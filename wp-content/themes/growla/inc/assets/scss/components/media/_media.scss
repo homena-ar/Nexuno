@@ -1,0 +1,43 @@
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+.wp-block-cover {
+	&.has-background-dim &-text {
+		color: var(--color-white);
+	}
+}
+
+.wp-block-cover-image .wp-block-cover-image-text, 
+.wp-block-cover .wp-block-cover-text, 
+section.wp-block-cover-image > h2 {
+	line-height: 2;
+
+	* {
+		font-size: inherit;
+		color: inherit;
+	}
+
+	@media (max-width: 991px) {
+		font-size: 2rem;
+	}
+}
+
+.wp-block-group.has-background {
+	padding: 2rem;
+    color: var(--color-black);
+
+    * {
+        color: inherit;
+    }
+}

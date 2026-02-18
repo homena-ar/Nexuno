@@ -1,0 +1,80 @@
+svg {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.icon-box {
+    display: flex;
+
+    font-size: 6rem;
+    width: 17.1rem;
+    height: 16.7rem;
+
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    background-color: var(--color-primary);
+}
+
+.icon-svg {
+    display: block;
+
+    [dir="rtl"] & {
+        transform: rotate(180deg);
+    }
+}
+
+.icon-box-alt {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+
+    padding: 3.4rem 3rem 2.7rem 3rem;
+
+    .icon {
+        font-size: 3.4rem;
+        height: 3.4rem;
+        color: var(--color-white);
+        fill: var(--color-white);
+    }
+
+    .sub {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: var(--color-primary-light);
+    }
+
+    .main {
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: var(--color-white);
+
+        word-break: break-word;
+    }
+
+    @media (max-width: 991px) {
+        flex-direction: column;
+        text-align: center;
+
+        .main {
+            font-size: 2rem;
+        }
+    }
+}
+
+.elementor-social-icon {
+    position: relative;
+    
+    &::before {
+        @extend %circular_hover;
+    }
+
+    &:hover {
+        &::before {
+            @extend %circular_hover_active;
+        }   
+    }
+}

@@ -1,0 +1,57 @@
+.growla-heading {
+    .mini-heading-02 {
+        color: var(--color-primary);
+        letter-spacing: .4rem;
+    }
+
+    &--content {
+        @extend h2;
+        margin-top: 1rem;
+        color: var(--color-white);
+
+        @media only screen and (max-width: 991px) {
+            margin-top: 0;
+        }
+
+        p {
+            @extend h2;
+            color: inherit;
+        }
+
+        span {
+            text-decoration-thickness: 0.2rem !important;
+            text-underline-offset: 0.9rem;
+            text-decoration-color: var(--color-primary) !important;
+        }
+    }
+}
+
+.growla-heading-underline {
+    a {
+        position: relative;
+        width: max-content;
+    }
+
+    a::after {
+        content: '';
+        width: 0;
+        height: 2px;
+        
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+
+        opacity: 0;
+
+        background-color: var(--color-primary);
+        
+        @include animateIt(.5s);
+    }
+
+    &:hover {
+        a::after {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+}

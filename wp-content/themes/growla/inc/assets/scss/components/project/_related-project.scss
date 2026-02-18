@@ -1,0 +1,13 @@
+.related-projects {
+    &-wrapper {
+       padding: 0 0 15rem 0;
+       
+       @media (max-width: 991px) {
+           padding: 44px 50px 50px 50px;
+       }
+       
+       @media (max-width: 767px) {
+        padding: 44px 25px 50px 25px;
+    }
+    }
+}

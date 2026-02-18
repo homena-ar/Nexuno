@@ -1,0 +1,25 @@
+.waves-illustration {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    display: flex;
+    width: 200vw;
+
+    @media only screen and (max-width: 991px) {
+        width: 500%;
+    }
+
+    @media only screen and (max-width: 757px) {
+        width: 1000%;
+    }
+
+    .first-wave,
+    .second-wave {
+        flex: 1;
+    }
+
+    path {
+        stroke: var(--color-primary) !important;
+    }
+}

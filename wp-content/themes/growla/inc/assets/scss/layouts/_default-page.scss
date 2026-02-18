@@ -1,0 +1,111 @@
+%default-headings {
+    @media (max-width: 991px) {
+        h1 {
+            font-size: calc(3.8rem + (6 - 3.8) * ((100vw - 250px) / (991 - 250)));
+            line-height: calc(6rem + (8 - 6) * ((100vw - 250px) / (991 - 250)));
+        }
+
+        h2 {
+            font-size: calc(3.5rem + (5 - 3.5) * ((100vw - 250px) / (991 - 250)));
+            line-height: calc(5.5rem + (7 - 5.5) * ((100vw - 250px) / (991 - 250)));
+        }
+
+        h3 {
+            font-size: calc(3rem + (4.5 - 3) * ((100vw - 250px) / (991 - 250)));
+            line-height: calc(5rem + (6.5 - 5) * ((100vw - 250px) / (991 - 250)));
+        }
+
+        h4 {
+            font-size: calc(2.75rem + (4 - 2.75) * ((100vw - 250px) / (991 - 250)));
+            line-height: calc(5.75rem + (6 - 5.75) * ((100vw - 250px) / (991 - 250)));
+        }
+
+        h5 {
+            font-size: calc(2.75rem + (3.5 - 2.75) * ((100vw - 250px) / (991 - 250)));
+            line-height: calc(5.75rem + (5.5 - 5.75) * ((100vw - 250px) / (991 - 250)));
+        }
+
+        h6 {
+            font-size: calc(2.75rem + (3 - 2.75) * ((100vw - 250px) / (991 - 250)));
+            line-height: calc(5.75rem + (5 - 5.75) * ((100vw - 250px) / (991 - 250)));
+        }
+    }
+}
+
+.default-page {
+    padding-top: 15rem;
+
+    @media (max-width: 991px) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    &.no-comments {
+        padding-bottom: 15rem;
+
+        @media (max-width: 991px) {
+            padding-bottom: 5rem;
+        }
+    }
+
+    &.only-comment-form {
+        @media (max-width: 991px) {
+            padding-bottom: 0;
+            margin-bottom: -2.5rem;
+        }
+    }
+
+    .entry-content {
+
+        @extend %default-headings;
+
+        * {
+            word-break: break-word;
+        }
+
+        > *:nth-child(n+2) {
+            margin-top: 1.5rem;
+        }
+
+        // clearfix
+        &::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .wp-block-calendar {
+            padding: 0;
+        }
+
+        @media (max-width: 991px) {
+            padding: 0 5rem;
+        }
+
+        @media (max-width: 767px) {
+            padding: 0 1.5rem;
+        }        
+
+    }
+
+}
+
+.page-links {
+    margin-top: 3rem !important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    font-size: 1.8rem;
+    color: var(--color-dark);
+    
+    span, a {
+        @extend %pagination-bullet;
+    }
+    
+    .current {
+        @extend %pagination-bullet-active;
+    }
+
+}

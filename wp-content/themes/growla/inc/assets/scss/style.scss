@@ -1,0 +1,69 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+// Import variables and mixins.
+@import 'abstracts/abstracts';
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+@import 'generic';
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import 'base/base';
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
+// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
+@import 'layouts/layouts';
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import 'components/components';
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+@import 'utilities/accessibility';
+
+/* Alignments
+--------------------------------------------- */
+@import 'utilities/alignments';
+
+/* Embeds
+--------------------------------------------- */
+@import 'utilities/embeds';
+
+/*--------------------------------------------------------------
+# Elementor
+--------------------------------------------------------------*/
+@import 'elementor/elementor-style';

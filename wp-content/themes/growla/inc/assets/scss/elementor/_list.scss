@@ -1,0 +1,29 @@
+.elementor-icon-list-items {
+    li {
+        a .elementor-icon-list-text {
+            position: relative;
+            width: max-content;
+        }
+
+        a .elementor-icon-list-text::after {
+            content: '';
+            width: 0;
+            height: 1px;
+            
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            opacity: 0;
+            
+            @include animateIt(.5s);
+        }
+
+        &:hover {
+            a .elementor-icon-list-text::after {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+    }
+}

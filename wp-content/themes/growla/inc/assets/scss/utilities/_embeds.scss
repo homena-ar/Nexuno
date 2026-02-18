@@ -1,0 +1,49 @@
+.wp-block-embed {
+    margin-bottom: 0;
+    word-break: break-word;
+}
+
+.wp-block-embed-twitter {
+    width: 100%;
+
+    iframe {
+        width: 100%;
+    }
+
+    &.alignwide {
+        .twitter-tweet,
+        iframe {
+            width: 100%;
+            min-width: 100%;
+        }
+        .r-y54riw {
+            min-width: 100%;
+        }
+    }
+}
+
+.wp-block-embed-youtube,
+.wp-block-embed-wordpress-tv {
+    width: 100%;
+    iframe {
+        width: 100%;
+        min-height: 40rem;
+    }
+    text-align: center;
+}
+
+.wp-block-embed__wrapper {
+    @extend %paragraph;
+}
+
+.twitter-tweet {
+    max-width: 100% !important;
+
+    iframe {
+        width: 100%;
+    }
+
+    div {
+        max-width: 100%;
+    }
+}

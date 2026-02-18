@@ -1,0 +1,104 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+    @include animateIt;
+
+    position: relative;
+
+    .site-branding {
+        min-width: 20%;
+    }
+
+    .logo {
+        @extend %logo-text;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &.scrolled {
+        min-height: 7rem;
+        border-color: transparent;
+        background-color: var(--color-dark);
+    }
+
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;	
+    @include animateIt;
+
+
+
+    @media (max-width: 991px) {
+        position: absolute;
+    }
+
+    @media (max-width: 767px) {
+        padding: 0 2.5rem;
+    }
+
+}
+
+.header-wrapper.mobile {
+    .site-header {
+        border-bottom: 1px solid var(--color-white-60);
+    }
+}
+
+
+.default-navigation {
+    height: 100%;
+
+    @media (max-width: 991px) {
+        > .navigation-slider-wrapper {
+            display: none;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .hamburger {
+        @media (min-width: 992px) {
+            display: none;
+        }
+    }
+
+    .mobile-wrapper {
+        max-height: 80vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
+
+.header-wrapper-default,
+.header-wrapper-default .header {
+    background-color: var(--color-dark);
+    border-bottom: 1px solid var(--color-white-60);
+
+}
+
+.header-wrapper-default.desktop {
+    .navigation-menu > li > a {
+        font-size: 1.4rem;
+    }
+}
+
+.site-header {
+    height: 9.2rem;
+    .logo {
+        padding: 0;
+    }
+
+    @media (max-width: 991px) {
+        height: 7rem;
+    }
+}
+
+.header-wrapper-default.desktop .default-navigation .navigation-menu > li > a {
+    height: 9.2rem;
+}

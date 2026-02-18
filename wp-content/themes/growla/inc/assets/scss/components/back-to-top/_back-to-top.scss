@@ -1,0 +1,41 @@
+.back-to-top {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+
+    z-index: 999999;
+
+    padding: 1.5rem;
+    background-color: var(--color-black);
+    fill: var(--color-primary);
+
+    opacity: 0;
+    visibility: hidden;
+
+    cursor: pointer;
+
+    @include animateIt;
+
+    &-inner {
+        width: 2rem;
+        height: 2rem;
+        fill: inherit;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+        fill: inherit;
+    }
+
+    &.scrolled {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:hover {
+        background-color: var(--color-primary);
+        fill: var(--color-black);
+    }
+
+}

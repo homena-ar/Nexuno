@@ -1,0 +1,11 @@
+// stylelint-enable value-keyword-case
+$font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+
+:root {
+    --paragraph-size: 1.8rem;
+    --paragraph-weight: 400;
+    --paragraph-line-height: 1.66;
+}

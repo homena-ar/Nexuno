@@ -1,0 +1,45 @@
+.growla-icon-box {
+    background-color: var(--color-dark-2);
+    padding: 5rem;
+    outline: 0.3rem solid transparent;
+    display: block;
+    @include animateIt;
+
+    &-icon {
+        svg {
+            height: 11rem;
+            fill: var(--color-white);
+            @include animateIt;
+
+            path {
+                @include animateIt;
+            }
+        }
+
+        [dir='rtl'] & {
+            text-align: left;
+            transform: rotate(180deg);
+        }
+    }
+
+    &-content {
+        h6 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            color: var(--color-white);
+
+            margin: 2rem 0 3rem 0;
+        }
+    }
+
+    &:hover {
+        outline-color: var(--color-primary);
+
+        .growla-icon-box-icon {
+            svg,
+            path {
+                fill: var(--color-primary) !important;
+            }
+        }
+    }
+}

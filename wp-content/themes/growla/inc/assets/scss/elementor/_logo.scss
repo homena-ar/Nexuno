@@ -1,0 +1,32 @@
+.growla-logo {
+    
+    a {
+        position: relative;
+        display: block;
+    }
+
+    .normal-logo {
+        @include animateIt;
+    }
+
+    .scrolled-logo {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include animateIt;
+    }
+}
+
+.sticky-nav.scrolled .growla-logo.scrollable {
+    .normal-logo {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .scrolled-logo {
+        opacity: 1;
+        visibility: visible;
+    }
+}

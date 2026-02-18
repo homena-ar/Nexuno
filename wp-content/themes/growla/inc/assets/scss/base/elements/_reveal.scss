@@ -1,0 +1,68 @@
+.reveal {
+    position: relative;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    @include animateIt;
+    
+    --size: 20px;
+    --width: calc(var(--size) * 0.6);
+    --height: calc(var(--size) * 0.1);
+
+    width: var(--size);
+    height: var(--size);
+
+    &::after, &::before {
+        position: absolute;
+        display: inline-block;
+        background-color: var(--color-black);
+        content: '';
+        width: 10px;
+        height: 2px;
+        width: var(--width);
+        height: var(--height);
+        top: calc(var(--size) / 2);
+        left: 10px;
+        transform: translate( -10px , -10px);
+        transition: transform .5s ease;
+        border-radius: 3px;
+    }
+
+    &:not(.plus)::after {
+        transform: translate3d(
+        calc((var(--size) - var(--width)) / 2),
+        calc((var(--size) - var(--height)) / 2), 0)
+        translate(-10px, -10px)
+        rotate(90deg);
+    }
+    
+    &:not(.plus)::before {
+        transform: translate3d(
+        calc((var(--size) - var(--width)) / 2),
+        calc((var(--size) - var(--height)) / 2), 0)
+        translate(-10px, -10px);
+    }
+
+    &.plus {
+        background-color: var(--color-paragraph-1);
+        &::before, &::after {
+            background-color: var(--color-dark);
+        }
+    }
+    
+    &.plus::after {
+        transform: translate3d(
+        calc((var(--size) - var(--width)) / 2),
+        calc((var(--size) - var(--height)) / 2), 0)
+        translate( -10px , -10px)
+        rotate(180deg);
+    }
+    
+    &.plus::before {
+        transform: translate3d(
+        calc((var(--size) - var(--width)) / 2),
+        calc((var(--size) - var(--height)) / 2), 0)
+        translate( -10px , -10px)
+        rotate(-180deg);
+    }
+}

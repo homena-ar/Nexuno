@@ -1,0 +1,19 @@
+.related-blog {
+
+    &.mobile {
+        display: none;
+    }
+
+    .swiper-container {
+        overflow: hidden;
+    }
+
+    @media (max-width: 991px) {
+        padding: 0 25px;
+    }
+
+    .swiper-button-lock {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

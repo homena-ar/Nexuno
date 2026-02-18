@@ -1,0 +1,64 @@
+ul,
+ol {
+	margin: 0;
+
+	font-size: var(--paragraph-size);
+	font-weight: var(--paragraph-weight);
+	line-height: var(--paragraph-line-height);
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 4.4rem;
+    color: var(--color-dark);
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+	@extend %paragraph;
+}
+
+%pagination-bullet {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+
+	width: 4.4rem;
+	height: 4.4rem;
+	border-radius: 50%;
+
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: var(--color-paragraph) !important; // !Important is used to override anchor element color formatting
+	fill: var(--color-paragraph);
+
+	background-color: var(--color-dark-2);
+	@include animateIt;
+
+	&:hover,
+	&:focus {
+		color: var(--color-black) !important;
+		background-color: var(--color-primary);
+	}
+}
+
+%pagination-bullet-active {
+	color: var(--color-black) !important;
+	background-color: var(--color-primary);
+}

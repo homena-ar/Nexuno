@@ -1,0 +1,65 @@
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+img {
+	height: auto; // Make sure images are scaled correctly.
+	max-width: 100%; // Adhere to container width.
+}
+
+figure {
+	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
+}
+
+.wp-block-media-text {
+	figure {
+		height: 100%;
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+    &__content {
+        color: var(--color-black);
+
+        * {
+            color: inherit;
+        }
+    }
+
+	.has-large-font-size {
+		font-size: 2.5rem !important;
+	}
+
+	@media (max-width: 991px) {
+		grid-template-columns: auto;
+		grid-template-rows: 1fr 1fr;
+
+		& &__content {
+			grid-column: auto;
+			grid-row: 2;
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
+	}
+}
+
+.mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
+	background-color: var(--color-dark-2) !important;
+}
+
+.mejs-container {
+    .mejs-button button {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.wp-block-audio audio {
+	min-width: unset;
+}

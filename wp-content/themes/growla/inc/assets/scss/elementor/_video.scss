@@ -1,0 +1,54 @@
+.elementor-widget-video {
+
+    .elementor-widget-container {
+        overflow: visible !important;
+    }
+
+    .growla-video-illustration {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        --box-color: var(--color-primary);
+
+        pointer-events: none;
+
+        &-box-1 {
+            width: 8rem;
+            height: 8rem;
+            border: .3rem solid var(--box-color);
+
+            position: absolute;
+            top: -3rem;
+            right: -3rem;
+
+            @media only screen and (max-width: 991px) {
+                width: 4rem;
+                height: 4rem;
+
+                top: -1.5rem;
+                right: -1.5rem;
+            }
+        }
+
+        &-box-2 {
+            width: 8rem;
+            height: 23.8rem;
+            border: .3rem solid var(--box-color);
+
+            position: absolute;
+            bottom: 5rem;
+            left: -4rem;
+
+            @media only screen and (max-width: 991px) {
+                width: 4rem;
+                height: 15rem;
+
+                left: -2rem;
+            }
+        }
+    }
+}

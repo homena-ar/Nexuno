@@ -1,0 +1,94 @@
+.growla-collapse {
+    background-color: var(--color-dark-2);
+    padding: 5rem;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+
+    &-heading {
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: var(--color-white);
+    }
+
+    &-inner {
+        > h6 {
+            font-size: 1.8rem;
+            color: var(--color-paragraph);
+            margin-top: 0.5rem;
+        }
+    }
+
+    ul {
+        color: var(--color-paragraph);
+        padding-left: 2rem;
+    }
+
+    &-content {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        cursor: initial;
+
+        padding: 0 0 3rem 0;
+
+        transform: translateY(25px);
+
+        &-wrapper {
+            position: relative;
+            margin-top: 3rem;
+
+            > * {
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    &-icon {
+        width: 4.5rem;
+        height: 4.5rem;
+
+        background-color: var(--color-dark-1);
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @include animateIt;
+
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &.active-icon {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            * {
+                fill: var(--color-paragraph);
+                color: var(--color-paragraph);
+                height: 2.4rem;
+                vertical-align: middle;
+
+                @include animateIt;
+            }
+        }
+    }
+
+    &:hover {
+        .growla-collapse-icon {
+            background-color: var(--color-primary);
+
+            div {
+                * {
+                    fill: var(--color-black);
+                    color: var(--color-black);
+                }
+            }
+        }
+    }
+}

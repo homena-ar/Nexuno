@@ -1,0 +1,132 @@
+.testimonial-main-wrapper {
+    
+    .testimonial-wrapper {
+        display: flex;
+        gap: 10rem;
+
+        @media only screen and (max-width: 991px) {
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        [dir="rtl"] & {
+            text-align: left;
+        }
+    }
+
+    .testimonial-slider {
+        max-width: 75%;
+        margin-left: 0;
+
+        [dir="rtl"] & {
+            margin-left: unset;
+            margin-right: 0;
+        }
+
+        @media only screen and (max-width: 991px) {
+            max-width: 100%;
+        }
+
+        &-wrapper {
+            max-width: calc( 100% - ( 10rem + 7.3rem ) );
+
+            @media only screen and (max-width: 991px) {
+                max-width: 100%;
+            }
+        }
+
+        p {
+            font-size: 7rem;
+            line-height: 9rem;
+            color: var(--color-white);
+
+            @media only screen and (max-width: 991px) {
+                font-size: 4rem;
+                line-height: 6rem;
+            }
+        }
+
+        h5 {
+            color: var(--color-primary);
+            margin-top: 2.2rem;
+
+            @media only screen and (max-width: 991px) {
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    .growla-heading {
+        @media only screen and (max-width: 991px) and (min-width: 768px) {
+            width: 51%;
+            margin: 0 auto;
+        }
+    }
+
+    .testimonial-image-slider {
+        flex: .1;
+        min-width: 7.3rem;
+        min-height: calc( ( 7.3rem * 4 ) + ( 22px * 3 ) );
+
+        @media only screen and (max-width: 991px) {
+            min-height: initial;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 991px) and (min-width: 768px) {
+            .swiper-wrapper {
+                justify-content: center;
+            }
+        }
+
+        .swiper-slide {
+            cursor: pointer;
+
+            transition: opacity var(--anim-duration) ease;
+
+            &:not(.swiper-slide-thumb-active) {
+                opacity: .4;
+            }
+        }
+
+        .testimonial-image-wrapper {
+            width: 7.3rem;
+            height: 7.3rem;
+            border-radius: 50%;
+
+            img {
+                width: inherit;
+                height: inherit;
+                border-radius: inherit;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .slider-nav {
+        margin-top: auto;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        [dir="rtl"] & {
+            left: unset;
+            right: 0;
+        }
+
+        @media only screen and (max-width: 991px) {
+            position: static;
+        }
+
+        @media only screen and (max-width: 991px) and (min-width: 768px) {
+            justify-content: center;
+        }
+
+        .slider-nav-btn svg {
+            width: 4rem;
+            height: auto;
+        }
+    }
+}

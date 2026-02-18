@@ -1,0 +1,55 @@
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const LOCAL_JS = path.join(__dirname, 'inc/assets/js')
+const LOCAL_SCSS = path.join(__dirname, 'inc/assets/scss')
+const BUILD_DIR = path.join(__dirname, 'inc/assets/dist')
+const RtlCssPlugin = require('rtlcss-webpack-plugin')
+
+module.exports = {
+  entry: {
+    app: [
+      `${LOCAL_JS}/main/main.js`
+    ],
+    style: [
+      `${LOCAL_SCSS}/style.scss`
+    ],
+    'editor-style': [
+        `${LOCAL_SCSS}/editor-style.scss`
+    ]
+  },
+  module:  {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [ 'babel-loader' ],
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+    ],
+  },
+  watch: true,
+  mode: 'development',
+  resolve: {
+    extensions: ['.js', '.css', '.scss']
+  },
+  output: {
+    path: BUILD_DIR,
+    filename: "[name].js",
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    }),
+    new RtlCssPlugin({
+        filename: '[name]-rtl.css',
+    })
+  ]
+};

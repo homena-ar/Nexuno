@@ -1,0 +1,145 @@
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+%blockquote-paragraph {
+	font-size: 2rem;
+	line-height: 4rem;
+	font-weight: 600;
+	color: var(--color-dark);
+	font-style: italic;
+}
+
+blockquote {
+
+	&:not(.twitter-tweet) {
+		padding: 5.5rem !important;
+		position: relative;
+		overflow: hidden;
+		background-color: var(--color-grey-1);
+
+		p {
+			@extend %blockquote-paragraph;
+            color: var(--color-white);
+		}
+
+		* {
+			z-index: 10;
+			position: relative;
+		}
+
+		&::before {
+			content: '“';
+			display: block;
+			font-size: 40rem;
+			line-height: 0;
+			font-weight: bold;
+			color: var(--color-primary);
+			position: absolute;
+			top: 20rem;
+			left: 0;
+			opacity: .2;
+			z-index: 1;
+
+			@media (max-width: 991px) {
+				font-size: calc(20rem + (40 - 20) * ((100vw - 250px) / (1400 - 250)));
+				top: calc(10rem + (20 - 10) * ((100vw - 250px) / (1400 - 250)));
+			}
+		}
+
+
+		@media (max-width: 991px) {
+			padding: 3rem !important;
+		}
+	}
+}
+
+.wp-block-column {
+    padding: 1rem;
+
+	blockquote:not(.twitter-tweet) {
+		padding: 2.5rem !important;
+	}
+
+    &.has-background {
+        color: var(--color-white);
+
+        * {
+            color: inherit;
+        }
+    }
+}
+
+.wp-block-columns {
+    &.has-background {
+        color: var(--color-white);
+
+        * {
+            color: inherit;
+        }
+    }
+}
+
+.wp-block-code {
+    padding: 0;
+    background: none;
+}
+
+.wp-block-quote.is-large:not(.is-style-plain) p, .wp-block-quote.is-style-large:not(.is-style-plain) p {
+	@extend %blockquote-paragraph;
+}
+
+.wp-block-pullquote.is-style-solid-color {
+	padding: 0;
+	
+	blockquote {
+		margin: 0;
+		max-width: 100%;
+	}
+}
+
+cite {
+	@extend %paragraph;
+	font-size: 1.5rem;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: var(--color-dark-1);
+	font-family: $font__pre;
+	line-height: $font__line-height-pre;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+	border-radius: var(--border-radius);
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: $font__code;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted $color__border-abbr;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: $color__background-ins;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}

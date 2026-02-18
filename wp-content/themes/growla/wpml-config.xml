@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wpml-config>
+    <elementor-widgets>
+        <widget name="growla_heading">
+            <conditions>
+                <condition key="widgetType">growla_heading</condition>
+            </conditions>
+            <fields>
+                <field type="heading" editor_type="LINE">heading</field>
+                <field type="subheading" editor_type="LINE">subheading</field>
+            </fields>
+        </widget>
+        <widget name="growla_button">
+            <conditions>
+                <condition key="widgetType">growla_button</condition>
+            </conditions>
+            <fields>
+                <field type="heading" editor_type="LINE">button_text</field>
+            </fields>
+        </widget>
+        <widget name="growla_block_slider">
+            <conditions>
+                <condition key="widgetType">growla_block_slider</condition>
+            </conditions>
+            <fields-in-item items_of="blocks">
+                <field type="Block: Title" editor_type="LINE">heading</field>
+                <field type="Block: Content" editor_type="AREA">content</field>
+                <field type="Block: Content 2" editor_type="AREA">content_2</field>
+            </fields-in-item>
+        </widget>
+        <widget name="growla_block_slider_secondary">
+            <conditions>
+                <condition key="widgetType">growla_block_slider_secondary</condition>
+            </conditions>
+            <fields-in-item items_of="blocks">
+                <field type="Block: Title" editor_type="LINE">heading</field>
+                <field type="Block: Content" editor_type="AREA">content</field>
+                <field type="Block: Content 2" editor_type="AREA">content_2</field>
+            </fields-in-item>
+        </widget>
+        <widget name="growla_award">
+            <conditions>
+                <condition key="widgetType">growla_award</condition>
+            </conditions>
+            <fields>
+                <field type="Award Time" editor_type="LINE">award_time</field>
+                <field type="Award Title" editor_type="LINE">award_title</field>
+                <field type="Award Presenter" editor_type="LINE">award_presenter</field>
+            </fields>
+        </widget>
+        <widget name="growla_collapse_tab">
+            <conditions>
+                <condition key="widgetType">growla_collapse_tab</condition>
+            </conditions>
+            <fields>
+                <field type="Heading" editor_type="LINE">heading</field>
+                <field type="Subheading" editor_type="LINE">subheading</field>
+                <field type="Excerpt" editor_type="VISUAL">excerpt</field>
+                <field type="Content" editor_type="VISUAL">content</field>
+            </fields>
+        </widget>
+        <widget name="growla_counter">
+            <conditions>
+                <condition key="widgetType">growla_counter</condition>
+            </conditions>
+            <fields>
+                <field type="Heading" editor_type="LINE">text</field>
+            </fields>
+        </widget>
+        <widget name="growla_tabs">
+            <conditions>
+                <condition key="widgetType">growla_tabs</condition>
+            </conditions>
+            <fields-in-item items_of="tabs_repeater">
+                <field type="Block: Label" editor_type="LINE">tab_option_label</field>
+            </fields-in-item>
+        </widget>
+        <widget name="growla_team_2">
+            <conditions>
+                <condition key="widgetType">growla_team_2</condition>
+            </conditions>
+            <fields-in-item items_of="team_member_slides_repeater">
+                <field type="Block: Name" editor_type="LINE">name</field>
+                <field type="Block: Designation" editor_type="LINE">designation</field>
+                <field type="Block: Content" editor_type="AREA">content</field>
+            </fields-in-item>
+        </widget>
+        <widget name="growla_testimonial_slider_2">
+            <conditions>
+                <condition key="widgetType">growla_testimonial_slider_2</condition>
+            </conditions>
+            <fields-in-item items_of="testimonial_slides_repeater">
+                <field type="Block: Content" editor_type="AREA">testimonial_slide_content</field>
+                <field type="Block: Name" editor_type="LINE">testimonial_slide_name</field>
+                <field type="Block: Designation" editor_type="LINE">testimonial_slide_desgination</field>
+            </fields-in-item>
+        </widget>
+        <widget name="contact_form_tab_growla">
+            <conditions>
+                <condition key="widgetType">contact_form_tab_growla</condition>
+            </conditions>
+            <fields-in-item items_of="contact_forms">
+                <field type="Block: Label" editor_type="LINE">label</field>
+            </fields-in-item>
+        </widget>
+        <widget name="growla_full_screen_menu">
+            <conditions>
+                <condition key="widgetType">growla_full_screen_menu</condition>
+            </conditions>
+            <fields>
+                <field type="Heading" editor_type="LINE">button_text</field>
+                <field type="Label" editor_type="LINE">menu_label</field>
+            </fields>
+        </widget>
+        <widget name="growla_hero_slider_1">
+            <conditions>
+                <condition key="widgetType">growla_hero_slider_1</condition>
+            </conditions>
+            <fields>
+                <field type="Caption" editor_type="LINE">caption</field>
+                <field type="Previous Text" editor_type="LINE">prev_text</field>
+                <field type="Next Text" editor_type="LINE">next_text</field>
+                <field type="Separator" editor_type="LINE">navigation_separator</field>
+            </fields>
+            <fields-in-item items_of="hs_repeater">
+                <field type="Block: Heading" editor_type="VISUAL">hs_wysiwyg</field>
+            </fields-in-item>
+        </widget>
+        <widget name="growla_icon_box">
+            <conditions>
+                <condition key="widgetType">growla_icon_box</condition>
+            </conditions>
+            <fields>
+                <field type="Heading" editor_type="LINE">heading</field>
+                <field type="Content" editor_type="AREA">textarea</field>
+            </fields>
+        </widget>
+        <widget name="growla_projects">
+            <conditions>
+                <condition key="widgetType">growla_projects</condition>
+            </conditions>
+            <fields>
+                <field type="Load More" editor_type="LINE">load_more_text</field>
+            </fields>
+        </widget>
+        <widget name="growla_team">
+            <conditions>
+                <condition key="widgetType">growla_team</condition>
+            </conditions>
+            <fields>
+                <field type="Name" editor_type="LINE">name</field>
+                <field type="Designation" editor_type="LINE">designation</field>
+            </fields>
+        </widget>
+        <widget name="growla_testimonial_slider">
+            <conditions>
+                <condition key="widgetType">growla_testimonial_slider</condition>
+            </conditions>
+            <fields-in-item items_of="testimonial_slides_repeater">
+                <field type="testimonial: Content" editor_type="AREA">testimonial_slide_content</field>
+                <field type="testimonial: Name" editor_type="LINE">testimonial_slide_name</field>
+            </fields-in-item>
+        </widget>
+    </elementor-widgets>
+</wpml-config>

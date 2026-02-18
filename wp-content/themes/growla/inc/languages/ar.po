@@ -1,0 +1,1402 @@
+# حقوق الطبع والنشر (C) 2024 GFXPARTNER
+# هذا الملف موزع بموجب رخصة جنو العامة الإصدار الثاني أو ما بعده.
+msgid ""
+msgstr ""
+"Project-Id-Version: Growla 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/growla\n"
+"POT-Creation-Date: 2024-11-20T16:47:05+00:00\n"
+"PO-Revision-Date: 2024-11-20 22:34+0500\n"
+"Last-Translator: الاسم الكامل <البريد الإلكتروني>\n"
+"Language-Team: اللغة <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Domain: growla\n"
+
+#. اسم القالب
+msgid "Growla"
+msgstr "جروولا"
+
+#. عنوان URI الخاص بالقالب
+msgid "http://gfxpartner.com/growla/"
+msgstr "http://gfxpartner.com/growla/"
+
+#. وصف القالب
+msgid "Growla is the best Creative Multipurpose WordPress Theme"
+msgstr "جروولا هو أفضل قالب ووردبريس متعدد الأغراض والإبداعي"
+
+#. مؤلف القالب
+msgid "GFXPARTNER"
+msgstr "شريك جرافيك"
+
+#. عنوان URI الخاص بالمؤلف
+msgid "https://themeforest.net/user/gfxpartner"
+msgstr "https://themeforest.net/user/gfxpartner"
+
+#: 404.php:22
+msgid "404 Error."
+msgstr "خطأ 404."
+
+#: 404.php:23
+msgid "The page you’re looking for doesn’t exist"
+msgstr "الصفحة التي تبحث عنها غير موجودة"
+
+#: 404.php:24
+msgid "We're sorry for the inconvenience. The page you'e looking for doesn't exist or has been removed."
+msgstr "نأسف للإزعاج. الصفحة التي تبحث عنها غير موجودة أو تم إزالتها."
+
+#: archive.php:21
+msgid "We can't seem to find any posts regarding the query."
+msgstr "لم نتمكن من العثور على أي منشورات تتعلق بالاستعلام."
+
+#: archive.php:22
+msgid "We’re sorry for the inconvenience. The data you’re looking for doesn’t exist or has been removed."
+msgstr "نأسف للإزعاج. البيانات التي تبحث عنها غير موجودة أو تم إزالتها."
+
+#: comments.php:39 comments.php:40
+msgid "Name *"
+msgstr "الاسم *"
+
+#: comments.php:50 comments.php:51
+msgid "Email *"
+msgstr "البريد الإلكتروني *"
+
+#: comments.php:56
+msgid "Save my name and email in this browser for the next time I comment."
+msgstr "احفظ اسمي وبريدي الإلكتروني في هذا المتصفح لتعليقي القادم."
+
+#: comments.php:70 comments.php:74
+msgid "Write your comment *"
+msgstr "اكتب تعليقك *"
+
+#: comments.php:79
+msgid "Post comment."
+msgstr "أرسل التعليق."
+
+#: comments.php:81
+msgid "CANCEL"
+msgstr "إلغاء"
+
+#: comments.php:82
+msgid "SUBMIT"
+msgstr "إرسال"
+
+#: comments.php:107
+msgid " comment"
+msgstr " تعليق"
+
+#: comments.php:109
+msgid " comments"
+msgstr " تعليقات"
+
+#: inc/elementor-widgets/class-growla-elementor-widget-loader.php:146
+msgid "Gfxpartner"
+msgstr "شريك جرافيك"
+
+#: inc/elementor-widgets/elementor-util.php:83
+msgid "Slider Controls"
+msgstr "عناصر تحكم الشريط المنزلق"
+
+#: inc/elementor-widgets/elementor-util.php:92
+msgid "Slides per view"
+msgstr "الشرائح لكل عرض"
+
+#: inc/elementor-widgets/elementor-util.php:104
+#: inc/elementor-widgets/widgets/hero-slider-1.php:231
+msgid "Slider navigation"
+msgstr "تنقل الشريط المنزلق"
+
+#: inc/elementor-widgets/elementor-util.php:106
+#: inc/elementor-widgets/elementor-util.php:137
+#: inc/elementor-widgets/elementor-util.php:149
+#: inc/elementor-widgets/elementor-util.php:189
+#: inc/elementor-widgets/elementor-util.php:201
+#: inc/elementor-widgets/widgets/hero-slider-1.php:233
+msgid "yes"
+msgstr "نعم"
+
+#: inc/elementor-widgets/elementor-util.php:107
+#: inc/elementor-widgets/elementor-util.php:138
+#: inc/elementor-widgets/elementor-util.php:150
+#: inc/elementor-widgets/elementor-util.php:190
+#: inc/elementor-widgets/elementor-util.php:202
+#: inc/elementor-widgets/widgets/hero-slider-1.php:234
+msgid "no"
+msgstr "لا"
+
+#: inc/elementor-widgets/elementor-util.php:116
+msgid "Navigation previous icon"
+msgstr "رمز التنقل السابق"
+
+#: inc/elementor-widgets/elementor-util.php:125
+msgid "Navigation next icon"
+msgstr "رمز التنقل التالي"
+
+#: inc/elementor-widgets/elementor-util.php:135
+msgid "Slider Pagination"
+msgstr "ترقيم الشريط المنزلق"
+
+#: inc/elementor-widgets/elementor-util.php:147
+msgid "Slider autoplay"
+msgstr "تشغيل تلقائي للشريط المنزلق"
+
+#: inc/elementor-widgets/elementor-util.php:159
+msgid "Delay"
+msgstr "تأخير"
+
+#: inc/elementor-widgets/elementor-util.php:160
+#: inc/elementor-widgets/elementor-util.php:174
+msgid "1000 represents 1 second"
+msgstr "1000 تمثل ثانية واحدة"
+
+#: inc/elementor-widgets/elementor-util.php:173
+msgid "Speed"
+msgstr "السرعة"
+
+#: inc/elementor-widgets/elementor-util.php:187
+msgid "Slider loop"
+msgstr "تكرار الشريط المنزلق"
+
+#: inc/elementor-widgets/elementor-util.php:199
+msgid "Slider overflow"
+msgstr "تجاوز الشريط المنزلق"
+
+#: inc/elementor-widgets/elementor-util.php:280
+msgid "Navigation"
+msgstr "التنقل"
+
+#: inc/elementor-widgets/elementor-util.php:289
+#: inc/elementor-widgets/elementor-util.php:407
+#: inc/elementor-widgets/mods/accordion.php:73
+#: inc/elementor-widgets/widgets/hamburger-close.php:61
+msgid "Size"
+msgstr "الحجم"
+
+#: inc/elementor-widgets/elementor-util.php:316
+msgid "Normal"
+msgstr "عادي"
+
+#: inc/elementor-widgets/elementor-util.php:324
+msgid "Color"
+msgstr "اللون"
+
+#: inc/elementor-widgets/elementor-util.php:337
+msgid "Background Color"
+msgstr "لون الخلفية"
+
+#: inc/elementor-widgets/elementor-util.php:351
+msgid "Hover"
+msgstr "مرر المؤشر"
+
+#: inc/elementor-widgets/elementor-util.php:398
+msgid "Pagination"
+msgstr "الترقيم"
+
+#: inc/elementor-widgets/elementor-util.php:489
+msgid "Subheading"
+msgstr "العنوان الفرعي"
+
+#: inc/elementor-widgets/elementor-util.php:498
+msgid "Text"
+msgstr "النص"
+
+#: inc/elementor-widgets/elementor-util.php:509
+msgid "Tag"
+msgstr "وسم"
+
+#: inc/elementor-widgets/elementor-util.php:521
+msgid "Heading"
+msgstr "عنوان"
+
+#: inc/elementor-widgets/elementor-util.php:589
+msgid "Gap"
+msgstr "المسافة"
+
+#: inc/elementor-widgets/elementor-util.php:612
+msgid "Alignment"
+msgstr "المحاذاة"
+
+#: inc/elementor-widgets/elementor-util.php:616
+msgid "Left"
+msgstr "يسار"
+
+#: inc/elementor-widgets/elementor-util.php:620
+msgid "Center"
+msgstr "وسط"
+
+#: inc/elementor-widgets/elementor-util.php:624
+msgid "Right"
+msgstr "يمين"
+
+#: inc/elementor-widgets/elementor-util.php:672
+msgid "Underline Color"
+msgstr "لون الخط السفلي"
+
+#: inc/elementor-widgets/elementor-util.php:715
+msgid "General"
+msgstr "عام"
+
+#: inc/elementor-widgets/elementor-util.php:724
+msgid "Animate"
+msgstr "تحريك"
+
+#: inc/elementor-widgets/elementor-util.php:726
+msgid "Yes"
+msgstr "نعم"
+
+#: inc/elementor-widgets/elementor-util.php:727
+msgid "No"
+msgstr "لا"
+
+#: inc/elementor-widgets/elementor-util.php:755
+msgid "There are no templates"
+msgstr "لا توجد قوالب"
+
+#: inc/elementor-widgets/elementor-util.php:760
+msgid "Select Template"
+msgstr "اختر القالب"
+
+#: inc/elementor-widgets/elementor-util.php:856
+msgid "H1"
+msgstr "العنوان 1"
+
+#: inc/elementor-widgets/elementor-util.php:857
+msgid "H2"
+msgstr "العنوان 2"
+
+#: inc/elementor-widgets/elementor-util.php:858
+msgid "H3"
+msgstr "العنوان 3"
+
+#: inc/elementor-widgets/elementor-util.php:859
+msgid "H4"
+msgstr "العنوان 4"
+
+#: inc/elementor-widgets/elementor-util.php:860
+msgid "H5"
+msgstr "العنوان 5"
+
+#: inc/elementor-widgets/elementor-util.php:861
+msgid "H6"
+msgstr "العنوان 6"
+
+#: inc/elementor-widgets/elementor-util.php:862
+msgid "P"
+msgstr "فقرة"
+
+#: inc/elementor-widgets/elementor-util.php:878
+msgid "Fields"
+msgstr "الحقول"
+
+#: inc/elementor-widgets/elementor-util.php:887
+msgid "Typography"
+msgstr "الخطوط"
+
+#: inc/elementor-widgets/elementor-util.php:895
+msgid "Field Text Color"
+msgstr "لون نص الحقل"
+
+#: inc/elementor-widgets/elementor-util.php:907
+msgid "Label Color"
+msgstr "لون التسمية"
+
+#: inc/elementor-widgets/elementor-util.php:919
+msgid "Border Color"
+msgstr "لون الإطار"
+
+#: inc/elementor-widgets/elementor-util.php:942
+msgid "Textarea"
+msgstr "منطقة النص"
+
+#: inc/elementor-widgets/elementor-util.php:950
+msgid "Minimum Height"
+msgstr "الارتفاع الأدنى"
+
+#: inc/elementor-widgets/elementor-util.php:973
+msgid "Maximum Height"
+msgstr "الارتفاع الأقصى"
+
+#: inc/elementor-widgets/elementor-util.php:1006
+msgid "Button"
+msgstr "زر"
+
+#: inc/elementor-widgets/elementor-util.php:1023
+msgid "Hover Color"
+msgstr "لون التمرير"
+
+#: inc/elementor-widgets/elementor-util.php:1045
+msgid "Text color"
+msgstr "لون النص"
+
+#: inc/elementor-widgets/elementor-util.php:1092
+msgid "Dropdown"
+msgstr "القائمة المنسدلة"
+
+#: inc/elementor-widgets/elementor-util.php:1101
+msgid "Label Typography"
+msgstr "خط التسمية"
+
+#: inc/elementor-widgets/elementor-util.php:1110
+msgid "Option Typography"
+msgstr "خط الخيار"
+
+#: inc/elementor-widgets/elementor-util.php:1127
+msgid "Option Color"
+msgstr "لون الخيار"
+
+#: inc/elementor-widgets/elementor-util.php:1139
+msgid "Option Background Color"
+msgstr "لون خلفية الخيار"
+
+#: inc/elementor-widgets/elementor-util.php:1166
+msgid "Active"
+msgstr "نشط"
+
+#: inc/elementor-widgets/mods/accordion.php:37
+msgid "Space between"
+msgstr "المسافة بين"
+
+#: inc/elementor-widgets/mods/heading.php:53
+msgid "Underline on hover"
+msgstr "خط سفلي عند التمرير"
+
+#: inc/elementor-widgets/mods/icon-list.php:30
+msgid "Bar color"
+msgstr "لون الشريط"
+
+#: inc/elementor-widgets/mods/icon-list.php:41
+msgid "Bar margin"
+msgstr "هامش الشريط"
+
+#: inc/elementor-widgets/mods/icon-list.php:53
+msgid "Text margin"
+msgstr "هامش النص"
+
+#: inc/elementor-widgets/mods/image-carousel.php:54
+msgid "Overflow"
+msgstr "التجاوز"
+
+#: inc/elementor-widgets/mods/image-carousel.php:58
+msgid "Hidden"
+msgstr "مخفي"
+
+#: inc/elementor-widgets/mods/image-carousel.php:59
+msgid "Visible"
+msgstr "مرئي"
+
+#: inc/elementor-widgets/mods/image-carousel.php:70
+msgid "Display navigation below carousel"
+msgstr "عرض التنقل أسفل المعرض"
+
+#: inc/elementor-widgets/mods/image-carousel.php:71
+msgid "This will override any other position applied to navigation."
+msgstr "سيؤدي ذلك إلى تجاوز أي موضع آخر تم تطبيقه على التنقل."
+
+#: inc/elementor-widgets/mods/section.php:156
+msgid "Height"
+msgstr "الارتفاع"
+
+#: inc/elementor-widgets/mods/section.php:77
+msgid "Full Width"
+msgstr "العرض الكامل"
+
+#: inc/elementor-widgets/mods/section.php:89
+msgid "Grow Animation"
+msgstr "تحريك النمو"
+
+#: inc/elementor-widgets/mods/section.php:103
+msgid "Sticky"
+msgstr "ثابت"
+
+#: inc/elementor-widgets/mods/section.php:105
+msgid "Show"
+msgstr "إظهار"
+
+#: inc/elementor-widgets/mods/section.php:106
+msgid "Hide"
+msgstr "إخفاء"
+
+#: inc/elementor-widgets/mods/section.php:125
+msgid "growla"
+msgstr "جروولا"
+
+#: inc/elementor-widgets/mods/social-list.php:30
+msgid "Primary Color"
+msgstr "اللون الأساسي"
+
+#: inc/elementor-widgets/mods/video.php:63
+msgid "Show Illustration"
+msgstr "إظهار الرسوم التوضيحية"
+
+#: inc/elementor-widgets/mods/video.php:79
+msgid "Growla: Video"
+msgstr "جروولا: فيديو"
+
+#: inc/elementor-widgets/mods/video.php:87
+msgid "Width"
+msgstr "العرض"
+
+#: inc/elementor-widgets/mods/video.php:146
+msgid "Illustration Box Color"
+msgstr "لون مربع الرسوم التوضيحية"
+
+#: inc/elementor-widgets/widgets/blog.php:13
+msgid "Blog"
+msgstr "مدونة"
+
+#: inc/elementor-widgets/widgets/blog.php:28
+msgid "Post Options"
+msgstr "خيارات المنشور"
+
+#: inc/elementor-widgets/widgets/blog.php:36
+msgid "Columns"
+msgstr "الأعمدة"
+
+#: inc/elementor-widgets/widgets/blog.php:40
+msgid "2"
+msgstr "٢"
+
+#: inc/elementor-widgets/widgets/blog.php:41
+msgid "3"
+msgstr "٣"
+
+#: inc/elementor-widgets/widgets/blog.php:49
+msgid "Posts per page"
+msgstr "عدد المنشورات لكل صفحة"
+
+#: inc/elementor-widgets/widgets/blog.php:59
+msgid "Order posts"
+msgstr "ترتيب المنشورات"
+
+#: inc/elementor-widgets/widgets/blog.php:72
+msgid "Sorting posts by"
+msgstr "فرز المنشورات حسب"
+
+#: inc/elementor-widgets/widgets/blog.php:88
+msgid "Show pagination"
+msgstr "إظهار الترقيم"
+
+#: inc/elementor-widgets/widgets/blog.php:100
+msgid "Custom date format"
+msgstr "تنسيق التاريخ المخصص"
+
+#: inc/elementor-widgets/widgets/blog.php:175
+msgid "Title"
+msgstr "العنوان"
+
+#: inc/elementor-widgets/widgets/blog.php:207
+msgid "Date"
+msgstr "التاريخ"
+
+#: inc/elementor-widgets/widgets/blog.php:250
+msgid "Author"
+msgstr "المؤلف"
+
+#: inc/elementor-widgets/widgets/blog.php:336
+msgid "Background color"
+msgstr "لون الخلفية"
+
+#: inc/elementor-widgets/widgets/blog.php:348
+msgid "Prev/Next color"
+msgstr "لون السابق/التالي"
+
+#: inc/elementor-widgets/widgets/blog.php:361
+msgid "Prev/Next Background color"
+msgstr "لون خلفية السابق/التالي"
+
+#: inc/elementor-widgets/widgets/button.php:28
+msgid "Content"
+msgstr "المحتوى"
+
+#: inc/elementor-widgets/widgets/button.php:49
+msgid "Link"
+msgstr "الرابط"
+
+#: inc/elementor-widgets/widgets/button.php:61
+msgid "Icon"
+msgstr "أيقونة"
+
+#: inc/elementor-widgets/widgets/button.php:73
+msgid "Style"
+msgstr "النمط"
+
+#: inc/elementor-widgets/widgets/button.php:143
+msgid "Padding"
+msgstr "المسافات الداخلية"
+
+#: inc/elementor-widgets/widgets/button.php:155
+msgid "Hover Style"
+msgstr "نمط التمرير"
+
+#: inc/elementor-widgets/widgets/button.php:159
+msgid "Background"
+msgstr "الخلفية"
+
+#: inc/elementor-widgets/widgets/button.php:161
+msgid "Underline"
+msgstr "خط سفلي"
+
+#: inc/elementor-widgets/widgets/button.php:208
+msgid "Icon color"
+msgstr "لون الأيقونة"
+
+#: inc/elementor-widgets/widgets/class-award.php:13
+msgid "Award"
+msgstr "الجائزة"
+
+#: inc/elementor-widgets/widgets/class-award.php:37
+msgid "Time"
+msgstr "الوقت"
+
+#: inc/elementor-widgets/widgets/class-award.php:57
+msgid "Presenter"
+msgstr "المقدم"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:33
+msgid "Block Slider Secondary"
+msgstr "شريط الكتل الثانوي"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:129
+msgid "Content 2"
+msgstr "المحتوى 2"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:142
+msgid "Blocks"
+msgstr "الكتل"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:164
+msgid "Slider"
+msgstr "شريط التمرير"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:218
+msgid "Box Styles"
+msgstr "أنماط الصندوق"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:237
+msgid "Outline Color"
+msgstr "لون الإطار الخارجي"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:248
+msgid "Separator Color"
+msgstr "لون الفاصل"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:265
+msgid "Box Icon"
+msgstr "أيقونة الصندوق"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:299
+msgid "Box Heading"
+msgstr "عنوان الصندوق"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:330
+msgid "Box Content"
+msgstr "محتوى الصندوق"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:361
+msgid "Box Content 2"
+msgstr "محتوى الصندوق 2"
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:401
+msgid "Icon Color"
+msgstr "لون الأيقونة"
+
+#: inc/elementor-widgets/widgets/class-block-slider.php:33
+msgid "Block Slider"
+msgstr "شريط الكتل"
+
+#: inc/elementor-widgets/widgets/class-block-slider.php:97
+msgid "Show Count"
+msgstr "إظهار العدد"
+
+#: inc/elementor-widgets/widgets/class-block-slider.php:111
+msgid "Choose Image"
+msgstr "اختر صورة"
+
+#: inc/elementor-widgets/widgets/class-block-slider.php:222
+msgid "Counter"
+msgstr "العداد"
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:13
+msgid "Collapse Tab"
+msgstr "علامة التبويب القابلة للطي"
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:64
+msgid "Excerpt"
+msgstr "المقتطف"
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:66
+msgid "Default excerpt"
+msgstr "المقتطف الافتراضي"
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:67
+msgid "Type your excerpt here"
+msgstr "اكتب مقتطفك هنا"
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:77
+msgid "Default description"
+msgstr "الوصف الافتراضي"
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:78
+msgid "Type your description here"
+msgstr "اكتب وصفك هنا"
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:271
+msgid "Paragraph Typography"
+msgstr "خط الفقرة"
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:279
+msgid "Paragraph Color"
+msgstr "لون الفقرة"
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:291
+msgid "Heading Color"
+msgstr "لون العنوان"
+
+#: inc/elementor-widgets/widgets/class-counter.php:86
+msgid "Default text"
+msgstr "النص الافتراضي"
+
+#: inc/elementor-widgets/widgets/class-counter.php:96
+msgid "value"
+msgstr "القيمة"
+
+#: inc/elementor-widgets/widgets/class-counter.php:149
+msgid "Border color"
+msgstr "لون الإطار"
+
+#: inc/elementor-widgets/widgets/class-counter.php:165
+msgid "Label"
+msgstr "التسمية"
+
+#: inc/elementor-widgets/widgets/class-illustration.php:13
+msgid "Illustration"
+msgstr "رسم توضيحي"
+
+#: inc/elementor-widgets/widgets/class-illustration.php:36
+msgid "First Image"
+msgstr "الصورة الأولى"
+
+#: inc/elementor-widgets/widgets/class-illustration.php:50
+msgid "Second Image"
+msgstr "الصورة الثانية"
+
+#: inc/elementor-widgets/widgets/class-progress-bar.php:33
+msgid "Progress Bar"
+msgstr "شريط التقدم"
+
+#: inc/elementor-widgets/widgets/class-progress-bar.php:239
+msgid "Fill Color"
+msgstr "لون التعبئة"
+
+#: inc/elementor-widgets/widgets/class-tabs.php:13
+msgid "Tabs"
+msgstr "علامات التبويب"
+
+#: inc/elementor-widgets/widgets/class-tabs.php:48
+msgid "{{ tab_option_label }}"
+msgstr "{{ تسمية خيار علامة التبويب }}"
+
+#: inc/elementor-widgets/widgets/class-tabs.php:59
+msgid "Option"
+msgstr "الخيار"
+
+#: inc/elementor-widgets/widgets/class-tabs.php:106
+msgid "Default Content"
+msgstr "المحتوى الافتراضي"
+
+#: inc/elementor-widgets/widgets/class-tabs.php:107
+msgid "Type your content here"
+msgstr "اكتب محتواك هنا"
+
+#: inc/elementor-widgets/widgets/class-tabs.php:118
+msgid "Tab"
+msgstr "علامة التبويب"
+
+#: inc/elementor-widgets/widgets/class-tabs.php:168
+msgid "Icon background color"
+msgstr "لون خلفية الأيقونة"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:19
+msgid "Team 2"
+msgstr "الفريق 2"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:115
+msgid "Name typography"
+msgstr "خط الاسم"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:123
+msgid "Name color"
+msgstr "لون الاسم"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:136
+msgid "Designation typography"
+msgstr "خط التعيين"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:144
+msgid "Designation color"
+msgstr "لون التعيين"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:167
+msgid "Drop icon color"
+msgstr "لون أيقونة السحب"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:179
+msgid "Social icon color"
+msgstr "لون أيقونة الوسائط الاجتماعية"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:191
+msgid "Social icon background color"
+msgstr "لون خلفية أيقونة الوسائط الاجتماعية"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:260
+msgid "Team Members"
+msgstr "أعضاء الفريق"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:281
+msgid "Name"
+msgstr "الاسم"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:283
+msgid "Type name here"
+msgstr "اكتب الاسم هنا"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:290
+msgid "Designation"
+msgstr "الوظيفة"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:292
+msgid "Type designation here"
+msgstr "اكتب الوظيفة هنا"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:308
+msgid "Social Icon 1"
+msgstr "الأيقونة الاجتماعية 1"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:316
+msgid "Social Link 1"
+msgstr "الرابط الاجتماعي 1"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:326
+msgid "Social Icon 2"
+msgstr "الأيقونة الاجتماعية 2"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:334
+msgid "Social Link 2"
+msgstr "الرابط الاجتماعي 2"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:344
+msgid "Social Icon 3"
+msgstr "الأيقونة الاجتماعية 3"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:352
+msgid "Social Link 3"
+msgstr "الرابط الاجتماعي 3"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:362
+msgid "Social Icon 4"
+msgstr "الأيقونة الاجتماعية 4"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:370
+msgid "Social Link 4"
+msgstr "الرابط الاجتماعي 4"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:380
+msgid "Team members"
+msgstr "أعضاء الفريق"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:383
+msgid "Member"
+msgstr "عضو"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:631
+msgid "Desgination"
+msgstr "الوظيفة"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:697
+msgid "Social"
+msgstr "الاجتماعي"
+
+#: inc/elementor-widgets/widgets/class-team-2.php:759
+msgid "Bacckground Color"
+msgstr "لون الخلفية"
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:13
+msgid "Testimonials 2"
+msgstr "الشهادات 2"
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:28
+msgid "Testimonials"
+msgstr "الشهادات"
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:38
+msgid "Testimonial"
+msgstr "شهادة"
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:41
+msgid "Type your testimonial here"
+msgstr "اكتب شهادتك هنا"
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:53
+msgid "Type your name here"
+msgstr "اكتب اسمك هنا"
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:78
+msgid "Slide"
+msgstr "الشريحة"
+
+#: inc/elementor-widgets/widgets/client-slider.php:18
+msgid "Client Slider"
+msgstr "شريط عملاء"
+
+#: inc/elementor-widgets/widgets/client-slider.php:35
+msgid "Slides"
+msgstr "الشرائح"
+
+#: inc/elementor-widgets/widgets/client-slider.php:58
+msgid "https://your-link.com"
+msgstr "https://رابطك-هنا.com"
+
+#: inc/elementor-widgets/widgets/client-slider.php:71
+msgid "Client slides"
+msgstr "شرائح العملاء"
+
+#: inc/elementor-widgets/widgets/client-slider.php:74
+msgid "Client"
+msgstr "العميل"
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:13
+msgid "Contact From 7 Tabs"
+msgstr "علامات تبويب نموذج الاتصال 7"
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:58
+msgid "Default title"
+msgstr "العنوان الافتراضي"
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:59
+msgid "Type your title here"
+msgstr "اكتب عنوانك هنا"
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:70
+msgid "Select contact form"
+msgstr "اختر نموذج الاتصال"
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:71
+msgid "Contact form 7 must be installed for this widget to work"
+msgstr "يجب تثبيت نموذج الاتصال 7 لكي يعمل هذا الويدجت"
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:82
+msgid "Forms"
+msgstr "النماذج"
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:85
+msgid "Form"
+msgstr "النموذج"
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:233
+msgid "No contact From 7 form found"
+msgstr "لم يتم العثور على أي نموذج من نموذج الاتصال 7"
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:13
+msgid "Contact From 7"
+msgstr "نموذج الاتصال 7"
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:77
+msgid "Contact Form 7"
+msgstr "نموذج الاتصال 7"
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:120
+msgid "Field Margin"
+msgstr "هامش الحقل"
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:132
+msgid "Textarea Margin"
+msgstr "هامش منطقة النص"
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:181
+msgid "Border radius"
+msgstr "نصف قطر الإطار"
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:280
+msgid "Placeholder"
+msgstr "النص البديل"
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:310
+msgid "Submit"
+msgstr "إرسال"
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:13
+msgid "Full Screen Menu"
+msgstr "قائمة ملء الشاشة"
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:97
+msgid "Menu"
+msgstr "القائمة"
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:106
+msgid "Menu Label"
+msgstr "تسمية القائمة"
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:126
+msgid "Main Menu"
+msgstr "القائمة الرئيسية"
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:152
+msgid "Text Color"
+msgstr "لون النص"
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:226
+msgid "Sub Menu"
+msgstr "القائمة الفرعية"
+
+#: inc/elementor-widgets/widgets/hamburger-close.php:13
+msgid "Hamburger close"
+msgstr "إغلاق قائمة همبرغر"
+
+#: inc/elementor-widgets/widgets/hamburger-close.php:199
+msgid "Text hover color"
+msgstr "لون النص عند التمرير"
+
+#: inc/elementor-widgets/widgets/hamburger.php:19
+msgid "Hamburger Menu"
+msgstr "قائمة همبرغر"
+
+#: inc/elementor-widgets/widgets/hamburger.php:48
+msgid "Template"
+msgstr "القالب"
+
+#: inc/elementor-widgets/widgets/hamburger.php:52
+msgid "You can create new templates or customize existing templates by going to the 'Templates' menu item (Besides the 'Elementor' menu item) on the dashboard."
+msgstr "يمكنك إنشاء قوالب جديدة أو تخصيص القوالب الحالية عن طريق الذهاب إلى عنصر قائمة 'القوالب' (بجانب عنصر قائمة 'عنصر') في لوحة التحكم."
+
+#: inc/elementor-widgets/widgets/hamburger.php:73
+msgid "Direction"
+msgstr "الاتجاه"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:13
+msgid "Hero Slider 1"
+msgstr "شريط البطل 1"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:38
+msgid "Type"
+msgstr "النوع"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:85
+msgid "Animating slide content"
+msgstr "تحريك محتوى الشريحة"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:86
+msgid "To animate any content present within the template, you can add this class 'growla-animate-slide'"
+msgstr "لتحريك أي محتوى موجود داخل القالب، يمكنك إضافة هذه الفئة 'growla-animate-slide'"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:97
+msgid "None"
+msgstr "لا شيء"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:98
+msgid "Waves"
+msgstr "الأمواج"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:99
+msgid "Boxes 1"
+msgstr "الصناديق 1"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:100
+msgid "Boxes 2"
+msgstr "الصناديق 2"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:101
+msgid "Lines"
+msgstr "الخطوط"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:109
+msgid "Video Background"
+msgstr "خلفية الفيديو"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:121
+msgid "Choose Video"
+msgstr "اختر الفيديو"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:136
+msgid "Video Color"
+msgstr "لون الفيديو"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:186
+msgid "Slide Padding"
+msgstr "المسافة الداخلية للشريحة"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:198
+msgid "Full Screen Slides"
+msgstr "شرائح ملء الشاشة"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:214
+msgid "Slider Navigation"
+msgstr "تنقل الشريط المنزلق"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:222
+msgid "Caption"
+msgstr "التسمية التوضيحية"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:224
+msgid "Example Caption"
+msgstr "تسمية توضيحية مثال"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:242
+msgid "Navigation Type"
+msgstr "نوع التنقل"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:256
+msgid "Previous text"
+msgstr "النص السابق"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:258
+msgid "PREV"
+msgstr "السابق"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:266
+msgid "Next text"
+msgstr "النص التالي"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:268
+msgid "NEXT"
+msgstr "التالي"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:276
+msgid "Previous icon"
+msgstr "الأيقونة السابقة"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:285
+msgid "Next icon"
+msgstr "الأيقونة التالية"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:294
+msgid "Separator"
+msgstr "الفاصل"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:296
+msgid "|"
+msgstr "|"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:370
+msgid "Slider Caption"
+msgstr "تسمية الشريط المنزلق"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:401
+msgid "Waves Illustration"
+msgstr "رسم توضيحي للأمواج"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:424
+msgid "Box 1 Illustration"
+msgstr "رسم توضيحي للصندوق 1"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:447
+msgid "Box 2 Illustration"
+msgstr "رسم توضيحي للصندوق 2"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:470
+msgid "Lines Illustration"
+msgstr "رسم توضيحي للخطوط"
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:489
+msgid "Secondary Color"
+msgstr "اللون الثانوي"
+
+#: inc/elementor-widgets/widgets/hero-slider-2.php:13
+msgid "Hero Slider 2"
+msgstr "شريط البطل 2"
+
+#: inc/elementor-widgets/widgets/hero-slider-2.php:122
+msgid "Image"
+msgstr "الصورة"
+
+#: inc/elementor-widgets/widgets/icon-box.php:13
+msgid "Icon Box"
+msgstr "صندوق الأيقونات"
+
+#: inc/elementor-widgets/widgets/icon-box.php:104
+msgid "Outline color"
+msgstr "لون الإطار"
+
+#: inc/elementor-widgets/widgets/icon-box.php:128
+msgid "Icon Size"
+msgstr "حجم الأيقونة"
+
+#: inc/elementor-widgets/widgets/menu.php:52
+msgid "Desktop"
+msgstr "سطح المكتب"
+
+#: inc/elementor-widgets/widgets/menu.php:53
+msgid "Mobile"
+msgstr "الهاتف المحمول"
+
+#: inc/elementor-widgets/widgets/menu.php:61
+msgid "Slider Mode"
+msgstr "وضع الشريط المنزلق"
+
+#: inc/elementor-widgets/widgets/menu.php:62
+msgid "When enabled, if the links take more width than the container, the menu will appear as a slider."
+msgstr "عند التمكين، إذا كانت الروابط تأخذ عرضًا أكبر من الحاوية، ستظهر القائمة كشريط منزلق."
+
+#: inc/elementor-widgets/widgets/menu.php:156
+msgid "Arrow color"
+msgstr "لون السهم"
+
+#: inc/elementor-widgets/widgets/projects.php:13
+msgid "Projects"
+msgstr "المشاريع"
+
+#: inc/elementor-widgets/widgets/projects.php:28
+msgid "Project Options"
+msgstr "خيارات المشروع"
+
+#: inc/elementor-widgets/widgets/projects.php:36
+msgid "Important Note"
+msgstr "ملاحظة هامة"
+
+#: inc/elementor-widgets/widgets/projects.php:38
+msgid "You can customize these projects by going to the 'Projects' (menu to the left) in the admin dashboard."
+msgstr "يمكنك تخصيص هذه المشاريع عن طريق الذهاب إلى قائمة 'المشاريع' (في القائمة إلى اليسار) في لوحة التحكم."
+
+#: inc/elementor-widgets/widgets/projects.php:45
+msgid "Projects per page"
+msgstr "عدد المشاريع لكل صفحة"
+
+#: inc/elementor-widgets/widgets/projects.php:55
+msgid "Order"
+msgstr "الترتيب"
+
+#: inc/elementor-widgets/widgets/projects.php:68
+msgid "Sorting projects by"
+msgstr "فرز المشاريع حسب"
+
+#: inc/elementor-widgets/widgets/projects.php:88
+msgid "Load more"
+msgstr "تحميل المزيد"
+
+#: inc/elementor-widgets/widgets/projects.php:96
+msgid "Display load more button"
+msgstr "عرض زر تحميل المزيد"
+
+#: inc/elementor-widgets/widgets/projects.php:110
+msgid "LOAD MORE"
+msgstr "تحميل المزيد"
+
+#: inc/elementor-widgets/widgets/projects.php:275
+msgid "Project Styles"
+msgstr "أنماط المشروع"
+
+#: inc/elementor-widgets/widgets/projects.php:283
+msgid "Layout Style"
+msgstr "نمط التخطيط"
+
+#: inc/elementor-widgets/widgets/projects.php:287
+msgid "Horizontal"
+msgstr "أفقي"
+
+#: inc/elementor-widgets/widgets/projects.php:288
+msgid "Vertical"
+msgstr "عمودي"
+
+#: inc/elementor-widgets/widgets/projects.php:296
+msgid "Display layout switcher"
+msgstr "عرض محول التخطيط"
+
+#: inc/elementor-widgets/widgets/team.php:19
+msgid "Team"
+msgstr "الفريق"
+
+#: inc/elementor-widgets/widgets/team.php:205
+msgid "Social Links"
+msgstr "الروابط الاجتماعية"
+
+#: inc/elementor-widgets/widgets/testimonial-slider.php:77
+msgid "Image slides"
+msgstr "شرائح الصور"
+
+#: inc/installation/install-init.php:9
+msgid "growla core"
+msgstr "جوهر جروولا"
+
+#: inc/installation/install-init.php:16
+msgid "Elementor"
+msgstr "العنصر"
+
+#: inc/installation/install-init.php:21
+msgid "Redux Framework"
+msgstr "إطار عمل ريدوكس"
+
+#: inc/installation/install-init.php:30
+msgid "One Click Demo Import"
+msgstr "استيراد العرض التوضيحي بنقرة واحدة"
+
+#: inc/misc/acf.php:7
+msgid "Default"
+msgstr "افتراضي"
+
+#: inc/misc/cf7-hooks.php:201
+msgid "Attach File"
+msgstr "إرفاق ملف"
+
+#: inc/misc/cf7-hooks.php:204
+msgid "Browse"
+msgstr "تصفح"
+
+#: inc/misc/comments-util.php:55
+msgid "Your comment is awaiting moderation."
+msgstr "تعليقك قيد المراجعة."
+
+#: inc/misc/general-hooks.php:45
+msgid "Primary Menu"
+msgstr "القائمة الرئيسية"
+
+#: inc/misc/general-hooks.php:46
+msgid "Default Menu"
+msgstr "القائمة الافتراضية"
+
+#: inc/misc/general-hooks.php:119
+msgid "Sidebar"
+msgstr "الشريط الجانبي"
+
+#: inc/misc/general-hooks.php:121
+msgid "Widgets added here will be displayed on the blogs page."
+msgstr "الأدوات المضافة هنا ستُعرض في صفحة المدونات."
+
+#: inc/misc/general-hooks.php:131
+msgid "Search Sidebar"
+msgstr "شريط البحث الجانبي"
+
+#: inc/misc/general-hooks.php:133
+msgid "Widgets added here will be displayed on the search page."
+msgstr "الأدوات المضافة هنا ستُعرض في صفحة البحث."
+
+#: inc/misc/general-hooks.php:143
+msgid "Archives Sidebar"
+msgstr "شريط الأرشيف الجانبي"
+
+#: inc/misc/general-hooks.php:145
+msgid "Widgets added here will be displayed on the archives page."
+msgstr "الأدوات المضافة هنا ستُعرض في صفحة الأرشيف."
+
+#: inc/template-parts/content-page.php:21
+msgid "Pages:"
+msgstr "الصفحات:"
+
+#: inc/template-parts/content-related-blog.php:4
+msgid "// NEWS"
+msgstr "// أخبار"
+
+#: inc/template-parts/content-related-blog.php:5
+msgid "Similar News."
+msgstr "أخبار مشابهة."
+
+#: inc/template-parts/content-related-projects.php:8
+msgid "// WORKS"
+msgstr "// الأعمال"
+
+#: inc/template-parts/content-related-projects.php:9
+msgid "Other Projects"
+msgstr "مشاريع أخرى"
+
+#: inc/template-parts/footer/footer-default.php:12
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+#: inc/template-parts/page-header.php:25
+msgid "Search result"
+msgstr "نتيجة البحث"
+
+#: inc/template-parts/page-header.php:29
+msgid "Archives"
+msgstr "الأرشيف"
+
+#: inc/template-parts/page-header.php:33
+msgid "Not Found"
+msgstr "غير موجود"
+
+#: inc/template-parts/page-header.php:61
+msgid "Journal"
+msgstr "المجلة"
+
+#. translators: %s: post date.
+#: inc/template-tags.php:30
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "نشر في %s"
+
+#. translators: %s: post author.
+#: inc/template-tags.php:46
+msgctxt "post author"
+msgid "by %s"
+msgstr "بواسطة %s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:63
+msgid ", "
+msgstr "، "
+
+#. translators: 1: list of categories.
+#: inc/template-tags.php:66
+msgid "Posted in %1$s"
+msgstr "نُشر في %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:70
+msgctxt "list item separator"
+msgid ", "
+msgstr "، "
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:73
+msgid "Tagged %1$s"
+msgstr "موسوم بـ %1$s"
+
+#. translators: %s: post title
+#: inc/template-tags.php:83
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "اترك تعليقًا<span class=\"screen-reader-text\"> على %s</span>"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:100
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "تعديل <span class=\"screen-reader-text\">%s</span>"
+
+#: inc/template-tags.php:394
+msgid "Home"
+msgstr "الرئيسية"
+
+#: inc/template-tags.php:461
+msgid "404"
+msgstr "404"
+
+#: index.php:34
+msgid "We're sorry, but there is no content available."
+msgstr "نأسف، لكن لا يوجد محتوى متاح."
+
+#: index.php:35
+msgid "Can't find what you need? Take a moment and do a search again below or alternatively you can start from our"
+msgstr "لا يمكنك العثور على ما تحتاجه؟ خذ لحظة وأعد البحث أدناه أو يمكنك البدء من"
+
+#: index.php:90
+msgid "homepage"
+msgstr "الصفحة الرئيسية"
+
+#: search.php:21
+msgid "We're sorry, but your search \""
+msgstr "نأسف، ولكن بحثك عن \""
+
+#: search.php:21
+msgid "\" did not match."
+msgstr "\" لم يعطِ أي نتائج."
+
+#: searchform.php:5
+msgid "Search"
+msgstr "بحث"
+
+#: single.php:32
+msgid "Pages"
+msgstr "الصفحات"
+
+#: single.php:92
+msgid "Tags"
+msgstr "الوسوم"

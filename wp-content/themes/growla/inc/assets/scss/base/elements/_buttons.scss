@@ -1,0 +1,289 @@
+%button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+
+    --color: var(--color-primary);
+    --border-color: var(--color);
+
+    width: 100%;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+    color: var(--color);
+
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    background-color: transparent;
+    // padding: 0 3.7rem 1.7rem 4rem;
+    padding: 1.7rem 3.7rem 1.7rem 4rem;
+
+    cursor: pointer;
+
+    @include animateIt;
+
+    span {
+        display: block;
+        color: inherit;
+        transition: transform 0.25s ease, color 0s ease;
+        color: inherit;
+        z-index: 10;
+        // @include animateIt;
+    }
+
+    .icon {
+        font-size: 1.8rem;
+        height: 1.8rem;
+        fill: var(--color);
+        color: var(--color);
+        transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease, color 0s ease, fill 0.25s ease;
+        // @include animateIt;
+
+        * {
+            font-size: inherit;
+            color: inherit;
+            fill: inherit;
+            height: inherit;
+        }
+
+        [dir='rtl'] & {
+            transform: rotate(180deg);
+
+            svg {
+                vertical-align: top;
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transform: translateY(100%);
+
+        background-color: var(--color-primary);
+        @include animateIt;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        --color: var(--color-black);
+
+        &::before {
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 991px) {
+        --button-padding-horizontal: 3rem;
+    }
+}
+
+.growla-button-border,
+button,
+input[type='button'],
+input[type='reset'],
+html body input[type='submit'] {
+    // border: none;
+    @extend %button;
+}
+
+html body input[type='submit'] {
+    &:hover,
+    &:focus,
+    &:active {
+        --color: var(--color-white);
+
+        &::before {
+            transform: translateY(0);
+        }
+    }
+}
+
+.growla-button-border:hover {
+    --border-color: var(--color-primary);
+}
+
+.growla-button-border-white {
+    --color: var(--color-white);
+
+    &::before {
+        background-color: var(--color-white);
+    }
+
+    &:hover {
+        --border-color: var(--color-white);
+    }
+}
+
+.growla-button-border {
+    width: auto;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.growla-button {
+    border: none;
+    width: auto;
+    font-size: 2rem;
+    font-weight: 600;
+    @extend %button;
+
+    --button-color: var(--color-primary);
+    --button-icon-color: var(--color-primary);
+
+    --button-hover-color: var(--color-black);
+    --button-hover-icon-color: var(--color-black);
+
+    color: var(--button-color) !important;
+    fill: var(--button-color) !important;
+
+    .icon {
+        color: var(--button-icon-color) !important;
+        fill: var(--button-icon-color) !important;
+    }
+
+    @media (max-width: 991px) {
+        font-size: 1.6rem;
+    }
+}
+
+.growla-button:not(.growla-button-background-hover) {
+    &::before {
+        display: none;
+    }
+}
+
+.growla-button.growla-button-background-hover {
+    font-size: 1.4rem;
+
+    &:hover {
+        color: var(--button-hover-color) !important;
+        fill: var(--button-hover-color) !important;
+
+        .icon {
+            color: var(--button-hover-icon-color) !important;
+            fill: var(--button-hover-icon-color) !important;
+        }
+    }
+}
+
+.growla-button.growla-button-icon-hover {
+    letter-spacing: normal;
+
+    &:hover {
+        .icon {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+body.rtl {
+    .growla-button.growla-button-icon-hover {
+        &:hover {
+            .icon {
+                transform: rotate(145deg);
+            }
+        }
+    }
+}
+
+.growla-button.growla-button-underline-hover {
+    position: relative;
+    overflow: visible;
+
+    &::after {
+        content: '';
+        width: 0;
+        height: 2px;
+
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+
+        opacity: 0;
+
+        background-color: var(--color-primary);
+
+        @include animateIt(0.5s);
+    }
+
+    &:hover::after {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+button.wpcf7-submit {
+    font-size: 1.4rem;
+    color: var(--color);
+
+    [dir='rtl'] & {
+        display: flex;
+        span {
+            &:first-child {
+                order: 2;
+            }
+
+            &:nth-child(2) {
+                order: 1;
+            }
+        }
+    }
+}
+
+.icon-submit {
+    background-color: transparent;
+    border: 3px solid var(--color-primary);
+
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+
+    font-size: 3rem;
+    color: var(--color-primary);
+
+    padding: 0;
+    margin: 3.4rem 0 0 0;
+
+    @media (max-width: 991px) {
+        width: 6rem;
+        height: 6rem;
+
+        font-size: 2.4rem;
+    }
+}
+
+.icon-submit-1 {
+    padding: 0;
+    font-size: 2rem;
+    background-color: transparent;
+    color: var(--color-primary) !important;
+}
+
+%default-btn {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 3rem;
+    border-radius: var(--border-radius);
+    padding: 1rem 2rem 0.7rem 2rem;
+    color: var(--color-white);
+}
+
+.wp-block-button__link,
+.blog-detail-content-wrapper .wp-block-button__link,
+.wp-block-file .wp-block-file__button {
+    @extend %default-btn;
+}

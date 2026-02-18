@@ -1,0 +1,90 @@
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 10rem;
+
+    .growla-heading {
+        flex: .7;
+    }
+
+    @media only screen and (max-width: 991px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+    }
+}
+
+.slider-nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+
+    &-btn {
+        cursor: pointer;
+        color: var(--color-white);
+        fill: var(--color-white);
+        @include animateIt;
+        text-align: center;
+        position: relative;
+
+        font-size: 3rem;
+        opacity: .4;
+
+        .icon {
+            position: relative;
+            z-index: 2;
+            [dir="rtl"] & {
+                transform: rotate(180deg);
+            }
+        }
+
+        svg {
+            height: 4rem;
+            fill: inherit;
+            display: inline-flex;
+            position: relative;
+            z-index: 2;   
+        }
+
+        &:hover,
+        &:active {
+            color: var(--color-primary);
+            fill: var(--color-primary);
+            opacity: 1;
+        }
+
+        &.swiper-button-disabled {
+            opacity: .1;
+        }
+    }
+
+    @media only screen and (max-width: 991px) {
+        margin-top: 3rem;
+    }
+}
+
+.slider-pagination {
+    width: max-content !important;
+    margin: 5rem auto 0 auto;
+    .swiper-pagination-bullet {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: var(--color-grey-1);
+        opacity: 1;
+        @include animateIt;
+
+        &:hover,
+        &-active {
+            background-color: var(--color-primary);
+        }
+
+    }
+
+    @media (max-width: 991px) {
+        margin: 3rem auto 0 auto;
+    }
+}

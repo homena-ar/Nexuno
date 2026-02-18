@@ -1,0 +1,12 @@
+// Import variables and mixins.
+@import 'abstracts/abstracts';
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+@import 'generic';
+
+body {
+    background-color: unset;
+    color: unset;
+}

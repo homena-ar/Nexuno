@@ -1,0 +1,80 @@
+.illustration-boxes-1 {
+    &-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        position: absolute;
+
+        &-left {
+            top: 2rem;
+            left: 2rem;
+
+            @media only screen and (max-width: 991px) {
+                display: none;
+            }
+
+            @media only screen and (max-width: 1700px) {
+                display: none;
+            }
+        }
+
+        &-right {
+            bottom: 2rem;
+            right: 2rem;
+            transform: rotate(180deg);
+
+            @media only screen and (max-width: 1700px) {
+                left: 2rem;
+                right: unset;
+                transform: scaleY(-1);
+            }
+        }
+    }
+
+    &-row {
+        display: flex;
+        gap: 1.4rem;
+
+        opacity: 0;
+        visibility: hidden;
+
+        &--1 {
+            margin-top: 0.8rem;
+
+            @media only screen and (max-width: 1400px) {
+                display: none;
+            }
+        }
+    }
+
+    &-item {
+        --box-color: var(--color-primary);
+        border: 0.2rem solid var(--box-color);
+        width: 4.5rem;
+        height: 4.5rem;
+
+        &--1 {
+            transform: translate(1.4rem, 1.2rem);
+        }
+
+        &--2 {
+            transform: translate(2.4rem, 0.3rem);
+        }
+
+        &--3 {
+            transform: translate(0.9rem, 0);
+        }
+
+        &--4 {
+            transform: translate(-1rem, 5.9rem);
+        }
+
+        &--5 {
+            transform: translate(-1.6rem, 0.3rem);
+        }
+
+        &--6 {
+            transform: translate(2.7rem, 3.2 rem);
+        }
+    }
+}

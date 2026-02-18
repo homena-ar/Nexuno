@@ -1,0 +1,36 @@
+2026-02-05T04:52:18+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T04:52:18+00:00 NOTICE Start Payment Renews cron at 2026-02-05 01:52:18 CONTEXT: {"_legacy":true}
+2026-02-05T04:52:18+00:00 NOTICE Search renew order with date < 2026-02-04 01:52:18 CONTEXT: {"_legacy":true}
+2026-02-05T04:52:18+00:00 NOTICE Found 0 new renew orders CONTEXT: {"_legacy":true}
+2026-02-05T04:52:18+00:00 NOTICE Found 0 failed renew orders CONTEXT: {"_legacy":true}
+2026-02-05T04:52:18+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T10:07:06+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T10:07:06+00:00 NOTICE Start Payment Renews cron at 2026-02-05 07:07:06 CONTEXT: {"_legacy":true}
+2026-02-05T10:07:06+00:00 NOTICE Search renew order with date < 2026-02-04 07:07:06 CONTEXT: {"_legacy":true}
+2026-02-05T10:07:06+00:00 NOTICE Found 0 new renew orders CONTEXT: {"_legacy":true}
+2026-02-05T10:07:06+00:00 NOTICE Found 0 failed renew orders CONTEXT: {"_legacy":true}
+2026-02-05T10:07:06+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T11:53:52+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T11:53:52+00:00 NOTICE Start Payment Renews cron at 2026-02-05 08:53:52 CONTEXT: {"_legacy":true}
+2026-02-05T11:53:52+00:00 NOTICE Search renew order with date < 2026-02-04 08:53:52 CONTEXT: {"_legacy":true}
+2026-02-05T11:53:52+00:00 NOTICE Found 0 new renew orders CONTEXT: {"_legacy":true}
+2026-02-05T11:53:52+00:00 NOTICE Found 0 failed renew orders CONTEXT: {"_legacy":true}
+2026-02-05T11:53:52+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T13:09:53+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T13:09:53+00:00 NOTICE Start Payment Renews cron at 2026-02-05 10:09:53 CONTEXT: {"_legacy":true}
+2026-02-05T13:09:53+00:00 NOTICE Search renew order with date < 2026-02-04 10:09:53 CONTEXT: {"_legacy":true}
+2026-02-05T13:09:53+00:00 NOTICE Found 0 new renew orders CONTEXT: {"_legacy":true}
+2026-02-05T13:09:53+00:00 NOTICE Found 0 failed renew orders CONTEXT: {"_legacy":true}
+2026-02-05T13:09:53+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T18:14:46+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T18:14:46+00:00 NOTICE Start Payment Renews cron at 2026-02-05 15:14:46 CONTEXT: {"_legacy":true}
+2026-02-05T18:14:46+00:00 NOTICE Search renew order with date < 2026-02-04 15:14:46 CONTEXT: {"_legacy":true}
+2026-02-05T18:14:46+00:00 NOTICE Found 0 new renew orders CONTEXT: {"_legacy":true}
+2026-02-05T18:14:46+00:00 NOTICE Found 0 failed renew orders CONTEXT: {"_legacy":true}
+2026-02-05T18:14:46+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T21:01:00+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}
+2026-02-05T21:01:00+00:00 NOTICE Start Payment Renews cron at 2026-02-05 18:01:00 CONTEXT: {"_legacy":true}
+2026-02-05T21:01:00+00:00 NOTICE Search renew order with date < 2026-02-04 18:01:00 CONTEXT: {"_legacy":true}
+2026-02-05T21:01:00+00:00 NOTICE Found 0 new renew orders CONTEXT: {"_legacy":true}
+2026-02-05T21:01:00+00:00 NOTICE Found 0 failed renew orders CONTEXT: {"_legacy":true}
+2026-02-05T21:01:00+00:00 NOTICE ======================= CONTEXT: {"_legacy":true}

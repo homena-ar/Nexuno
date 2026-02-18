@@ -1,0 +1,211 @@
+.illustration-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    --line-color: var(--color-primary);
+    --color-secondary: var(--color-white);
+
+    .illustration-lines-canvas {
+        &-1 {
+            width: 166px;
+            height: 75%;
+    
+            position: absolute;
+            bottom: 0;
+
+            [dir="rtl"] & {
+                right: 0;
+            }
+
+            @media (max-width: 1600px) {
+                left: -60px;
+            }
+
+            @media (max-width: 1400px) {
+                left: -100px;
+            }
+
+            @media (max-width: 1300px) {
+                display: none;
+            }
+        }
+
+        &-2 {
+            width: 166px;
+            height: 20%;
+    
+            position: absolute;
+            top: 0;
+
+            [dir="rtl"] & {
+                right: 0;
+            }
+            
+            @media (max-width: 1600px) {
+                left: -60px;
+            }
+
+            @media (max-width: 1400px) {
+                display: none;
+            }
+        }
+
+        &-3 {
+            width: 250px;
+            height: 75%;
+    
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            [dir="rtl"] & {
+                left: 0;
+            }
+
+            @media (max-width: 1600px) {
+                display: none;
+            }
+        }
+
+        &-4 {
+            width: 166px;
+            height: 20%;
+    
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            [dir="rtl"] & {
+                left: 0;
+            }
+            
+            @media (max-width: 1300px) {
+                display: none;
+            }
+        }
+
+        &-inverse {
+            transform: scale(-1);
+        }
+
+        &-color-secondary {
+            --line-color: var(--color-secondary);
+        }
+    }
+
+    .line-type-1 {
+        fill: var(--color-primary);
+    }
+
+    .line-type-2 {
+        fill: var(--color-secondary);
+    }
+
+    .line-1 {
+        width: 17rem;
+        transform: translateX(-15%);
+        stroke: var(--color-secondary);
+        fill: transparent;
+
+        &-svg {
+            position: absolute;
+            left: 0;
+            top: -30%;
+
+            width: 100%;
+            height: 100%;
+
+            @media only screen and (max-width: 991px) {
+                display: none;
+            }
+        }
+    }
+
+    .line-2 {
+        width: 17rem;
+        stroke: var(--color-primary);
+        fill: transparent;
+
+        &-svg {
+            position: absolute;
+            left: -25%;
+            bottom: 0;
+
+            width: 100%;
+            height: 50rem;
+
+            @media only screen and (max-width: 991px) {
+                display: none;
+            }
+        }
+    }
+
+    .line-3 {
+        stroke: var(--color-primary);
+        fill: transparent;
+
+        &-svg {
+            position: absolute;
+            top: -50%;
+            right: -43%;
+
+            max-height: initial;
+
+            @media only screen and (max-width: 991px) {
+                display: none;
+            }
+        }
+    }
+
+    .line-4 {
+        stroke: var(--color-secondary);
+        fill: transparent;
+
+        &-svg {
+            position: absolute;
+            right: -10%;
+            bottom: -20%;
+        }
+
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+}
+
+.page-header .illustration-lines {
+    z-index: initial;
+
+    .line-1 {
+        &-svg {
+            height: 150%;
+            max-height: initial;
+            top: -75%;
+        }
+    }
+
+    .line-2 {
+        &-svg {
+            bottom: -50%;
+        }
+    }
+
+    .line-3 {
+        &-svg {
+            top: -175%;
+            right: -45%;
+        }
+    }
+
+    .line-4 {
+        &-svg {
+            bottom: -70%;
+        }
+    }
+}

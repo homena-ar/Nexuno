@@ -1,0 +1,504 @@
+# Copyright (C) 2024 GFXPARTNER
+# This file is distributed under the GNU General Public License v2+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Growla core 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/growla-core\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-11-24T18:54:13+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: growla-core\n"
+
+#. Plugin Name of the plugin
+#: E:\WordPressSites\growla\app\public\wp-content\plugins\growla-core\index.php
+msgid "Growla core"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: E:\WordPressSites\growla\app\public\wp-content\plugins\growla-core\index.php
+msgid "https://themeforest.net/user/gfxpartner"
+msgstr ""
+
+#. Description of the plugin
+#: E:\WordPressSites\growla\app\public\wp-content\plugins\growla-core\index.php
+msgid "Additional functionality for the growla premium wordpress theme."
+msgstr ""
+
+#. Author of the plugin
+#: E:\WordPressSites\growla\app\public\wp-content\plugins\growla-core\index.php
+msgid "GFXPARTNER"
+msgstr ""
+
+#: cpt/footer-cpt.php:14
+#: cpt/footer-cpt.php:25
+msgid "Footers"
+msgstr ""
+
+#: cpt/footer-cpt.php:15
+#: options/meta/metaboxes.php:45
+msgid "Footer"
+msgstr ""
+
+#: cpt/footer-cpt.php:16
+#: cpt/header-cpt.php:16
+#: cpt/project-cpt.php:16
+msgid "Add New"
+msgstr ""
+
+#: cpt/footer-cpt.php:17
+msgid "Add New Footer"
+msgstr ""
+
+#: cpt/footer-cpt.php:18
+msgid "Edit Footer"
+msgstr ""
+
+#: cpt/footer-cpt.php:19
+msgid "New Footer"
+msgstr ""
+
+#: cpt/footer-cpt.php:20
+msgid "All Footers"
+msgstr ""
+
+#: cpt/footer-cpt.php:21
+msgid "View Footer"
+msgstr ""
+
+#: cpt/footer-cpt.php:22
+msgid "Search Footers"
+msgstr ""
+
+#: cpt/footer-cpt.php:23
+msgid "No Footers found"
+msgstr ""
+
+#: cpt/footer-cpt.php:24
+msgid "No Footers found in the Trash"
+msgstr ""
+
+#: cpt/footer-cpt.php:30
+msgid "Holds our footers and footer specific data"
+msgstr ""
+
+#: cpt/header-cpt.php:14
+#: cpt/header-cpt.php:25
+msgid "Headers"
+msgstr ""
+
+#: cpt/header-cpt.php:15
+#: options/meta/metaboxes.php:33
+msgid "Header"
+msgstr ""
+
+#: cpt/header-cpt.php:17
+msgid "Add New Header"
+msgstr ""
+
+#: cpt/header-cpt.php:18
+msgid "Edit Header"
+msgstr ""
+
+#: cpt/header-cpt.php:19
+msgid "New Header"
+msgstr ""
+
+#: cpt/header-cpt.php:20
+msgid "All Headers"
+msgstr ""
+
+#: cpt/header-cpt.php:21
+msgid "View Header"
+msgstr ""
+
+#: cpt/header-cpt.php:22
+msgid "Search Headers"
+msgstr ""
+
+#: cpt/header-cpt.php:23
+msgid "No Headers found"
+msgstr ""
+
+#: cpt/header-cpt.php:24
+msgid "No Headers found in the Trash"
+msgstr ""
+
+#: cpt/header-cpt.php:30
+msgid "Holds our headers and header specific data"
+msgstr ""
+
+#: cpt/project-cpt.php:14
+#: cpt/project-cpt.php:25
+#: options/config/config.php:267
+msgid "Projects"
+msgstr ""
+
+#: cpt/project-cpt.php:15
+#: options/meta/metaboxes.php:85
+msgid "Project"
+msgstr ""
+
+#: cpt/project-cpt.php:17
+msgid "Add New Project"
+msgstr ""
+
+#: cpt/project-cpt.php:18
+msgid "Edit Project"
+msgstr ""
+
+#: cpt/project-cpt.php:19
+msgid "New Project"
+msgstr ""
+
+#: cpt/project-cpt.php:20
+msgid "All Projects"
+msgstr ""
+
+#: cpt/project-cpt.php:21
+msgid "View Project"
+msgstr ""
+
+#: cpt/project-cpt.php:22
+msgid "Search Projects"
+msgstr ""
+
+#: cpt/project-cpt.php:23
+msgid "No Projects found"
+msgstr ""
+
+#: cpt/project-cpt.php:24
+msgid "No Projects found in the Trash"
+msgstr ""
+
+#: cpt/project-cpt.php:30
+msgid "Holds our projects and project specific data"
+msgstr ""
+
+#: options/config/config.php:61
+#: options/config/config.php:64
+msgid "Growla Options"
+msgstr ""
+
+#: options/config/config.php:211
+#: options/meta/metaboxes.php:27
+msgid "General"
+msgstr ""
+
+#: options/config/config.php:213
+msgid "Customize general settings"
+msgstr ""
+
+#: options/config/config.php:243
+msgid "Blog"
+msgstr ""
+
+#: options/config/config.php:245
+msgid "Customize blog details"
+msgstr ""
+
+#: options/config/config.php:254
+msgid "Related Slider"
+msgstr ""
+
+#: options/config/config.php:256
+#: options/config/config.php:280
+msgid "Customize related slider"
+msgstr ""
+
+#: options/config/config.php:269
+msgid "Customize project details"
+msgstr ""
+
+#: options/config/config.php:278
+msgid "Related Projects"
+msgstr ""
+
+#: options/config/config.php:291
+msgid "404"
+msgstr ""
+
+#: options/config/config.php:302
+msgid "Search page"
+msgstr ""
+
+#: options/config/fields/404-fields.php:13
+#: options/config/fields/search-fields.php:13
+msgid "Select Desktop Header"
+msgstr ""
+
+#: options/config/fields/404-fields.php:19
+#: options/config/fields/search-fields.php:19
+msgid "Select Mobile Header"
+msgstr ""
+
+#: options/config/fields/404-fields.php:25
+#: options/meta/fields/page-header-fields.php:21
+msgid "Background"
+msgstr ""
+
+#: options/config/fields/404-fields.php:31
+msgid "Button 1 Text"
+msgstr ""
+
+#: options/config/fields/404-fields.php:36
+msgid "Button 1 Link"
+msgstr ""
+
+#: options/config/fields/404-fields.php:41
+msgid "Button 2 Text"
+msgstr ""
+
+#: options/config/fields/404-fields.php:46
+msgid "Button 2 Link"
+msgstr ""
+
+#: options/config/fields/404-fields.php:51
+#: options/config/fields/search-fields.php:31
+msgid "Select Footer"
+msgstr ""
+
+#: options/config/fields/404-fields.php:57
+#: options/config/fields/search-fields.php:37
+#: options/meta/fields/page-header-fields.php:28
+msgid "Illustration"
+msgstr ""
+
+#: options/config/fields/404-fields.php:59
+#: options/config/fields/search-fields.php:39
+#: options/meta/fields/page-header-fields.php:30
+msgid "None"
+msgstr ""
+
+#: options/config/fields/404-fields.php:60
+#: options/config/fields/search-fields.php:40
+#: options/meta/fields/page-header-fields.php:31
+msgid "Waves"
+msgstr ""
+
+#: options/config/fields/404-fields.php:61
+#: options/config/fields/search-fields.php:41
+#: options/meta/fields/page-header-fields.php:32
+msgid "Boxes 1"
+msgstr ""
+
+#: options/config/fields/404-fields.php:62
+#: options/config/fields/search-fields.php:42
+#: options/meta/fields/page-header-fields.php:33
+msgid "Boxes 2"
+msgstr ""
+
+#: options/config/fields/404-fields.php:63
+#: options/config/fields/search-fields.php:43
+#: options/meta/fields/page-header-fields.php:34
+msgid "Lines"
+msgstr ""
+
+#: options/config/fields/blog-fields.php:13
+#: options/config/fields/project-fields.php:13
+msgid "Subheading"
+msgstr ""
+
+#: options/config/fields/blog-fields.php:14
+msgid "// NEWS"
+msgstr ""
+
+#: options/config/fields/blog-fields.php:19
+#: options/config/fields/project-fields.php:19
+#: options/meta/fields/page-header-fields.php:16
+msgid "Heading"
+msgstr ""
+
+#: options/config/fields/blog-fields.php:20
+msgid "Similar News."
+msgstr ""
+
+#: options/config/fields/blog-fields.php:25
+msgid "Typography"
+msgstr ""
+
+#: options/config/fields/blog-fields.php:32
+#: options/config/fields/project-fields.php:25
+msgid "Animate Heading"
+msgstr ""
+
+#: options/config/fields/general-fields.php:11
+msgid "Global font select"
+msgstr ""
+
+#: options/config/fields/general-fields.php:26
+msgid "Select the font to be used in the theme."
+msgstr ""
+
+#: options/config/fields/general-fields.php:31
+msgid "Primary Color"
+msgstr ""
+
+#: options/config/fields/general-fields.php:32
+msgid "This color may not override the primary color in elementor pages."
+msgstr ""
+
+#: options/config/fields/project-fields.php:14
+msgid "// WORKS"
+msgstr ""
+
+#: options/config/fields/project-fields.php:20
+msgid "Other Projects"
+msgstr ""
+
+#: options/config/fields/project-fields.php:31
+msgid "Heading Typography"
+msgstr ""
+
+#: options/config/fields/search-fields.php:25
+msgid "Page header background"
+msgstr ""
+
+#: options/meta/fields/footer-fields.php:13
+msgid "Select Option"
+msgstr ""
+
+#: options/meta/fields/footer-fields.php:14
+msgid "Select the footer that you want to be displayed"
+msgstr ""
+
+#: options/meta/fields/general-fields.php:13
+msgid "Primary color"
+msgstr ""
+
+#: options/meta/fields/general-fields.php:14
+msgid "This changes the theme and elementor's primary color for this page"
+msgstr ""
+
+#: options/meta/fields/header-fields.php:15
+msgid "Select Header for desktop"
+msgstr ""
+
+#: options/meta/fields/header-fields.php:16
+msgid "Select the header that you want to be displayed"
+msgstr ""
+
+#: options/meta/fields/header-fields.php:23
+msgid "Select Header for mobile"
+msgstr ""
+
+#: options/meta/fields/header-fields.php:24
+msgid "Select the header that you want to be displayed on smaller devices like mobile."
+msgstr ""
+
+#: options/meta/fields/page-header-fields.php:9
+msgid "Display page header"
+msgstr ""
+
+#: options/meta/fields/page-header-fields.php:10
+msgid "Choose whether to display the page header."
+msgstr ""
+
+#: options/meta/fields/page-header-fields.php:22
+msgid "This background will appear in the page header"
+msgstr ""
+
+#: options/meta/fields/post-fields.php:13
+msgid "Select Date format"
+msgstr ""
+
+#: options/meta/fields/post-fields.php:14
+msgid "Select the type of date format"
+msgstr ""
+
+#: options/meta/fields/post-fields.php:24
+msgid "Display related slider"
+msgstr ""
+
+#: options/meta/fields/project-fields.php:13
+msgid "Display related projects"
+msgstr ""
+
+#: options/meta/fields/project-fields.php:19
+msgid "Content Heading"
+msgstr ""
+
+#: options/meta/fields/project-fields.php:20
+msgid "Project Scope"
+msgstr ""
+
+#: options/meta/fields/project-fields.php:25
+msgid "Metadata"
+msgstr ""
+
+#: options/meta/fields/project-fields.php:31
+msgid "Title"
+msgstr ""
+
+#: options/meta/fields/project-fields.php:36
+msgid "Value"
+msgstr ""
+
+#: options/meta/metaboxes.php:21
+msgid "General Options"
+msgstr ""
+
+#: options/meta/metaboxes.php:39
+msgid "Page header"
+msgstr ""
+
+#: options/meta/metaboxes.php:59
+msgid "Post Options"
+msgstr ""
+
+#: options/meta/metaboxes.php:65
+msgid "Post"
+msgstr ""
+
+#: options/meta/metaboxes.php:79
+msgid "Projects Options"
+msgstr ""
+
+#: widgets/archives-widget.php:19
+msgid "Growla: Archives"
+msgstr ""
+
+#: widgets/archives-widget.php:32
+msgid "Archives"
+msgstr ""
+
+#: widgets/form-widget.php:11
+msgid "Growla: Form Widget"
+msgstr ""
+
+#: widgets/form-widget.php:14
+msgid "Widget to add a contact form in a sidebar."
+msgstr ""
+
+#: widgets/form-widget.php:178
+msgid "No contact From 7 form found"
+msgstr ""
+
+#: widgets/recent-posts-widget.php:11
+msgid "Growla: Recent Posts"
+msgstr ""
+
+#: widgets/recent-posts-widget.php:14
+msgid "Displays recent posts in the sidebar"
+msgstr ""
+
+#: widgets/recent-posts-widget.php:23
+msgid "Recent posts"
+msgstr ""
+
+#: widgets/recent-posts-widget.php:59
+msgid "(no title)"
+msgstr ""
+
+#: widgets/recent-posts-widget.php:94
+msgid "Title:"
+msgstr ""
+
+#: widgets/recent-posts-widget.php:106
+msgid "Number of posts to show:"
+msgstr ""

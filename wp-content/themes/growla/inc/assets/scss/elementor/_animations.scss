@@ -1,0 +1,29 @@
+.fadeInUp {
+	animation-name: growlafadeInUp !important;
+
+	@media (max-width: 991px) {
+		animation-name: growlafadeInUpMobile !important;
+	}
+}
+
+@keyframes growlafadeInUp {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes growlafadeInUpMobile {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 10%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}

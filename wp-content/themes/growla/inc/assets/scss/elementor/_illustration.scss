@@ -1,0 +1,114 @@
+.growla-illustration {
+    position: relative;
+
+    --box-color: var(--color-primary);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &-first-image-wrapper,
+    &-second-image-wrapper {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &-first-image {
+        max-width: 80%;
+        
+        margin-left: auto;
+
+        position: relative;
+
+        &-wrapper {
+            max-height: 43.3rem;
+        }
+
+        &::after {
+            content: '';
+
+            width: 8rem;
+            height: 8rem;
+
+            background-color: transparent;
+            border: 0.3rem solid var(--box-color);
+
+            position: absolute;
+            top: -3.3rem;
+            right: -2.5rem;
+        }
+    }
+
+    &-second-image {
+        position: relative;
+        margin-top: -12rem;
+
+        max-width: 60%;
+        max-height: 23.3rem;
+
+        border: 2rem solid var(--color-black);
+
+        &-wrapper {
+            max-height: 23.3rem;
+        }
+
+        &::after {
+            content: '';
+
+            width: 7.8rem;
+            height: 100%;
+
+            background-color: transparent;
+            border: 0.3rem solid var(--box-color);
+
+            position: absolute;
+            bottom: -4.5rem;
+            left: -2.6rem;
+        }
+    }
+
+    &-boxes {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        position: absolute;
+        bottom: -3rem;
+        right: 0;
+    }
+
+    &-box-row {
+        width: calc(4.4rem * 3 + (1.2rem * 2));
+        display: flex;
+        gap: 1.2rem;
+
+        &-2 {
+            margin-bottom: 1.2rem;
+        }
+
+        &-end {
+            justify-content: flex-end;
+        }
+
+        &-space-between {
+            justify-content: space-between;
+        }
+
+        &-center {
+            justify-content: center;
+        }
+    }
+
+    &-box {
+        width: 4.4rem;
+        height: 4.4rem;
+        border: 0.3rem solid var(--box-color);
+
+        &-filled {
+            background-color: var(--box-color);
+        }
+    }
+}

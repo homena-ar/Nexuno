@@ -1,0 +1,47 @@
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+@mixin animateIt($duration: 0.25s) {
+	-webkit-transition: all $duration ease;
+	-moz-transition: all $duration ease;
+	-o-transition: all $duration ease;
+	transition: all $duration ease;
+}
+
+@mixin absoluteCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+%circular_hover {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	display: block;
+	background-color: var(--color-primary);
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+	transform-origin: center;
+	@include animateIt;
+	z-index: -1;
+	opacity: 0;
+}
+
+%circular_hover_active {
+	transform: translate(-50%, -50%) scale(1);
+	opacity: 1;
+}

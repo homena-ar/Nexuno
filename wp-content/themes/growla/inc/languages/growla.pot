@@ -1,0 +1,1895 @@
+# Copyright (C) 2024 GFXPARTNER
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Growla 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/growla\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-11-20T16:47:05+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: growla\n"
+
+#. Theme Name of the theme
+#: E:\WordPressSites\growla\app\public\wp-content\themes\growla\style.css
+#: inc/elementor-widgets/mods/accordion.php:28
+#: inc/elementor-widgets/mods/accordion.php:64
+#: inc/elementor-widgets/mods/heading.php:44
+#: inc/elementor-widgets/mods/icon-list.php:21
+#: inc/elementor-widgets/mods/image-carousel.php:45
+#: inc/elementor-widgets/mods/section.php:68
+#: inc/elementor-widgets/mods/social-list.php:21
+#: inc/elementor-widgets/mods/video.php:54
+msgid "Growla"
+msgstr ""
+
+#. Theme URI of the theme
+#: E:\WordPressSites\growla\app\public\wp-content\themes\growla\style.css
+msgid "http://gfxpartner.com/growla/"
+msgstr ""
+
+#. Description of the theme
+#: E:\WordPressSites\growla\app\public\wp-content\themes\growla\style.css
+msgid "Growla is the best Creative Multipurpose WordPress Theme"
+msgstr ""
+
+#. Author of the theme
+#: E:\WordPressSites\growla\app\public\wp-content\themes\growla\style.css
+msgid "GFXPARTNER"
+msgstr ""
+
+#. Author URI of the theme
+#: E:\WordPressSites\growla\app\public\wp-content\themes\growla\style.css
+msgid "https://themeforest.net/user/gfxpartner"
+msgstr ""
+
+#: 404.php:22
+msgid "404 Error."
+msgstr ""
+
+#: 404.php:23
+msgid "The page you’re looking for doesn’t exist"
+msgstr ""
+
+#: 404.php:24
+msgid "We're sorry for the inconvenience. The page you'e looking for doesn't exist or has been removed."
+msgstr ""
+
+#: archive.php:21
+msgid "We can't seem to find any posts regarding the query."
+msgstr ""
+
+#: archive.php:22
+msgid "We’re sorry for the inconvenience. The data you’re looking for doesn’t exist or has been removed. "
+msgstr ""
+
+#: comments.php:39
+#: comments.php:40
+#: inc/misc/comments-util.php:109
+#: inc/misc/comments-util.php:110
+msgid "Name *"
+msgstr ""
+
+#: comments.php:50
+#: comments.php:51
+#: inc/misc/comments-util.php:122
+#: inc/misc/comments-util.php:123
+msgid "Email *"
+msgstr ""
+
+#: comments.php:56
+#: inc/misc/comments-util.php:146
+msgid "Save my name and email in this browser for the next time I comment."
+msgstr ""
+
+#: comments.php:70
+#: comments.php:74
+#: inc/misc/comments-util.php:135
+#: inc/misc/comments-util.php:139
+msgid "Write your comment *"
+msgstr ""
+
+#: comments.php:79
+msgid "Post comment."
+msgstr ""
+
+#: comments.php:81
+msgid "CANCEL"
+msgstr ""
+
+#: comments.php:82
+msgid "SUBMIT"
+msgstr ""
+
+#: comments.php:107
+msgid " comment"
+msgstr ""
+
+#: comments.php:109
+msgid " comments"
+msgstr ""
+
+#: inc/elementor-widgets/class-growla-elementor-widget-loader.php:146
+msgid "Gfxpartner"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:83
+msgid "Slider Controls"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:92
+msgid "Slides per view"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:104
+#: inc/elementor-widgets/widgets/hero-slider-1.php:231
+msgid "Slider navigation"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:106
+#: inc/elementor-widgets/elementor-util.php:137
+#: inc/elementor-widgets/elementor-util.php:149
+#: inc/elementor-widgets/elementor-util.php:189
+#: inc/elementor-widgets/elementor-util.php:201
+#: inc/elementor-widgets/widgets/hero-slider-1.php:233
+msgid "yes"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:107
+#: inc/elementor-widgets/elementor-util.php:138
+#: inc/elementor-widgets/elementor-util.php:150
+#: inc/elementor-widgets/elementor-util.php:190
+#: inc/elementor-widgets/elementor-util.php:202
+#: inc/elementor-widgets/widgets/hero-slider-1.php:234
+msgid "no"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:116
+msgid "Navigation previous icon"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:125
+msgid "Navigation next icon"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:135
+msgid "Slider Pagination"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:147
+msgid "Slider autoplay"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:159
+msgid "Delay"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:160
+#: inc/elementor-widgets/elementor-util.php:174
+msgid "1000 represents 1 second"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:173
+msgid "Speed"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:187
+msgid "Slider loop"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:199
+msgid "Slider overflow"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:280
+msgid "Navigation"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:289
+#: inc/elementor-widgets/elementor-util.php:407
+#: inc/elementor-widgets/mods/accordion.php:73
+#: inc/elementor-widgets/widgets/hamburger-close.php:61
+msgid "Size"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:316
+#: inc/elementor-widgets/elementor-util.php:434
+#: inc/elementor-widgets/elementor-util.php:1038
+#: inc/elementor-widgets/elementor-util.php:1120
+#: inc/elementor-widgets/mods/section.php:136
+#: inc/elementor-widgets/widgets/blog.php:317
+#: inc/elementor-widgets/widgets/button.php:177
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:178
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:394
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:99
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:322
+#: inc/elementor-widgets/widgets/class-tabs.php:137
+#: inc/elementor-widgets/widgets/class-team-2.php:64
+#: inc/elementor-widgets/widgets/class-team-2.php:160
+#: inc/elementor-widgets/widgets/class-team-2.php:707
+#: inc/elementor-widgets/widgets/class-team-2.php:789
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:115
+#: inc/elementor-widgets/widgets/contact-form-7.php:197
+#: inc/elementor-widgets/widgets/full-screen-menu.php:145
+#: inc/elementor-widgets/widgets/full-screen-menu.php:244
+#: inc/elementor-widgets/widgets/hamburger-close.php:171
+#: inc/elementor-widgets/widgets/hamburger.php:90
+#: inc/elementor-widgets/widgets/icon-box.php:153
+#: inc/elementor-widgets/widgets/menu.php:137
+#: inc/elementor-widgets/widgets/projects.php:202
+#: inc/elementor-widgets/widgets/projects.php:310
+#: inc/elementor-widgets/widgets/team.php:215
+msgid "Normal"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:324
+#: inc/elementor-widgets/elementor-util.php:359
+#: inc/elementor-widgets/elementor-util.php:442
+#: inc/elementor-widgets/elementor-util.php:465
+#: inc/elementor-widgets/elementor-util.php:570
+#: inc/elementor-widgets/elementor-util.php:653
+#: inc/elementor-widgets/mods/section.php:144
+#: inc/elementor-widgets/mods/section.php:203
+#: inc/elementor-widgets/widgets/blog.php:192
+#: inc/elementor-widgets/widgets/blog.php:224
+#: inc/elementor-widgets/widgets/blog.php:267
+#: inc/elementor-widgets/widgets/blog.php:324
+#: inc/elementor-widgets/widgets/blog.php:383
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:273
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:315
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:346
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:377
+#: inc/elementor-widgets/widgets/class-block-slider.php:196
+#: inc/elementor-widgets/widgets/class-block-slider.php:238
+#: inc/elementor-widgets/widgets/class-block-slider.php:269
+#: inc/elementor-widgets/widgets/class-block-slider.php:300
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:180
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:213
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:246
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:329
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:362
+#: inc/elementor-widgets/widgets/class-counter.php:137
+#: inc/elementor-widgets/widgets/class-counter.php:182
+#: inc/elementor-widgets/widgets/class-illustration.php:76
+#: inc/elementor-widgets/widgets/class-progress-bar.php:170
+#: inc/elementor-widgets/widgets/class-progress-bar.php:203
+#: inc/elementor-widgets/widgets/class-team-2.php:615
+#: inc/elementor-widgets/widgets/class-team-2.php:648
+#: inc/elementor-widgets/widgets/class-team-2.php:681
+#: inc/elementor-widgets/widgets/class-team-2.php:714
+#: inc/elementor-widgets/widgets/class-team-2.php:747
+#: inc/elementor-widgets/widgets/class-team-2.php:796
+#: inc/elementor-widgets/widgets/class-team-2.php:817
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:140
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:171
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:202
+#: inc/elementor-widgets/widgets/hero-slider-1.php:324
+#: inc/elementor-widgets/widgets/hero-slider-1.php:355
+#: inc/elementor-widgets/widgets/hero-slider-1.php:386
+#: inc/elementor-widgets/widgets/hero-slider-1.php:409
+#: inc/elementor-widgets/widgets/icon-box.php:220
+#: inc/elementor-widgets/widgets/icon-box.php:254
+#: inc/elementor-widgets/widgets/team.php:156
+#: inc/elementor-widgets/widgets/team.php:189
+#: inc/elementor-widgets/widgets/testimonial-slider.php:107
+#: inc/elementor-widgets/widgets/testimonial-slider.php:138
+#: inc/elementor-widgets/widgets/waves-illustration.php:36
+msgid "Color"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:337
+#: inc/elementor-widgets/elementor-util.php:372
+#: inc/elementor-widgets/widgets/blog.php:235
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:226
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:284
+#: inc/elementor-widgets/widgets/class-block-slider.php:207
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:147
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:341
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:374
+#: inc/elementor-widgets/widgets/class-progress-bar.php:227
+#: inc/elementor-widgets/widgets/class-team-2.php:570
+#: inc/elementor-widgets/widgets/class-team-2.php:726
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:225
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:237
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:260
+#: inc/elementor-widgets/widgets/menu.php:243
+msgid "Background Color"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:351
+#: inc/elementor-widgets/elementor-util.php:457
+#: inc/elementor-widgets/elementor-util.php:1059
+#: inc/elementor-widgets/widgets/blog.php:376
+#: inc/elementor-widgets/widgets/button.php:231
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:195
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:355
+#: inc/elementor-widgets/widgets/class-team-2.php:81
+#: inc/elementor-widgets/widgets/class-team-2.php:740
+#: inc/elementor-widgets/widgets/full-screen-menu.php:189
+#: inc/elementor-widgets/widgets/full-screen-menu.php:264
+#: inc/elementor-widgets/widgets/hamburger-close.php:192
+#: inc/elementor-widgets/widgets/icon-box.php:175
+#: inc/elementor-widgets/widgets/projects.php:235
+#: inc/elementor-widgets/widgets/team.php:248
+msgid "Hover"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:398
+#: inc/elementor-widgets/widgets/blog.php:282
+msgid "Pagination"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:489
+#: inc/elementor-widgets/elementor-util.php:561
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:51
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:196
+msgid "Subheading"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:498
+#: inc/elementor-widgets/elementor-util.php:530
+#: inc/elementor-widgets/widgets/button.php:37
+#: inc/elementor-widgets/widgets/button.php:82
+#: inc/elementor-widgets/widgets/class-counter.php:83
+#: inc/elementor-widgets/widgets/class-progress-bar.php:85
+#: inc/elementor-widgets/widgets/contact-form-7.php:319
+#: inc/elementor-widgets/widgets/full-screen-menu.php:37
+#: inc/elementor-widgets/widgets/hero-slider-1.php:42
+#: inc/elementor-widgets/widgets/hero-slider-1.php:246
+#: inc/elementor-widgets/widgets/hero-slider-2.php:45
+#: inc/elementor-widgets/widgets/icon-box.php:44
+#: inc/elementor-widgets/widgets/menu.php:125
+#: inc/elementor-widgets/widgets/menu.php:223
+#: inc/elementor-widgets/widgets/projects.php:108
+#: inc/elementor-widgets/widgets/projects.php:139
+msgid "Text"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:509
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:103
+#: inc/elementor-widgets/widgets/class-block-slider.php:135
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:46
+msgid "Tag"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:521
+#: inc/elementor-widgets/elementor-util.php:644
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:93
+#: inc/elementor-widgets/widgets/class-block-slider.php:125
+#: inc/elementor-widgets/widgets/class-block-slider.php:253
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:36
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:163
+#: inc/elementor-widgets/widgets/class-heading.php:33
+#: inc/elementor-widgets/widgets/class-progress-bar.php:153
+#: inc/elementor-widgets/widgets/icon-box.php:203
+msgid "Heading"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:589
+msgid "Gap"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:612
+#: inc/elementor-widgets/elementor-util.php:683
+#: inc/elementor-widgets/widgets/blog.php:290
+#: inc/elementor-widgets/widgets/button.php:90
+#: inc/elementor-widgets/widgets/contact-form-7.php:326
+#: inc/elementor-widgets/widgets/hamburger-close.php:88
+#: inc/elementor-widgets/widgets/projects.php:147
+msgid "Alignment"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:616
+#: inc/elementor-widgets/elementor-util.php:687
+#: inc/elementor-widgets/widgets/blog.php:294
+#: inc/elementor-widgets/widgets/button.php:94
+#: inc/elementor-widgets/widgets/contact-form-7.php:330
+#: inc/elementor-widgets/widgets/hamburger-close.php:92
+#: inc/elementor-widgets/widgets/hamburger.php:77
+#: inc/elementor-widgets/widgets/projects.php:151
+msgid "Left"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:620
+#: inc/elementor-widgets/elementor-util.php:691
+#: inc/elementor-widgets/widgets/blog.php:298
+#: inc/elementor-widgets/widgets/button.php:98
+#: inc/elementor-widgets/widgets/contact-form-7.php:334
+#: inc/elementor-widgets/widgets/hamburger-close.php:96
+#: inc/elementor-widgets/widgets/projects.php:155
+msgid "Center"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:624
+#: inc/elementor-widgets/elementor-util.php:695
+#: inc/elementor-widgets/widgets/blog.php:302
+#: inc/elementor-widgets/widgets/button.php:102
+#: inc/elementor-widgets/widgets/contact-form-7.php:338
+#: inc/elementor-widgets/widgets/hamburger-close.php:100
+#: inc/elementor-widgets/widgets/hamburger.php:78
+#: inc/elementor-widgets/widgets/projects.php:159
+msgid "Right"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:672
+#: inc/elementor-widgets/widgets/full-screen-menu.php:207
+#: inc/elementor-widgets/widgets/full-screen-menu.php:282
+msgid "Underline Color"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:715
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:156
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:139
+#: inc/elementor-widgets/widgets/class-progress-bar.php:129
+#: inc/elementor-widgets/widgets/class-team-2.php:54
+#: inc/elementor-widgets/widgets/class-team-2.php:562
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:89
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:252
+#: inc/elementor-widgets/widgets/hero-slider-1.php:178
+#: inc/elementor-widgets/widgets/icon-box.php:84
+#: inc/elementor-widgets/widgets/team.php:46
+msgid "General"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:724
+msgid "Animate"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:726
+#: inc/elementor-widgets/mods/heading.php:55
+#: inc/elementor-widgets/mods/image-carousel.php:73
+#: inc/elementor-widgets/mods/section.php:79
+#: inc/elementor-widgets/mods/section.php:91
+#: inc/elementor-widgets/widgets/blog.php:102
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:166
+#: inc/elementor-widgets/widgets/class-block-slider.php:87
+#: inc/elementor-widgets/widgets/hero-slider-1.php:111
+#: inc/elementor-widgets/widgets/hero-slider-1.php:200
+msgid "Yes"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:727
+#: inc/elementor-widgets/mods/heading.php:56
+#: inc/elementor-widgets/mods/image-carousel.php:74
+#: inc/elementor-widgets/mods/section.php:80
+#: inc/elementor-widgets/mods/section.php:92
+#: inc/elementor-widgets/widgets/blog.php:103
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:167
+#: inc/elementor-widgets/widgets/class-block-slider.php:88
+#: inc/elementor-widgets/widgets/hero-slider-1.php:112
+#: inc/elementor-widgets/widgets/hero-slider-1.php:201
+msgid "No"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:755
+msgid "There are no templates"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:760
+msgid "Select Template"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:856
+msgid "H1"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:857
+msgid "H2"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:858
+msgid "H3"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:859
+msgid "H4"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:860
+msgid "H5"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:861
+msgid "H6"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:862
+msgid "P"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:878
+#: inc/elementor-widgets/widgets/contact-form-7.php:103
+msgid "Fields"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:887
+#: inc/elementor-widgets/elementor-util.php:1015
+#: inc/elementor-widgets/widgets/blog.php:184
+#: inc/elementor-widgets/widgets/blog.php:216
+#: inc/elementor-widgets/widgets/blog.php:259
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:172
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:205
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:238
+#: inc/elementor-widgets/widgets/class-counter.php:129
+#: inc/elementor-widgets/widgets/class-counter.php:174
+#: inc/elementor-widgets/widgets/class-progress-bar.php:162
+#: inc/elementor-widgets/widgets/class-progress-bar.php:195
+#: inc/elementor-widgets/widgets/class-tabs.php:127
+#: inc/elementor-widgets/widgets/class-team-2.php:607
+#: inc/elementor-widgets/widgets/class-team-2.php:640
+#: inc/elementor-widgets/widgets/class-team-2.php:673
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:105
+#: inc/elementor-widgets/widgets/contact-form-7.php:112
+#: inc/elementor-widgets/widgets/contact-form-7.php:289
+#: inc/elementor-widgets/widgets/icon-box.php:212
+#: inc/elementor-widgets/widgets/icon-box.php:246
+#: inc/elementor-widgets/widgets/team.php:148
+#: inc/elementor-widgets/widgets/team.php:181
+msgid "Typography"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:895
+msgid "Field Text Color"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:907
+msgid "Label Color"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:919
+#: inc/elementor-widgets/elementor-util.php:1151
+#: inc/elementor-widgets/elementor-util.php:1197
+msgid "Border Color"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:942
+msgid "Textarea"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:950
+msgid "Minimum Height"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:973
+msgid "Maximum Height"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:1006
+#: inc/elementor-widgets/widgets/button.php:13
+msgid "Button"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:1023
+msgid "Hover Color"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:1045
+#: inc/elementor-widgets/elementor-util.php:1066
+#: inc/elementor-widgets/widgets/button.php:184
+#: inc/elementor-widgets/widgets/button.php:238
+#: inc/elementor-widgets/widgets/class-tabs.php:144
+#: inc/elementor-widgets/widgets/class-tabs.php:189
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:122
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:167
+#: inc/elementor-widgets/widgets/contact-form-7.php:204
+#: inc/elementor-widgets/widgets/contact-form-7.php:243
+#: inc/elementor-widgets/widgets/contact-form-7.php:297
+#: inc/elementor-widgets/widgets/hamburger-close.php:178
+#: inc/elementor-widgets/widgets/icon-box.php:160
+#: inc/elementor-widgets/widgets/icon-box.php:182
+#: inc/elementor-widgets/widgets/menu.php:144
+#: inc/elementor-widgets/widgets/menu.php:179
+#: inc/elementor-widgets/widgets/menu.php:231
+#: inc/elementor-widgets/widgets/projects.php:209
+msgid "Text color"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:1092
+#: inc/elementor-widgets/widgets/menu.php:213
+msgid "Dropdown"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:1101
+msgid "Label Typography"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:1110
+msgid "Option Typography"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:1127
+#: inc/elementor-widgets/elementor-util.php:1173
+msgid "Option Color"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:1139
+#: inc/elementor-widgets/elementor-util.php:1185
+msgid "Option Background Color"
+msgstr ""
+
+#: inc/elementor-widgets/elementor-util.php:1166
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:416
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:116
+#: inc/elementor-widgets/widgets/class-tabs.php:182
+#: inc/elementor-widgets/widgets/class-team-2.php:205
+#: inc/elementor-widgets/widgets/class-team-2.php:810
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:160
+#: inc/elementor-widgets/widgets/contact-form-7.php:236
+#: inc/elementor-widgets/widgets/projects.php:333
+msgid "Active"
+msgstr ""
+
+#: inc/elementor-widgets/mods/accordion.php:37
+#: inc/elementor-widgets/mods/image-carousel.php:83
+msgid "Space between"
+msgstr ""
+
+#: inc/elementor-widgets/mods/heading.php:53
+msgid "Underline on hover"
+msgstr ""
+
+#: inc/elementor-widgets/mods/icon-list.php:30
+msgid "Bar color"
+msgstr ""
+
+#: inc/elementor-widgets/mods/icon-list.php:41
+msgid "Bar margin"
+msgstr ""
+
+#: inc/elementor-widgets/mods/icon-list.php:53
+msgid "Text margin"
+msgstr ""
+
+#: inc/elementor-widgets/mods/image-carousel.php:54
+msgid "Overflow"
+msgstr ""
+
+#: inc/elementor-widgets/mods/image-carousel.php:58
+msgid "Hidden"
+msgstr ""
+
+#: inc/elementor-widgets/mods/image-carousel.php:59
+msgid "Visible"
+msgstr ""
+
+#: inc/elementor-widgets/mods/image-carousel.php:70
+msgid "Display navigation below carousel"
+msgstr ""
+
+#: inc/elementor-widgets/mods/image-carousel.php:71
+msgid "This will override any other position applied to navigation."
+msgstr ""
+
+#: inc/elementor-widgets/mods/image-carousel.php:105
+#: inc/elementor-widgets/mods/section.php:156
+#: inc/elementor-widgets/mods/section.php:215
+#: inc/elementor-widgets/mods/video.php:116
+#: inc/elementor-widgets/widgets/contact-form-7.php:144
+#: inc/elementor-widgets/widgets/hamburger-close.php:142
+#: inc/elementor-widgets/widgets/hamburger.php:160
+#: inc/elementor-widgets/widgets/menu.php:98
+msgid "Height"
+msgstr ""
+
+#: inc/elementor-widgets/mods/section.php:77
+msgid "Full Width"
+msgstr ""
+
+#: inc/elementor-widgets/mods/section.php:89
+msgid "Grow Animation"
+msgstr ""
+
+#: inc/elementor-widgets/mods/section.php:103
+#: inc/elementor-widgets/mods/section.php:195
+#: inc/elementor-widgets/widgets/hamburger.php:110
+#: inc/elementor-widgets/widgets/menu.php:170
+msgid "Sticky"
+msgstr ""
+
+#: inc/elementor-widgets/mods/section.php:105
+#: inc/elementor-widgets/mods/video.php:65
+#: inc/elementor-widgets/widgets/blog.php:90
+#: inc/elementor-widgets/widgets/class-block-slider.php:99
+#: inc/elementor-widgets/widgets/menu.php:64
+#: inc/elementor-widgets/widgets/projects.php:98
+#: inc/elementor-widgets/widgets/projects.php:298
+msgid "Show"
+msgstr ""
+
+#: inc/elementor-widgets/mods/section.php:106
+#: inc/elementor-widgets/mods/video.php:66
+#: inc/elementor-widgets/widgets/blog.php:91
+#: inc/elementor-widgets/widgets/class-block-slider.php:100
+#: inc/elementor-widgets/widgets/menu.php:65
+#: inc/elementor-widgets/widgets/projects.php:99
+#: inc/elementor-widgets/widgets/projects.php:299
+msgid "Hide"
+msgstr ""
+
+#: inc/elementor-widgets/mods/section.php:125
+msgid "growla"
+msgstr ""
+
+#: inc/elementor-widgets/mods/social-list.php:30
+#: inc/elementor-widgets/widgets/hero-slider-1.php:432
+#: inc/elementor-widgets/widgets/hero-slider-1.php:455
+#: inc/elementor-widgets/widgets/hero-slider-1.php:478
+msgid "Primary Color"
+msgstr ""
+
+#: inc/elementor-widgets/mods/video.php:63
+msgid "Show Illustration"
+msgstr ""
+
+#: inc/elementor-widgets/mods/video.php:79
+msgid "Growla: Video"
+msgstr ""
+
+#: inc/elementor-widgets/mods/video.php:87
+#: inc/elementor-widgets/widgets/button.php:116
+#: inc/elementor-widgets/widgets/contact-form-7.php:352
+#: inc/elementor-widgets/widgets/full-screen-menu.php:163
+#: inc/elementor-widgets/widgets/hamburger-close.php:114
+#: inc/elementor-widgets/widgets/hamburger.php:134
+#: inc/elementor-widgets/widgets/projects.php:173
+msgid "Width"
+msgstr ""
+
+#: inc/elementor-widgets/mods/video.php:146
+msgid "Illustration Box Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:13
+msgid "Blog"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:28
+msgid "Post Options"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:36
+msgid "Columns"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:40
+msgid "2"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:41
+msgid "3"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:49
+msgid "Posts per page"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:59
+msgid "Order posts"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:72
+msgid "Sorting posts by"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:88
+msgid "Show pagination"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:100
+msgid "Custom date format"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:175
+#: inc/elementor-widgets/widgets/class-award.php:47
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:56
+msgid "Title"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:207
+#: single-project.php:76
+msgid "Date"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:250
+msgid "Author"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:336
+#: inc/elementor-widgets/widgets/blog.php:397
+#: inc/elementor-widgets/widgets/button.php:196
+#: inc/elementor-widgets/widgets/button.php:250
+#: inc/elementor-widgets/widgets/class-progress-bar.php:137
+#: inc/elementor-widgets/widgets/contact-form-7.php:221
+#: inc/elementor-widgets/widgets/contact-form-7.php:252
+#: inc/elementor-widgets/widgets/icon-box.php:92
+#: inc/elementor-widgets/widgets/projects.php:221
+#: inc/elementor-widgets/widgets/projects.php:254
+msgid "Background color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:348
+#: inc/elementor-widgets/widgets/blog.php:411
+msgid "Prev/Next color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/blog.php:361
+#: inc/elementor-widgets/widgets/blog.php:424
+msgid "Prev/Next Background color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/button.php:28
+#: inc/elementor-widgets/widgets/class-award.php:28
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:83
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:116
+#: inc/elementor-widgets/widgets/class-block-slider.php:77
+#: inc/elementor-widgets/widgets/class-block-slider.php:148
+#: inc/elementor-widgets/widgets/class-block-slider.php:284
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:28
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:75
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:262
+#: inc/elementor-widgets/widgets/class-counter.php:74
+#: inc/elementor-widgets/widgets/class-illustration.php:28
+#: inc/elementor-widgets/widgets/class-progress-bar.php:76
+#: inc/elementor-widgets/widgets/class-tabs.php:28
+#: inc/elementor-widgets/widgets/class-tabs.php:86
+#: inc/elementor-widgets/widgets/class-tabs.php:104
+#: inc/elementor-widgets/widgets/class-tabs.php:236
+#: inc/elementor-widgets/widgets/class-team-2.php:299
+#: inc/elementor-widgets/widgets/class-team-2.php:664
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:38
+#: inc/elementor-widgets/widgets/full-screen-menu.php:28
+#: inc/elementor-widgets/widgets/full-screen-menu.php:67
+#: inc/elementor-widgets/widgets/hamburger-close.php:31
+#: inc/elementor-widgets/widgets/hamburger.php:40
+#: inc/elementor-widgets/widgets/hero-slider-1.php:28
+#: inc/elementor-widgets/widgets/hero-slider-1.php:51
+#: inc/elementor-widgets/widgets/hero-slider-1.php:308
+#: inc/elementor-widgets/widgets/hero-slider-2.php:31
+#: inc/elementor-widgets/widgets/hero-slider-2.php:54
+#: inc/elementor-widgets/widgets/icon-box.php:28
+#: inc/elementor-widgets/widgets/icon-box.php:57
+#: inc/elementor-widgets/widgets/icon-box.php:237
+#: inc/elementor-widgets/widgets/menu.php:40
+msgid "Content"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/button.php:49
+#: inc/elementor-widgets/widgets/class-award.php:67
+#: inc/elementor-widgets/widgets/class-block-slider.php:161
+#: inc/elementor-widgets/widgets/client-slider.php:56
+#: inc/elementor-widgets/widgets/full-screen-menu.php:46
+#: inc/elementor-widgets/widgets/icon-box.php:69
+#: inc/elementor-widgets/widgets/team.php:116
+msgid "Link"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/button.php:61
+#: inc/elementor-widgets/widgets/button.php:160
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:108
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:185
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:202
+#: inc/elementor-widgets/widgets/class-block-slider.php:140
+#: inc/elementor-widgets/widgets/class-block-slider.php:188
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:89
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:106
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:123
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:312
+#: inc/elementor-widgets/widgets/class-tabs.php:66
+#: inc/elementor-widgets/widgets/class-team-2.php:71
+#: inc/elementor-widgets/widgets/class-team-2.php:88
+#: inc/elementor-widgets/widgets/class-team-2.php:779
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:97
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:217
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:48
+#: inc/elementor-widgets/widgets/full-screen-menu.php:55
+#: inc/elementor-widgets/widgets/hamburger-close.php:39
+#: inc/elementor-widgets/widgets/hero-slider-1.php:247
+#: inc/elementor-widgets/widgets/icon-box.php:36
+#: inc/elementor-widgets/widgets/icon-box.php:120
+#: inc/elementor-widgets/widgets/projects.php:117
+#: inc/elementor-widgets/widgets/team.php:108
+msgid "Icon"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/button.php:73
+#: inc/elementor-widgets/widgets/class-illustration.php:68
+#: inc/elementor-widgets/widgets/class-team-2.php:106
+#: inc/elementor-widgets/widgets/hamburger-close.php:53
+#: inc/elementor-widgets/widgets/hamburger.php:65
+#: inc/elementor-widgets/widgets/menu.php:90
+msgid "Style"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/button.php:143
+#: inc/elementor-widgets/widgets/contact-form-7.php:171
+msgid "Padding"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/button.php:155
+msgid "Hover Style"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/button.php:159
+msgid "Background"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/button.php:161
+msgid "Underline"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/button.php:208
+#: inc/elementor-widgets/widgets/button.php:262
+#: inc/elementor-widgets/widgets/class-tabs.php:156
+#: inc/elementor-widgets/widgets/class-tabs.php:202
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:134
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:180
+#: inc/elementor-widgets/widgets/projects.php:318
+#: inc/elementor-widgets/widgets/projects.php:341
+msgid "Icon color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-award.php:13
+msgid "Award"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-award.php:37
+msgid "Time"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-award.php:57
+msgid "Presenter"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:33
+msgid "Block Slider Secondary"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:129
+msgid "Content 2"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:142
+#: inc/elementor-widgets/widgets/class-block-slider.php:174
+msgid "Blocks"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:164
+#: inc/elementor-widgets/widgets/class-block-slider.php:85
+#: inc/elementor-widgets/widgets/class-progress-bar.php:99
+#: inc/elementor-widgets/widgets/hero-slider-2.php:108
+msgid "Slider"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:218
+msgid "Box Styles"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:237
+msgid "Outline Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:248
+#: inc/elementor-widgets/widgets/class-team-2.php:582
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:271
+msgid "Separator Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:265
+msgid "Box Icon"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:299
+msgid "Box Heading"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:330
+msgid "Box Content"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:361
+msgid "Box Content 2"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:401
+#: inc/elementor-widgets/widgets/class-block-slider-secondary.php:423
+#: inc/elementor-widgets/widgets/hamburger.php:97
+#: inc/elementor-widgets/widgets/hamburger.php:117
+msgid "Icon Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider.php:33
+msgid "Block Slider"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider.php:97
+msgid "Show Count"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider.php:111
+#: inc/elementor-widgets/widgets/class-tabs.php:93
+#: inc/elementor-widgets/widgets/class-team-2.php:270
+#: inc/elementor-widgets/widgets/client-slider.php:45
+#: inc/elementor-widgets/widgets/full-screen-menu.php:75
+#: inc/elementor-widgets/widgets/full-screen-menu.php:86
+#: inc/elementor-widgets/widgets/hero-slider-1.php:147
+#: inc/elementor-widgets/widgets/hero-slider-2.php:81
+#: inc/elementor-widgets/widgets/team.php:54
+#: inc/elementor-widgets/widgets/testimonial-slider.php:38
+msgid "Choose Image"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-block-slider.php:222
+#: inc/elementor-widgets/widgets/class-counter.php:33
+#: inc/elementor-widgets/widgets/class-counter.php:120
+#: inc/elementor-widgets/widgets/class-progress-bar.php:186
+msgid "Counter"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:13
+msgid "Collapse Tab"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:64
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:229
+msgid "Excerpt"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:66
+msgid "Default excerpt"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:67
+msgid "Type your excerpt here"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:77
+msgid "Default description"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:78
+msgid "Type your description here"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:271
+#: inc/elementor-widgets/widgets/class-tabs.php:245
+msgid "Paragraph Typography"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:279
+#: inc/elementor-widgets/widgets/class-tabs.php:253
+msgid "Paragraph Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-collapse-tab.php:291
+#: inc/elementor-widgets/widgets/class-tabs.php:265
+msgid "Heading Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-counter.php:86
+#: inc/elementor-widgets/widgets/class-progress-bar.php:88
+msgid "Default text"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-counter.php:96
+msgid "value"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-counter.php:149
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:146
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:193
+msgid "Border color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-counter.php:165
+#: inc/elementor-widgets/widgets/class-tabs.php:74
+msgid "Label"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-illustration.php:13
+#: inc/elementor-widgets/widgets/hero-slider-1.php:93
+msgid "Illustration"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-illustration.php:36
+msgid "First Image"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-illustration.php:50
+msgid "Second Image"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-progress-bar.php:33
+#: inc/elementor-widgets/widgets/class-progress-bar.php:219
+msgid "Progress Bar"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-progress-bar.php:239
+msgid "Fill Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-tabs.php:13
+#: inc/elementor-widgets/widgets/class-tabs.php:45
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:96
+msgid "Tabs"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-tabs.php:48
+msgid "{{ tab_option_label }}"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-tabs.php:59
+msgid "Option"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-tabs.php:106
+msgid "Default Content"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-tabs.php:107
+#: inc/elementor-widgets/widgets/hero-slider-1.php:54
+#: inc/elementor-widgets/widgets/hero-slider-2.php:57
+msgid "Type your content here"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-tabs.php:118
+msgid "Tab"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-tabs.php:168
+#: inc/elementor-widgets/widgets/class-tabs.php:215
+msgid "Icon background color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:19
+msgid "Team 2"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:115
+msgid "Name typography"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:123
+msgid "Name color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:136
+msgid "Designation typography"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:144
+msgid "Designation color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:167
+#: inc/elementor-widgets/widgets/class-team-2.php:212
+msgid "Drop icon color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:179
+#: inc/elementor-widgets/widgets/class-team-2.php:224
+#: inc/elementor-widgets/widgets/team.php:222
+#: inc/elementor-widgets/widgets/team.php:255
+msgid "Social icon color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:191
+#: inc/elementor-widgets/widgets/class-team-2.php:236
+#: inc/elementor-widgets/widgets/team.php:234
+#: inc/elementor-widgets/widgets/team.php:267
+msgid "Social icon background color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:260
+msgid "Team Members"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:281
+#: inc/elementor-widgets/widgets/class-team-2.php:598
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:51
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:155
+#: inc/elementor-widgets/widgets/team.php:68
+#: inc/elementor-widgets/widgets/team.php:139
+#: inc/elementor-widgets/widgets/testimonial-slider.php:65
+#: inc/elementor-widgets/widgets/testimonial-slider.php:122
+msgid "Name"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:283
+#: inc/elementor-widgets/widgets/team.php:70
+msgid "Type name here"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:290
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:63
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:186
+#: inc/elementor-widgets/widgets/team.php:81
+#: inc/elementor-widgets/widgets/team.php:172
+msgid "Designation"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:292
+#: inc/elementor-widgets/widgets/class-team-2.php:301
+#: inc/elementor-widgets/widgets/team.php:83
+msgid "Type designation here"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:308
+msgid "Social Icon 1"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:316
+msgid "Social Link 1"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:326
+msgid "Social Icon 2"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:334
+msgid "Social Link 2"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:344
+msgid "Social Icon 3"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:352
+msgid "Social Link 3"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:362
+msgid "Social Icon 4"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:370
+msgid "Social Link 4"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:380
+msgid "Team members"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:383
+msgid "Member"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:631
+msgid "Desgination"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:697
+#: inc/elementor-widgets/widgets/team.php:98
+#: inc/elementor-widgets/widgets/team.php:124
+#: inc/elementor-widgets/widgets/team.php:127
+msgid "Social"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-team-2.php:759
+msgid "Bacckground Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:13
+msgid "Testimonials 2"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:28
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:75
+#: inc/elementor-widgets/widgets/testimonial-slider.php:13
+#: inc/elementor-widgets/widgets/testimonial-slider.php:28
+msgid "Testimonials"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:38
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:124
+#: inc/elementor-widgets/widgets/testimonial-slider.php:52
+#: inc/elementor-widgets/widgets/testimonial-slider.php:91
+msgid "Testimonial"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:41
+#: inc/elementor-widgets/widgets/testimonial-slider.php:55
+msgid "Type your testimonial here"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:53
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:65
+#: inc/elementor-widgets/widgets/testimonial-slider.php:67
+msgid "Type your name here"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/class-testimonial-slider-2.php:78
+#: inc/elementor-widgets/widgets/hero-slider-1.php:167
+#: inc/elementor-widgets/widgets/hero-slider-2.php:95
+#: inc/elementor-widgets/widgets/testimonial-slider.php:80
+msgid "Slide"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/client-slider.php:18
+msgid "Client Slider"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/client-slider.php:35
+#: inc/elementor-widgets/widgets/hero-slider-1.php:164
+#: inc/elementor-widgets/widgets/hero-slider-2.php:92
+msgid "Slides"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/client-slider.php:58
+msgid "https://your-link.com"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/client-slider.php:71
+msgid "Client slides"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/client-slider.php:74
+msgid "Client"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:13
+msgid "Contact From 7 Tabs"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:58
+msgid "Default title"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:59
+msgid "Type your title here"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:70
+#: inc/elementor-widgets/widgets/contact-form-7.php:85
+msgid "Select contact form"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:71
+#: inc/elementor-widgets/widgets/contact-form-7.php:86
+msgid "Contact form 7 must be installed for this widget to work"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:82
+msgid "Forms"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:85
+msgid "Form"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7-tabs.php:233
+#: inc/elementor-widgets/widgets/contact-form-7.php:395
+msgid "No contact From 7 form found"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:13
+msgid "Contact From 7"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:77
+#: inc/installation/install-init.php:26
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:120
+msgid "Field Margin"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:132
+msgid "Textarea Margin"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:181
+#: inc/elementor-widgets/widgets/hero-slider-2.php:130
+msgid "Border radius"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:280
+msgid "Placeholder"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/contact-form-7.php:310
+msgid "Submit"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:13
+msgid "Full Screen Menu"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:97
+#: inc/elementor-widgets/widgets/menu.php:19
+#: inc/elementor-widgets/widgets/menu.php:75
+msgid "Menu"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:106
+msgid "Menu Label"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:126
+msgid "Main Menu"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:152
+#: inc/elementor-widgets/widgets/full-screen-menu.php:196
+#: inc/elementor-widgets/widgets/full-screen-menu.php:251
+#: inc/elementor-widgets/widgets/full-screen-menu.php:271
+msgid "Text Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/full-screen-menu.php:226
+msgid "Sub Menu"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hamburger-close.php:13
+msgid "Hamburger close"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hamburger-close.php:199
+#: inc/elementor-widgets/widgets/projects.php:242
+msgid "Text hover color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hamburger.php:19
+msgid "Hamburger Menu"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hamburger.php:48
+#: inc/elementor-widgets/widgets/hero-slider-1.php:43
+#: inc/elementor-widgets/widgets/hero-slider-1.php:68
+#: inc/elementor-widgets/widgets/hero-slider-2.php:46
+#: inc/elementor-widgets/widgets/hero-slider-2.php:67
+msgid "Template"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hamburger.php:52
+#: inc/elementor-widgets/widgets/hero-slider-1.php:72
+#: inc/elementor-widgets/widgets/hero-slider-2.php:71
+msgid "You can create new templates or customize existing templates by going to the 'Templates' menu item (Besides the 'Elementor' menu item) on the dashboard."
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hamburger.php:73
+msgid "Direction"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:13
+msgid "Hero Slider 1"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:38
+#: inc/elementor-widgets/widgets/hero-slider-2.php:41
+#: inc/elementor-widgets/widgets/menu.php:48
+msgid "Type"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:85
+msgid "Animating slide content"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:86
+msgid "To animate any content present within the template, you can add this class 'growla-animate-slide'"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:97
+msgid "None"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:98
+msgid "Waves"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:99
+msgid "Boxes 1"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:100
+msgid "Boxes 2"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:101
+msgid "Lines"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:109
+msgid "Video Background"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:121
+msgid "Choose Video"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:136
+msgid "Video Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:186
+msgid "Slide Padding"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:198
+msgid "Full Screen Slides"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:214
+#: inc/elementor-widgets/widgets/hero-slider-1.php:339
+msgid "Slider Navigation"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:222
+msgid "Caption"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:224
+msgid "Example Caption"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:242
+msgid "Navigation Type"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:256
+msgid "Previous text"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:258
+msgid "PREV"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:266
+msgid "Next text"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:268
+msgid "NEXT"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:276
+msgid "Previous icon"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:285
+msgid "Next icon"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:294
+msgid "Separator"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:296
+msgid "|"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:370
+msgid "Slider Caption"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:401
+#: inc/elementor-widgets/widgets/waves-illustration.php:13
+#: inc/elementor-widgets/widgets/waves-illustration.php:28
+msgid "Waves Illustration"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:424
+msgid "Box 1 Illustration"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:447
+msgid "Box 2 Illustration"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:470
+msgid "Lines Illustration"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-1.php:489
+msgid "Secondary Color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-2.php:13
+msgid "Hero Slider 2"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/hero-slider-2.php:122
+msgid "Image"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/icon-box.php:13
+msgid "Icon Box"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/icon-box.php:104
+msgid "Outline color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/icon-box.php:128
+msgid "Icon Size"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/menu.php:52
+msgid "Desktop"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/menu.php:53
+msgid "Mobile"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/menu.php:61
+msgid "Slider Mode"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/menu.php:62
+msgid "When enabled, if the links take more width than the container, the menu will appear as a slider."
+msgstr ""
+
+#: inc/elementor-widgets/widgets/menu.php:156
+#: inc/elementor-widgets/widgets/menu.php:191
+msgid "Arrow color"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:13
+msgid "Projects"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:28
+msgid "Project Options"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:36
+msgid "Important Note"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:38
+msgid "You can customize these projects by going to the 'Projects' (menu to the left) in the admin dashboard."
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:45
+msgid "Projects per page"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:55
+msgid "Order"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:68
+msgid "Sorting projects by"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:88
+#: inc/elementor-widgets/widgets/projects.php:129
+msgid "Load more"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:96
+msgid "Display load more button"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:110
+msgid "LOAD MORE"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:275
+msgid "Project Styles"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:283
+msgid "Layout Style"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:287
+msgid "Horizontal"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:288
+msgid "Vertical"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/projects.php:296
+msgid "Display layout switcher"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/team.php:19
+msgid "Team"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/team.php:205
+msgid "Social Links"
+msgstr ""
+
+#: inc/elementor-widgets/widgets/testimonial-slider.php:77
+msgid "Image slides"
+msgstr ""
+
+#: inc/installation/install-init.php:9
+msgid "growla core"
+msgstr ""
+
+#: inc/installation/install-init.php:16
+msgid "Elementor"
+msgstr ""
+
+#: inc/installation/install-init.php:21
+msgid "Redux Framework"
+msgstr ""
+
+#: inc/installation/install-init.php:30
+msgid "One Click Demo Import"
+msgstr ""
+
+#: inc/misc/acf.php:7
+#: inc/misc/acf.php:31
+msgid "Default"
+msgstr ""
+
+#: inc/misc/cf7-hooks.php:201
+msgid "Attach File"
+msgstr ""
+
+#: inc/misc/cf7-hooks.php:204
+msgid "Browse"
+msgstr ""
+
+#: inc/misc/comments-util.php:55
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/misc/general-hooks.php:45
+msgid "Primary Menu"
+msgstr ""
+
+#: inc/misc/general-hooks.php:46
+msgid "Default Menu"
+msgstr ""
+
+#: inc/misc/general-hooks.php:119
+msgid "Sidebar"
+msgstr ""
+
+#: inc/misc/general-hooks.php:121
+msgid "Widgets added here will be displayed on the blogs page."
+msgstr ""
+
+#: inc/misc/general-hooks.php:131
+msgid "Search Sidebar"
+msgstr ""
+
+#: inc/misc/general-hooks.php:133
+msgid "Widgets added here will be displayed on the search page."
+msgstr ""
+
+#: inc/misc/general-hooks.php:143
+msgid "Archives Sidebar"
+msgstr ""
+
+#: inc/misc/general-hooks.php:145
+msgid "Widgets added here will be displayed on the archives page."
+msgstr ""
+
+#: inc/template-parts/content-page.php:21
+msgid "Pages:"
+msgstr ""
+
+#: inc/template-parts/content-related-blog.php:4
+msgid "// NEWS"
+msgstr ""
+
+#: inc/template-parts/content-related-blog.php:5
+msgid "Similar News."
+msgstr ""
+
+#: inc/template-parts/content-related-projects.php:8
+msgid "// WORKS"
+msgstr ""
+
+#: inc/template-parts/content-related-projects.php:9
+msgid "Other Projects"
+msgstr ""
+
+#: inc/template-parts/footer/footer-default.php:12
+msgid "Copyright"
+msgstr ""
+
+#: inc/template-parts/page-header.php:25
+#: inc/template-tags.php:454
+msgid "Search result"
+msgstr ""
+
+#: inc/template-parts/page-header.php:29
+msgid "Archives"
+msgstr ""
+
+#: inc/template-parts/page-header.php:33
+msgid "Not Found"
+msgstr ""
+
+#: inc/template-parts/page-header.php:61
+msgid "Journal"
+msgstr ""
+
+#. translators: %s: post date.
+#: inc/template-tags.php:30
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#. translators: %s: post author.
+#: inc/template-tags.php:46
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:63
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: inc/template-tags.php:66
+msgid "Posted in %1$s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:70
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:73
+msgid "Tagged %1$s"
+msgstr ""
+
+#. translators: %s: post title
+#: inc/template-tags.php:83
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:100
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: inc/template-tags.php:394
+#: inc/template-tags.php:398
+msgid "Home"
+msgstr ""
+
+#: inc/template-tags.php:461
+msgid "404"
+msgstr ""
+
+#: index.php:34
+msgid "We're sorry, but there is no content available."
+msgstr ""
+
+#: index.php:35
+#: search.php:22
+msgid "Can't find what you need? Take a moment and do a search again below or alternatively you can start from our"
+msgstr ""
+
+#: index.php:90
+#: search.php:87
+msgid "homepage"
+msgstr ""
+
+#: search.php:21
+msgid "We're sorry, but your search \""
+msgstr ""
+
+#: search.php:21
+msgid "\" did not match."
+msgstr ""
+
+#: searchform.php:5
+msgid "Search"
+msgstr ""
+
+#: single.php:32
+msgid "Pages"
+msgstr ""
+
+#: single.php:92
+msgid "Tags"
+msgstr ""

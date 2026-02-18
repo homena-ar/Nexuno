@@ -1,0 +1,18 @@
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+:root {
+    --border-radius: 10px;
+    --column-width: 1170px;
+
+    --blog-detail-thumbnail-height: 44.5rem;
+
+    $grid-breakpoints: (
+        'xs': 0,
+        'sm': 576px,
+        'md': 768px,
+        'lg': 992px,
+        'xl': 1200px,
+        'xxl': 1400px
+    );
+}

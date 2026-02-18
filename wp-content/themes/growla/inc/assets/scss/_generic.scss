@@ -1,0 +1,196 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    width: 100%;
+    box-sizing: border-box;
+
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    word-break: break-word;
+}
+
+img {
+    display: block;
+}
+
+// for some reason, elementor changes the icon display property to inline-block on non-elementor pages.
+body:not(.elementor-page) {
+    .elementor-icon {
+        display: inline-flex !important;
+    }
+}
+
+// these styles are added so that the footer stays at the bottom
+.main-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.has-large-font-size {
+    @media (max-width: 991px) {
+        font-size: 24px !important;
+    }
+}
+
+.growla-container {
+    max-width: 1170px;
+    margin: 0 auto;
+
+    &-small {
+        max-width: 77rem;
+        margin: 0 auto;
+    }
+}
+
+.growla-container-flex {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.growla-container-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3rem;
+
+    @media only screen and (max-width: 991px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.growla-column-12 {
+    grid-column: auto / span 12;
+}
+
+.growla-column-8 {
+    grid-column: auto / span 8;
+}
+
+.growla-column-6 {
+    grid-column: auto / span 6;
+}
+
+.growla-column-4 {
+    grid-column: auto / span 4;
+}
+
+.growla-column-991-12 {
+    @media only screen and (max-width: 991px) {
+        grid-column: auto / span 2;
+    }
+}
+
+// I believe that elementor uses the same plugin for the lightbox
+// This causes issues like two lightboxes appear on clicking a gallery item
+// the elementor lightbox is forcefully displayed none to prevent this behaviour
+.glightbox-container + .elementor-lightbox {
+    display: none !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.growla-character {
+    display: inline-block;
+    text-decoration: inherit;
+}
+
+.growla-word {
+    display: inline-block;
+    text-decoration: inherit;
+}
+
+svg.growla-mouse-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    z-index: 1000;
+    pointer-events: none;
+
+    @media only screen and (max-width: 991px) {
+        display: none !important;
+    }
+}
+
+body:hover svg.growla-mouse-trail {
+    display: block;
+}
+
+svg.growla-mouse-trail path {
+    fill: none;
+
+    stroke: var(--color-primary);
+    stroke-width: 8px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.growla-grow-section {
+    clip-path: polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%);
+
+    @media (max-width: 991px) {
+        clip-path: none;
+    }
+}
+
+.pin-wrapper {
+    width: 100%;
+    height: 200vh; /* Adjust height as needed */
+    position: relative; /* Required for pinning */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}

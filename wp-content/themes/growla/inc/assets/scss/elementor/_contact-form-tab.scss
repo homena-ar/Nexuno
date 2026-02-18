@@ -1,0 +1,66 @@
+.contact-form-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    &-navigation {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        &-item {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-paragraph);
+            cursor: pointer;
+
+            display: flex;
+            justify-content: center;
+            vertical-align: middle;
+            gap: 1rem;
+            padding: 0 3rem 2rem 3rem;
+            border-bottom: 2px solid var(--color-grey-1);
+
+            @include animateIt;
+
+            svg {
+                height: 2.5rem;
+                fill: var(--color-paragraph);
+                @include animateIt;
+
+                [dir='rtl'] & {
+                    vertical-align: top;
+                }
+            }
+
+            &:hover,
+            &.active {
+                color: var(--color-primary);
+                border-color: var(--color-primary);
+
+                svg {
+                    fill: var(--color-primary);
+                }
+            }
+        }
+    }
+
+    &-content {
+        position: relative;
+    }
+
+    .contact-form-tab {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        width: 100%;
+        transform: translateY(25px);
+
+        &.active {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+}

@@ -1,0 +1,51 @@
+
+---Downloaded files---
+The import files for: Jade were successfully downloaded!
+Initial max execution time = 480
+Files info:
+Site URL = https://nexuno.com.ar
+Data file = /home/u351502411/domains/nexuno.com.ar/public_html/wp-content/themes/growla/inc/installation/demo-data/demo-3/growla-demo-3.xml
+Widget file = /home/u351502411/domains/nexuno.com.ar/public_html/wp-content/themes/growla/inc/installation/demo-data/demo-3/growla-demo-3-widgets.wie
+Customizer file = /home/u351502411/domains/nexuno.com.ar/public_html/wp-content/themes/growla/inc/installation/demo-data/demo-3/growla-demo-3-customizer.dat
+Redux files:
+growla_opt -> /home/u351502411/domains/nexuno.com.ar/public_html/wp-content/themes/growla/inc/installation/demo-data/demo-3/growla-demo-3-redux.json 
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+Sidebar : 
+
+Buscar - No Title - Imported
+Categorías - No Title - Imported
+Growla: Recent Posts - Recent Posts - Imported
+Growla: Archives - No Title - Imported
+
+Search Sidebar : 
+
+Buscar - No Title - Imported
+
+
+
+---Importing Redux settings---
+Redux settings import for: growla_opt finished successfully!
+
+---Importing customizer settings---
+Customizer settings import finished!
+
+---ocdi/after_import---
+

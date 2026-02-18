@@ -1,0 +1,97 @@
+.project-detail {
+    padding: 15rem 0;
+
+    @media (max-width: 991px) {
+        padding: 50px;
+    }
+
+    @media (max-width: 767px) {
+        padding: 50px 25px;
+    }
+
+    &-thumbnail {
+        height: 87.8rem;
+
+        .post-thumbnail {
+            height: 100%;
+        }
+
+        a {
+            display: block;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media only screen and (max-width: 991px) {
+            height: 30rem;
+        }
+    }
+
+    &-header {
+        margin-bottom: 4.5rem;
+    }
+
+    &-title {
+        @extend h2;
+    }
+
+    &-inner {
+        display: flex;
+        gap: 3rem;
+
+        @media only screen and (max-width: 991px) {
+            flex-direction: column;
+        }
+    }
+
+    &-content {
+        width: 70%;
+
+        @media only screen and (max-width: 991px) {
+            width: 100%;
+        }
+
+        &-heading {
+            margin: 5rem 0;
+        }
+    }
+
+    &-sidebar {
+        width: 30%;
+
+        @media only screen and (max-width: 991px) {
+            width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .detail {
+            span.title {
+                font-size: 1.8rem;
+                font-weight: 600;
+                color: var(--color-paragraph);
+            }
+
+            span:not(.title) {
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: var(--color-paragraph);
+            }
+
+            &:nth-child(n + 2) {
+                margin-top: 0.3rem;
+            }
+        }
+    }
+
+    &-categories {
+        span {
+            margin: 0 15px;
+        }
+    }
+}

@@ -1,0 +1,141 @@
+.accordion {
+
+    &-item {
+        background-color: transparent;
+        border: none;
+        
+        @include animateIt;
+        
+        
+        &:nth-child(n+2) {
+            margin-top: 1rem;
+        }
+        
+        &,
+        &:first-of-type,
+        &:last-of-type {
+            border-radius: calc( var(--border-radius) / 2);
+        }
+
+    }
+
+    &-button {
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include animateIt;
+        padding: 0;
+
+        &.keep-open[aria-expanded=true] {
+            pointer-events: none;
+        }
+
+        &,
+        &:focus {
+            box-shadow: none;
+        }
+
+        span {
+            display: inline-block;
+        }
+
+        --size: 20px;
+        --width: calc(var(--size) * 0.6);
+        --height: calc(var(--size) * 0.1);
+
+        &::after {
+            display: none;
+        }
+
+        &,
+        &:not(.collapsed) {
+            color: var(--color-white);
+            box-shadow: none;
+            background-color: transparent;
+
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+        }
+
+        &.collapsed::after,
+        &:not(.collapsed)::after {
+            background-image: none;
+        }
+
+        .icon {
+            display: inline-block;
+            position: relative;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 50%;
+            aspect-ratio: 1 / 1;
+            background-color: var(--color-primary);
+
+        }
+
+        .icon::after, .icon::before {
+            position: absolute;
+            display: inline-block;
+            background-color: var(--color-black);
+            content: '';
+            width: 10px;
+            height: 2px;
+            width: var(--width);
+            height: var(--height);
+            top: calc(var(--size) / 2);
+            left: 10px;
+            transform: translate( -10px , -10px);
+            transition: transform .5s ease;
+            border-radius: 3px;
+        }
+        
+        &.collapsed .icon::after {
+            transform: translate3d(
+            calc((var(--size) - var(--width)) / 2),
+            calc((var(--size) - var(--height)) / 2), 0)
+            translate(-10px, -10px)
+            rotate(90deg);
+        }
+        
+        &.collapsed .icon::before {
+            transform: translate3d(
+            calc((var(--size) - var(--width)) / 2),
+            calc((var(--size) - var(--height)) / 2), 0)
+            translate(-10px, -10px);
+        }
+        
+        &:not(.collapsed) .icon::after {
+            transform: translate3d(
+            calc((var(--size) - var(--width)) / 2),
+            calc((var(--size) - var(--height)) / 2), 0)
+            translate( -10px , -10px)
+            rotate(180deg);
+        }
+        
+        &:not(.collapsed) .icon::before {
+            transform: translate3d(
+            calc((var(--size) - var(--width)) / 2),
+            calc((var(--size) - var(--height)) / 2), 0)
+            translate( -10px , -10px)
+            rotate(-180deg);
+        }
+
+    }
+
+    &-collapse {
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+    }
+
+    &-body {
+        padding: 1rem 0;
+        @include animateIt;
+        p {
+            color: var(--color-paragraph-1);
+            @include animateIt;
+        }
+    }
+}

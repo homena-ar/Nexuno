@@ -1,0 +1,38 @@
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+
+		@include center-block;
+	}
+
+	.wp-caption-text {
+		margin: 0.8075em 0;
+	}
+}
+
+
+
+.wp-caption-text {
+	text-align: center;
+	margin-top: 1.5rem;
+}
+
+figure {
+	figcaption {
+		@extend %paragraph;
+        margin-top: 1rem;
+	}
+
+	&.aligncenter {
+		text-align: center;
+	}
+}
+
+.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-image figcaption, 
+.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-item figcaption,
+.wp-block-gallery:not(.has-nested-images) .blocks-gallery-image figcaption,
+.wp-block-gallery:not(.has-nested-images) .blocks-gallery-item figcaption {
+	font-size: 1.4rem;
+}

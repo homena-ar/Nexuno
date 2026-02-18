@@ -1,0 +1,26 @@
+.growla-block-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    row-gap: 5rem;
+
+    .growla-block-slide {
+        width: calc( 50% - 1.5rem);
+
+        &--content-inner {
+            width: initial;
+        }
+
+        &--icon {
+            width: 9rem;
+            
+            svg {
+                max-width: 42px;
+            }
+        }
+
+        @media only screen and (max-width: 991px) {
+            width: 100%;
+        }
+    }
+}

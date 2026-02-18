@@ -1,0 +1,343 @@
+.comment-form--wrapper {
+    padding: 7rem 0 14rem 0;
+    margin-top: 2.5rem;
+
+    .heading {
+        font-size: 3.4rem;
+        font-weight: 600;
+        color: var(--color-dark);
+        margin-bottom: 2rem;
+        line-height: 1.5;
+    }
+
+    h3 {
+        margin-bottom: 6.2rem;
+    }
+
+    @media (max-width: 991px) {
+        padding: 0 50px 40px 50px;
+
+        &.no-comments {
+            padding-top: 50px;
+        }
+
+        .comment-respond {
+            margin: 0 0 0 0;
+        }
+
+        h3 {
+            margin-bottom: 0;
+        }
+
+        .container {
+            padding: 0;
+        }
+
+        &:not(.logged-in-form) {
+            .comment-form {
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 0 25px 40px 25px;
+
+        &.no-comments {
+            padding-top: 50px;
+        }
+        
+    }
+}
+
+.comment-form {
+    &--inner {
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .comment-reply-title {
+            margin-top: 2rem;
+            small {
+                max-height: 0;
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                a {
+                    font-size: 1.6rem;
+                    text-decoration: none;
+                }
+            }
+    
+            span {
+                display: block;
+            }
+    
+            @media (max-width: 991px) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .cookies-consent {
+        width: 100%;
+        margin-top: 2.4rem;
+
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        
+        cursor: pointer;
+        font-size: 1.6rem;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        @media (max-width: 250px) {
+            padding-left: 0;
+            padding-top: 35px;
+        }
+
+        @media (max-width: 991px) {
+            margin-top: 5rem;
+        }
+
+        input{
+            height: initial;
+            margin-right: 1rem;
+
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .paragraph {
+            font-size: inherit;
+            color: var(--color-paragraph);
+            line-height: initial;
+            cursor: pointer;
+
+            @media (max-width: 575px) {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2.2rem;
+            height: 2.2rem;
+            background-color: transparent;
+            border: 2px solid var(--color-grey);
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        input:checked ~ .checkmark {
+            border-color: var(--color-primary);
+            background-color: var(--color-primary);
+        }
+        
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        
+        /* Show the checkmark when checked */
+        input:checked ~ .checkmark:after {
+            display: block;
+        }
+        
+        /* Style the checkmark/indicator */
+        .checkmark:after {
+            content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>check</title><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg>');
+            width: 100%;
+            height: 100%;
+            @include absoluteCenter;
+        }
+    }
+
+    .form-control {
+        &--author,
+        &--email {
+            width: calc( 50% - 1.5rem );
+        }
+    }
+
+    .form-submit {
+        padding: 0;
+
+        input {
+            font-size: 1.4rem !important;
+
+            &:hover {
+                color: var(--color-white);
+            }
+        }
+
+        @media (max-width: 991px) {
+            width: 100%;
+        }
+    }
+
+    .form-submit-row {
+        width: 100%;
+        display: flex;
+
+        .form-submit {
+            width: 100%;
+        }
+    }
+
+    .cancel {
+        display: none;
+    }
+    
+}
+
+.logged-in-form {
+    
+    .comment-reply-title {
+        margin-bottom: 0;
+    }
+
+    .textarea-group {
+        width: 100%;
+        height: 20rem;
+        margin: 3.5rem 0 0 0;
+
+        textarea {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 991px) {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .form-submit {
+            margin-top: 0;
+        }
+    }
+
+}
+
+.logged-in-as {
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    * {
+        font-size: inherit;
+        font-weight: inherit;
+    }
+
+    a {
+        &:first-child {
+            color: var(--color-paragraph);
+        }
+
+        &:nth-child(n+2) {
+            color: var(--color-dark);
+            font-weight: 700;
+        }
+        
+    }
+}
+
+.comment-pagination {
+    margin-top: 2rem;
+
+    a {
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+        letter-spacing: 0.1rem;
+        text-decoration: none;
+        color: var(--color-dark);
+        margin: 0 0.5rem;
+        @include animateIt;
+        
+        &:hover {
+            color: var(--growla-main-color);
+        }
+
+    }
+
+    span {
+        color: var(--color-black);
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+        margin: 0 0.5rem;
+        letter-spacing: 0.1rem;
+    }
+
+}
+
+/****************************************
+comment form inside comment
+****************************************/
+.comment-list {
+    .comment-form {
+
+        &--inner {
+            margin-top: 3rem;
+        }
+        
+        .logged-in-as {
+            margin-top: 1.5rem;
+
+            a {
+                color: inherit;
+            }
+        }
+
+        .form-submit-row {
+            display: flex;
+            gap: 3rem;
+
+            .form-submit {
+                width: 100%;
+            }
+
+            .cancel {
+                width: 100%;
+                display: flex;
+            }
+        }
+    }
+}
+
+
+#cancel-comment-reply-link {
+    width: 100%;
+    display: flex;
+    @extend %button;
+    @include animateIt;
+
+    --color: var(--color-white);
+
+    &:hover,
+	&:focus,
+	&:active {
+        --color: var(--color-primary);
+	}
+
+    
+    @media (max-width: 991px) {
+        width: 100%;
+        transform: translateY(0);
+    }
+}

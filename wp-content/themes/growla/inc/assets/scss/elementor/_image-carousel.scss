@@ -1,0 +1,11 @@
+.growla-carousel-navigation-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 5rem;
+
+    .elementor-swiper-button {
+        position: static !important;
+        transform: none !important;
+    }
+}

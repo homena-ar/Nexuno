@@ -1,0 +1,131 @@
+.growla-tabs {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 991px) {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    &-options {
+        width: 45%;
+
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+
+            cursor: pointer;
+
+            &:nth-child(n+2) {
+                margin-top: 1rem;
+            }
+
+            span {
+                font-size: 2.8rem;
+                font-weight: 500;
+                color: var(--color-grey-2);
+                width: calc( 100% - ( 7rem + 2.2rem ) );
+            }
+
+            .icon {
+                width: 7rem;
+                height: 6.6rem;
+                background-color: var(--color-dark-2);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @include animateIt;
+
+                svg {
+                    height: 3rem;
+                    fill: var(--color-grey);
+                    @include animateIt;
+                }
+            }
+
+            &.growla-tab-option-active,
+            &:hover {
+                .icon {
+                    background-color: var(--color-primary);
+
+                    svg {
+                        color: var(--color-black);
+                    }
+                }
+
+                span {
+                    color: var(--color-white);
+                }
+            }
+        }
+    }
+
+    &-select {
+        display: none;
+
+        @media only screen and (max-width: 991px) {
+            display: block;
+        }
+
+        select {
+            opacity: 0;
+            visibility: hidden;    
+        }
+
+        .icon {
+
+            svg {
+                height: 3rem;
+                fill: var(--color-primary);
+            }
+        }
+    }
+
+    &-content {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        span {
+            text-decoration-thickness: 0.2rem !important;
+            text-underline-offset: 0.9rem;
+            text-decoration-color: var(--color-primary) !important;
+        }
+
+        ul {
+            li {
+                color: var(--color-paragraph);
+            }
+        }
+
+        .growla-tab {
+            width: 100%;
+            top: 0;
+            left: 0;
+
+            opacity: 1;
+            visibility: visible;
+
+            &:not(.growla-tab-active) {
+                opacity: 0;
+                visibility: hidden;
+    
+                position: absolute;
+    
+                transform: translateY(50px);
+            }
+        }
+    }
+
+    .growla-tab-content {
+        margin-top: 3rem;
+    }
+}
