@@ -34,6 +34,7 @@ class App {
         // Crear instancias
         this.map = new MapRenderer('mapContainer');
         this.router = new Router();
+        this.map.setDebugData(this.router.getDebugData());
         
         // Configurar callbacks
         this.map.onManzanaClick = (manzana) => this.abrirModal(manzana);
@@ -445,6 +446,13 @@ class App {
     }
 
     onGlobalKeydown(e) {
+        if (e.ctrlKey && e.shiftKey && (e.key === 'D' || e.key === 'd')) {
+            e.preventDefault();
+            const enabled = this.map.toggleDebugOverlay();
+            this.toast(`Debug grafo: ${enabled ? 'ON' : 'OFF'}`);
+            return;
+        }
+
         if (e.key === 'Escape' && this.modalManzana !== null) {
             this.cerrarModal();
             return;

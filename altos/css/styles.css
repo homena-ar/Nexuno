@@ -693,6 +693,17 @@ input {
     z-index: 50;
 }
 
+.debug-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 49;
+    display: none;
+}
+
 .route-path {
     fill: none;
     stroke: var(--color-secondary);
@@ -701,6 +712,21 @@ input {
     stroke-linejoin: round;
     stroke-dasharray: 8 4;
     animation: dash-move 0.4s linear infinite;
+}
+
+.debug-edge {
+    stroke: rgba(38, 198, 218, 0.55);
+    stroke-width: 1.5;
+}
+
+.debug-node {
+    fill: rgba(255, 193, 7, 0.95);
+}
+
+.debug-obstacle {
+    fill: rgba(255, 82, 82, 0.15);
+    stroke: rgba(255, 82, 82, 0.6);
+    stroke-width: 1;
 }
 
 @keyframes dash-move {

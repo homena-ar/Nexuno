@@ -15,6 +15,8 @@ class MapRenderer {
         this.startY = 0;
         this.onManzanaClick = null;
         this.showPoiLabels = false;
+        this.debugEnabled = false;
+        this.debugData = null;
         
         this.init();
     }
@@ -141,6 +143,7 @@ class MapRenderer {
             
             <!-- Route SVG -->
             <svg class="route-svg" id="routeSvg" viewBox="0 0 573.16 704.08"></svg>
+            <svg class="debug-svg" id="debugSvg" viewBox="0 0 573.16 704.08"></svg>
             
             <!-- Markers -->
             <div class="marker marker--origin" id="markerOrigin"><span class="marker__label" id="labelOrigin"></span></div>
@@ -402,5 +405,57 @@ class MapRenderer {
     clearRoute() {
         const svg = this.map.querySelector('#routeSvg');
         svg.innerHTML = '';
+    }
+
+    setDebugData(debugData) {
+        this.debugData = debugData;
+        this.renderDebugOverlay();
+    }
+
+    toggleDebugOverlay(forceValue = null) {
+        this.debugEnabled = typeof forceValue === 'boolean' ? forceValue : !this.debugEnabled;
+        this.renderDebugOverlay();
+        return this.debugEnabled;
+    }
+
+    renderDebugOverlay() {
+        if (!this.map) return;
+        const svg = this.map.querySelector('#debugSvg');
+        if (!svg) return;
+        svg.innerHTML = '';
+        svg.style.display = this.debugEnabled ? 'block' : 'none';
+        if (!this.debugEnabled || !this.debugData) return;
+
+        // Obstaculos (manzanas)
+        this.debugData.obstacles.forEach((rect) => {
+            const r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            r.setAttribute('x', rect.left);
+            r.setAttribute('y', rect.top);
+            r.setAttribute('width', rect.width);
+            r.setAttribute('height', rect.height);
+            r.setAttribute('class', 'debug-obstacle');
+            svg.appendChild(r);
+        });
+
+        // Aristas del grafo
+        this.debugData.edges.forEach((edge) => {
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', edge.a.x);
+            line.setAttribute('y1', edge.a.y);
+            line.setAttribute('x2', edge.b.x);
+            line.setAttribute('y2', edge.b.y);
+            line.setAttribute('class', 'debug-edge');
+            svg.appendChild(line);
+        });
+
+        // Nodos del grafo
+        this.debugData.nodes.forEach((node) => {
+            const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            c.setAttribute('cx', node.x);
+            c.setAttribute('cy', node.y);
+            c.setAttribute('r', '1.8');
+            c.setAttribute('class', 'debug-node');
+            svg.appendChild(c);
+        });
     }
 }

@@ -99,6 +99,29 @@ class Router {
         }
     }
 
+    getDebugData() {
+        const nodes = [];
+        const edges = [];
+        for (const node of this.baseGraph.nodes.values()) {
+            nodes.push({ x: node.x, y: node.y });
+        }
+        for (const edge of this.baseGraph.edges) {
+            const a = this.baseGraph.nodes.get(edge.from);
+            const b = this.baseGraph.nodes.get(edge.to);
+            if (a && b) {
+                edges.push({ a: { x: a.x, y: a.y }, b: { x: b.x, y: b.y } });
+            }
+        }
+        const obstacles = this.obstacles.map((o) => ({
+            left: o.left,
+            top: o.top,
+            width: o.right - o.left,
+            height: o.bottom - o.top
+        }));
+
+        return { nodes, edges, obstacles };
+    }
+
     // ========= Core routing =========
 
     routeBetweenPoints(startPoint, endPoint) {
