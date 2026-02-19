@@ -264,6 +264,11 @@ class Router {
     // ========= Core routing =========
 
     routeBetweenPoints(startPoint, endPoint) {
+        if (!startPoint || !endPoint) return [];
+        if (this.distance(startPoint, endPoint) < 0.5) {
+            return [startPoint, endPoint];
+        }
+
         const graph = this.cloneGraph(this.baseGraph);
 
         const startInfo = this.attachPointToGraph(graph, startPoint, 'start');
