@@ -11,11 +11,14 @@ class Router {
         this.callesV = BarrioData.callesV;
         this.nodos = BarrioData.nodosManzana;
         this.manzanasDerechaVerde = BarrioData.manzanasDerechaVerde;
+        this.oneWayCorridors = BarrioData.oneWayCorridors || [];
+        this.extraObstacles = BarrioData.extraObstacles || [];
 
         this.obstacles = this.buildObstacleRects();
         this.baseGraph = this.buildBaseGraph();
         this.auditWalkableEdges();
         this.validateRandomRoutes(200);
+        this.scheduleConnectivityAudit();
     }
 
     // ========= Public API =========
@@ -33,6 +36,13 @@ class Router {
     }
 
     rutaEntreManzanas(origManzana, origCasa, destManzana, destCasa) {
+        if (origManzana === destManzana && origCasa && destCasa) {
+            const start = this.getPuntoMarcador(null, origManzana, origCasa);
+            const end = this.getPuntoMarcador(null, destManzana, destCasa);
+            const local = this.routeAroundSameManzana(origManzana, start, end);
+            if (local.length >= 2) return local;
+        }
+
         const start = this.getPuntoMarcador(null, origManzana, origCasa);
         const end = this.getPuntoMarcador(null, destManzana, destCasa);
         return this.routeBetweenPoints(start, end);
@@ -57,8 +67,8 @@ class Router {
     getPuntoMarcador(tipo, manzana, casa) {
         if (tipo === 'florida') return BarrioData.accesos.florida;
         if (tipo === 'principal') return BarrioData.accesos.principal;
-        if (casa) return this.getPosicionCasa(manzana, casa);
-        return this.nodos[manzana];
+        const raw = casa ? this.getPosicionCasa(manzana, casa) : this.nodos[manzana];
+        return this.resolveReachableAccessPoint(raw, manzana);
     }
 
     snapPointToPath(point, maxDistance = 20) {
@@ -84,13 +94,19 @@ class Router {
             }
 
             let crosses = false;
+            let wrongWay = false;
             for (let s = 1; s < route.length; s++) {
                 if (!this.isSegmentWalkable(route[s - 1], route[s])) {
                     crosses = true;
                     break;
                 }
+                if (!this.isDirectionAllowed(route[s - 1], route[s])) {
+                    wrongWay = true;
+                    break;
+                }
             }
             if (crosses) issues.push(`interseccion obstaculo: M${m1}C${c1} -> M${m2}C${c2}`);
+            if (wrongWay) issues.push(`contramano: M${m1}C${c1} -> M${m2}C${c2}`);
         }
 
         if (issues.length) {
@@ -98,6 +114,101 @@ class Router {
         } else {
             console.info(`[Router] Validacion aleatoria OK (${total} rutas sin cruces de manzanas).`);
         }
+    }
+
+    validateAllConnectivity() {
+        const report = [];
+        const manzanas = Object.keys(BarrioData.casasPorManzana).map((n) => parseInt(n, 10));
+        for (const manzana of manzanas) {
+            const casas = BarrioData.casasPorManzana[manzana];
+            let unreachable = 0;
+            let sample = null;
+
+            for (let casa = 1; casa <= casas; casa++) {
+                const r1 = this.rutaDesdePrincipal(manzana, casa);
+                const r2 = this.rutaDesdeFlorida(manzana, casa);
+                const hasRoute = (r1 && r1.length >= 2) || (r2 && r2.length >= 2);
+                if (hasRoute) continue;
+
+                unreachable++;
+                if (!sample) {
+                    const anchor = this.getPosicionCasa(manzana, casa);
+                    sample = this.describeDisconnection(anchor);
+                    sample.casa = casa;
+                }
+            }
+
+            if (unreachable > 0) {
+                report.push({
+                    manzana,
+                    casasSinRuta: unreachable,
+                    totalCasas: casas,
+                    zonaCorte: sample
+                });
+            }
+        }
+
+        if (report.length) {
+            console.warn('[Router] Reporte de conectividad (manzanas inaccesibles)', report);
+        } else {
+            console.info('[Router] Conectividad completa: todas las manzanas/casas tienen ruta.');
+        }
+    }
+
+    scheduleConnectivityAudit() {
+        if (typeof window === 'undefined' || typeof window.setTimeout !== 'function') return;
+        window.setTimeout(() => this.validateAllConnectivityAsync(), 0);
+    }
+
+    validateAllConnectivityAsync(chunkSize = 80) {
+        const manzanas = Object.keys(BarrioData.casasPorManzana).map((n) => parseInt(n, 10));
+        const queue = [];
+        for (const manzana of manzanas) {
+            const casas = BarrioData.casasPorManzana[manzana];
+            for (let casa = 1; casa <= casas; casa++) {
+                queue.push({ manzana, casa, totalCasas: casas });
+            }
+        }
+
+        const byManzana = new Map();
+        const tick = () => {
+            let processed = 0;
+            while (queue.length && processed < chunkSize) {
+                processed++;
+                const item = queue.shift();
+                const r1 = this.rutaDesdePrincipal(item.manzana, item.casa);
+                const r2 = this.rutaDesdeFlorida(item.manzana, item.casa);
+                const hasRoute = (r1 && r1.length >= 2) || (r2 && r2.length >= 2);
+                if (hasRoute) continue;
+
+                const prev = byManzana.get(item.manzana) || {
+                    manzana: item.manzana,
+                    casasSinRuta: 0,
+                    totalCasas: item.totalCasas,
+                    zonaCorte: null
+                };
+                prev.casasSinRuta++;
+                if (!prev.zonaCorte) {
+                    const anchor = this.getPosicionCasa(item.manzana, item.casa);
+                    prev.zonaCorte = { casa: item.casa, ...this.describeDisconnection(anchor) };
+                }
+                byManzana.set(item.manzana, prev);
+            }
+
+            if (queue.length) {
+                window.setTimeout(tick, 0);
+                return;
+            }
+
+            const report = [...byManzana.values()];
+            if (report.length) {
+                console.warn('[Router] Reporte de conectividad (manzanas inaccesibles)', report);
+            } else {
+                console.info('[Router] Conectividad completa: todas las manzanas/casas tienen ruta.');
+            }
+        };
+
+        tick();
     }
 
     getDebugData() {
@@ -320,7 +431,28 @@ class Router {
         const b = graph.nodes.get(idB);
         if (!a || !b) return;
         if (!this.isSegmentWalkable(a, b)) return;
-        this.addUndirectedEdge(graph, idA, idB);
+        this.addEdgeByTrafficRule(graph, idA, idB);
+    }
+
+    addAccessEdgeIfWalkable(graph, idA, idB) {
+        const a = graph.nodes.get(idA);
+        const b = graph.nodes.get(idB);
+        if (!a || !b) return;
+        if (!this.isSegmentWalkable(a, b)) return;
+        this.addDirectedEdge(graph, idA, idB);
+        this.addDirectedEdge(graph, idB, idA);
+    }
+
+    addEdgeByTrafficRule(graph, idA, idB) {
+        const a = graph.nodes.get(idA);
+        const b = graph.nodes.get(idB);
+        if (!a || !b) return;
+
+        const allowAB = this.isDirectionAllowed(a, b);
+        const allowBA = this.isDirectionAllowed(b, a);
+
+        if (allowAB) this.addDirectedEdge(graph, idA, idB);
+        if (allowBA) this.addDirectedEdge(graph, idB, idA);
     }
 
     attachPointToGraph(graph, point, prefix) {
@@ -350,7 +482,7 @@ class Router {
         }
 
         const sourceNode = this.addNode(graph, point, `${prefix}_src`);
-        this.addEdgeIfWalkable(graph, sourceNode.id, snapNodeId);
+        this.addAccessEdgeIfWalkable(graph, sourceNode.id, snapNodeId);
 
         const neighbors = graph.adjacency.get(sourceNode.id) || [];
         if (!neighbors.length) return null;
@@ -424,6 +556,15 @@ class Router {
                 top: pos.t,
                 right: pos.l + w,
                 bottom: pos.t + h
+            });
+        }
+        for (const obs of this.extraObstacles) {
+            rects.push({
+                id: obs.id,
+                left: obs.left,
+                top: obs.top,
+                right: obs.right,
+                bottom: obs.bottom
             });
         }
         return rects;
@@ -506,6 +647,179 @@ class Router {
         return Math.sqrt(dx * dx + dy * dy);
     }
 
+    isDirectionAllowed(from, to) {
+        const corridor = this.getMatchingCorridor(from, to);
+        if (!corridor) return true;
+
+        if (corridor.orientation === 'vertical') {
+            const dy = to.y - from.y;
+            if (Math.abs(dy) < 0.01) return true;
+            return corridor.forward === 'up' ? dy < 0 : dy > 0;
+        }
+
+        if (corridor.orientation === 'horizontal') {
+            const dx = to.x - from.x;
+            if (Math.abs(dx) < 0.01) return true;
+            return corridor.forward === 'right' ? dx > 0 : dx < 0;
+        }
+
+        return true;
+    }
+
+    getMatchingCorridor(a, b) {
+        const dx = Math.abs(a.x - b.x);
+        const dy = Math.abs(a.y - b.y);
+        const mx = (a.x + b.x) / 2;
+        const my = (a.y + b.y) / 2;
+        const tol = 1.2;
+
+        for (const c of this.oneWayCorridors) {
+            if (c.orientation === 'vertical' && dx > tol) continue;
+            if (c.orientation === 'horizontal' && dy > tol) continue;
+            if (mx < c.minX || mx > c.maxX || my < c.minY || my > c.maxY) continue;
+            return c;
+        }
+        return null;
+    }
+
+    resolveReachableAccessPoint(rawPoint, manzana) {
+        if (!rawPoint || !manzana || !BarrioData.manzanasPosiciones[manzana]) return rawPoint;
+        const candidates = this.buildManzanaAccessCandidates(manzana, rawPoint);
+
+        let best = rawPoint;
+        let bestDist = Number.POSITIVE_INFINITY;
+        for (const candidate of candidates) {
+            if (!candidate || this.isPointBlocked(candidate, 0.4)) continue;
+            const projection = this.findNearestEdgeProjection(candidate);
+            if (!projection) continue;
+            if (!this.isSegmentWalkable(candidate, projection.point)) continue;
+            if (projection.distance < bestDist) {
+                bestDist = projection.distance;
+                best = candidate;
+            }
+        }
+
+        return best;
+    }
+
+    buildManzanaAccessCandidates(manzana, basePoint) {
+        const pos = BarrioData.manzanasPosiciones[manzana];
+        if (!pos) return [basePoint];
+
+        const w = pos.w || 19.42;
+        const h = pos.h || 35.33;
+        const west = { x: pos.l - 3, y: pos.t + h / 2 };
+        const east = { x: pos.l + w + 3, y: pos.t + h / 2 };
+        const north = { x: pos.l + w / 2, y: pos.t - 3 };
+        const south = { x: pos.l + w / 2, y: pos.t + h + 3 };
+
+        const preferWest = this.manzanasDerechaVerde.includes(Number(manzana));
+        return preferWest
+            ? [west, south, north, east, basePoint]
+            : [basePoint, east, west, north, south];
+    }
+
+    describeDisconnection(point) {
+        const projection = this.findNearestEdgeProjection(point);
+        if (!projection) {
+            return { reason: 'sin proyeccion a la red', point };
+        }
+
+        const crossing = this.getFirstCrossedObstacle(point, projection.point);
+        if (crossing) {
+            return {
+                reason: 'bloqueo por obstaculo al conectar al grafo',
+                point,
+                snap: projection.point,
+                obstacleId: crossing.id
+            };
+        }
+
+        return {
+            reason: 'sin camino A* entre nodos conectados',
+            point,
+            snap: projection.point
+        };
+    }
+
+    routeAroundSameManzana(manzana, start, end) {
+        const pos = BarrioData.manzanasPosiciones[manzana];
+        if (!pos || !start || !end) return [];
+        if (this.isSegmentWalkable(start, end)) return [start, end];
+
+        const w = pos.w || 19.42;
+        const h = pos.h || 35.33;
+        const margin = 3.4;
+        const nodes = [
+            { id: 'S', x: start.x, y: start.y },
+            { id: 'E', x: end.x, y: end.y },
+            { id: 'NW', x: pos.l - margin, y: pos.t - margin },
+            { id: 'NE', x: pos.l + w + margin, y: pos.t - margin },
+            { id: 'SE', x: pos.l + w + margin, y: pos.t + h + margin },
+            { id: 'SW', x: pos.l - margin, y: pos.t + h + margin }
+        ];
+
+        const adj = new Map(nodes.map((n) => [n.id, []]));
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                const a = nodes[i];
+                const b = nodes[j];
+                if (!this.isSegmentWalkable(a, b, 0.15)) continue;
+                const wgt = this.distance(a, b);
+                adj.get(a.id).push({ to: b.id, w: wgt });
+                adj.get(b.id).push({ to: a.id, w: wgt });
+            }
+        }
+
+        const pathIds = this.dijkstraLocal(adj, 'S', 'E');
+        if (!pathIds.length) return [];
+        return pathIds.map((id) => {
+            const n = nodes.find((x) => x.id === id);
+            return { x: n.x, y: n.y };
+        });
+    }
+
+    dijkstraLocal(adj, startId, endId) {
+        const dist = new Map();
+        const prev = new Map();
+        const q = new Set(adj.keys());
+
+        for (const id of q) dist.set(id, Number.POSITIVE_INFINITY);
+        dist.set(startId, 0);
+
+        while (q.size) {
+            let u = null;
+            let best = Number.POSITIVE_INFINITY;
+            for (const id of q) {
+                const d = dist.get(id);
+                if (d < best) {
+                    best = d;
+                    u = id;
+                }
+            }
+            if (u === null || u === endId) break;
+            q.delete(u);
+
+            for (const edge of adj.get(u) || []) {
+                if (!q.has(edge.to)) continue;
+                const alt = dist.get(u) + edge.w;
+                if (alt < dist.get(edge.to)) {
+                    dist.set(edge.to, alt);
+                    prev.set(edge.to, u);
+                }
+            }
+        }
+
+        if (!Number.isFinite(dist.get(endId))) return [];
+        const path = [endId];
+        let cur = endId;
+        while (prev.has(cur)) {
+            cur = prev.get(cur);
+            path.unshift(cur);
+        }
+        return path[0] === startId ? path : [];
+    }
+
     addNode(graph, point, prefix = 'n') {
         const x = this.roundCoord(point.x);
         const y = this.roundCoord(point.y);
@@ -518,21 +832,19 @@ class Router {
         return graph.nodes.get(id);
     }
 
-    addUndirectedEdge(graph, idA, idB) {
+    addDirectedEdge(graph, idA, idB) {
         if (idA === idB) return;
         const a = graph.nodes.get(idA);
         const b = graph.nodes.get(idB);
         if (!a || !b) return;
 
         const w = this.distance(a, b);
-        const arrA = graph.adjacency.get(idA);
-        const arrB = graph.adjacency.get(idB);
+        const arrA = graph.adjacency.get(idA) || [];
+        if (!graph.adjacency.has(idA)) graph.adjacency.set(idA, arrA);
         if (!arrA.some((e) => e.to === idB)) arrA.push({ to: idB, weight: w });
-        if (!arrB.some((e) => e.to === idA)) arrB.push({ to: idA, weight: w });
 
         const keyA = `${idA}->${idB}`;
-        const keyB = `${idB}->${idA}`;
-        if (!graph.edges.some((e) => e.key === keyA || e.key === keyB)) {
+        if (!graph.edges.some((e) => e.key === keyA)) {
             graph.edges.push({ key: keyA, from: idA, to: idB });
         }
     }

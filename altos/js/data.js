@@ -238,6 +238,49 @@ const BarrioData = {
         { lat: -34.5940, lon: -58.6230, x: 108, y: 590 }  // SW
     ],
 
+    // Corredores con sentido único cuando hay separador verde.
+    // Si no hay corredor aplicable, se asume doble mano.
+    oneWayCorridors: [
+        // Eje vertical principal con separador verde central.
+        // Derecha (x mayor): ingreso hacia adentro del barrio (y decrece).
+        { id: 'principal-east-inbound', orientation: 'vertical', minX: 420, maxX: 466, minY: 110, maxY: 590, forward: 'up' },
+        // Izquierda (x menor): egreso (y crece).
+        { id: 'principal-west-outbound', orientation: 'vertical', minX: 380, maxX: 404.5, minY: 110, maxY: 590, forward: 'down' }
+    ],
+
+    // Obstáculos no caminables adicionales a las manzanas.
+    // Se usan rectángulos existentes del dibujo del mapa (no inventados).
+    extraObstacles: [
+        { id: 'plaza-secundaria', left: 245.62, top: 195.05, right: 319.89, bottom: 232.24 },
+        { id: 'plaza-benitez', left: 259.91, top: 365.74, right: 322.07, bottom: 402.78 },
+        { id: 'verde-vert-1', left: 408.11, top: 114.14, right: 412.49, bottom: 149.47 },
+        { id: 'verde-vert-2', left: 408.11, top: 155.53, right: 412.49, bottom: 190.86 },
+        { id: 'verde-vert-3', left: 408.11, top: 196.91, right: 412.49, bottom: 232.24 },
+        { id: 'verde-vert-4', left: 409.40, top: 247.30, right: 413.78, bottom: 282.63 },
+        { id: 'verde-vert-5', left: 409.40, top: 287.19, right: 413.78, bottom: 322.52 },
+        { id: 'verde-vert-6', left: 409.40, top: 325.97, right: 413.78, bottom: 362.40 },
+        { id: 'verde-vert-7', left: 410.28, top: 367.53, right: 414.66, bottom: 402.86 },
+        { id: 'verde-vert-8', left: 409.24, top: 414.22, right: 413.62, bottom: 434.37 },
+        { id: 'verde-vert-9', left: 408.62, top: 440.91, right: 413.15, bottom: 463.09 },
+        { id: 'verde-vert-10', left: 408.62, top: 469.29, right: 413.15, bottom: 491.47 },
+        { id: 'verde-vert-11', left: 408.62, top: 497.68, right: 413.15, bottom: 516.89 },
+        { id: 'verde-vert-12', left: 408.62, top: 525.59, right: 413.15, bottom: 546.55 },
+        { id: 'verde-vert-13', left: 408.62, top: 553.94, right: 413.15, bottom: 574.90 },
+        { id: 'verde-vert-14', left: 390.11, top: 247.30, right: 405.07, bottom: 282.63 },
+        { id: 'verde-vert-15', left: 164.42, top: 365.74, right: 168.53, bottom: 402.78 },
+        { id: 'verde-sep-1', left: 164.08, top: 237.19, right: 186.12, bottom: 242.34 },
+        { id: 'verde-sep-2', left: 192.19, top: 237.19, right: 214.23, bottom: 242.34 },
+        { id: 'verde-sep-3', left: 220.27, top: 237.19, right: 242.31, bottom: 242.34 },
+        { id: 'verde-sep-4', left: 247.14, top: 237.19, right: 269.18, bottom: 242.34 },
+        { id: 'verde-sep-5', left: 276.33, top: 237.19, right: 298.37, bottom: 242.34 },
+        { id: 'verde-sep-6', left: 305.45, top: 237.19, right: 319.71, bottom: 242.34 },
+        { id: 'verde-sep-7', left: 330.65, top: 237.19, right: 344.91, bottom: 242.34 },
+        { id: 'verde-sep-8', left: 353.17, top: 237.19, right: 374.04, bottom: 242.34 },
+        { id: 'verde-sep-9', left: 381.69, top: 237.19, right: 402.56, bottom: 242.34 },
+        { id: 'verde-sep-10', left: 418.32, top: 237.19, right: 439.19, bottom: 242.34 },
+        { id: 'verde-sep-11', left: 445.39, top: 237.19, right: 467.55, bottom: 242.34 }
+    ],
+
     // Accesos
     accesos: {
         florida: { x: 456, y: 73 },
