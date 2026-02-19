@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1d653f">
     <meta name="description" content="Navegador GPS del Barrio Altos de Podestá - Encontrá rutas entre manzanas y casas">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,7 +32,7 @@
             </svg>
             <span>Altos de Podestá</span>
         </div>
-        <button class="header__menu" id="menuBtn" aria-label="Menú">
+        <button type="button" class="header__menu" id="menuBtn" aria-label="Menú">
             <span></span>
             <span></span>
             <span></span>
@@ -51,11 +51,11 @@
             <div class="input-group">
                 <div class="input-field">
                     <label for="origenM">Manzana</label>
-                    <input type="text" id="origenM" inputmode="numeric" placeholder="--" maxlength="2" autocomplete="off">
+                    <input type="text" id="origenM" inputmode="numeric" pattern="[0-9]*" placeholder="--" maxlength="2" autocomplete="off">
                 </div>
                 <div class="input-field">
                     <label for="origenC">Casa</label>
-                    <input type="text" id="origenC" inputmode="numeric" placeholder="--" maxlength="2" autocomplete="off">
+                    <input type="text" id="origenC" inputmode="numeric" pattern="[0-9]*" placeholder="--" maxlength="2" autocomplete="off">
                 </div>
                 <div class="selected-tag" id="origenTag">
                     <span>Sin seleccionar</span>
@@ -63,15 +63,15 @@
             </div>
             
             <div class="quick-actions">
-                <button class="chip" data-action="origen-florida">
+                <button type="button" class="chip" data-action="origen-florida">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
                     Florida
                 </button>
-                <button class="chip" data-action="origen-principal">
+                <button type="button" class="chip" data-action="origen-principal">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
                     Principal
                 </button>
-                <button class="chip" data-action="origen-gps" id="gpsBtn">
+                <button type="button" class="chip" data-action="origen-gps" id="gpsBtn">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
                     GPS
                 </button>
@@ -88,11 +88,11 @@
             <div class="input-group">
                 <div class="input-field">
                     <label for="destinoM">Manzana</label>
-                    <input type="text" id="destinoM" inputmode="numeric" placeholder="--" maxlength="2" autocomplete="off">
+                    <input type="text" id="destinoM" inputmode="numeric" pattern="[0-9]*" placeholder="--" maxlength="2" autocomplete="off">
                 </div>
                 <div class="input-field">
                     <label for="destinoC">Casa</label>
-                    <input type="text" id="destinoC" inputmode="numeric" placeholder="--" maxlength="2" autocomplete="off">
+                    <input type="text" id="destinoC" inputmode="numeric" pattern="[0-9]*" placeholder="--" maxlength="2" autocomplete="off">
                 </div>
                 <div class="selected-tag selected-tag--dest" id="destinoTag">
                     <span>Sin seleccionar</span>
@@ -102,11 +102,11 @@
 
         <!-- Acciones -->
         <div class="nav-actions">
-            <button class="btn btn--primary" id="calcularBtn">
+            <button type="button" class="btn btn--primary" id="calcularBtn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
                 Calcular ruta
             </button>
-            <button class="btn btn--secondary" id="limpiarBtn">
+            <button type="button" class="btn btn--secondary" id="limpiarBtn" aria-label="Limpiar ruta y selección">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         </div>
@@ -130,13 +130,13 @@
         
         <!-- Controles de zoom -->
         <div class="map-controls">
-            <button class="map-control" id="zoomInBtn" aria-label="Acercar">
+            <button type="button" class="map-control" id="zoomInBtn" aria-label="Acercar">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
             </button>
-            <button class="map-control" id="zoomOutBtn" aria-label="Alejar">
+            <button type="button" class="map-control" id="zoomOutBtn" aria-label="Alejar">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
             </button>
-            <button class="map-control" id="centerBtn" aria-label="Centrar">
+            <button type="button" class="map-control" id="centerBtn" aria-label="Centrar">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
             </button>
         </div>
@@ -144,7 +144,7 @@
 
     <!-- Modal -->
     <div class="modal-overlay" id="modalOverlay">
-        <div class="modal" role="dialog" aria-labelledby="modalTitle">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
             <div class="modal__header">
                 <h3 id="modalTitle">Manzana <span id="modalManzana">--</span></h3>
                 <span class="modal__subtitle"><span id="modalCasas">--</span> casas</span>
@@ -153,29 +153,29 @@
             <div class="modal__body">
                 <div class="input-field input-field--large">
                     <label for="modalCasa">Número de casa (opcional)</label>
-                    <input type="number" id="modalCasa" min="1" placeholder="Ej: 15" autocomplete="off">
+                    <input type="number" id="modalCasa" min="1" step="1" inputmode="numeric" placeholder="Ej: 15" autocomplete="off">
                 </div>
             </div>
             
             <div class="modal__actions">
-                <button class="btn btn--origin-modal" id="modalOrigenBtn">
+                <button type="button" class="btn btn--origin-modal" id="modalOrigenBtn">
                     <span class="badge badge--origin badge--small">A</span>
                     Origen
                 </button>
-                <button class="btn btn--dest-modal" id="modalDestinoBtn">
+                <button type="button" class="btn btn--dest-modal" id="modalDestinoBtn">
                     <span class="badge badge--dest badge--small">B</span>
                     Destino
                 </button>
             </div>
             
-            <button class="modal__close" id="modalCloseBtn" aria-label="Cerrar">
+            <button type="button" class="modal__close" id="modalCloseBtn" aria-label="Cerrar">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         </div>
     </div>
 
     <!-- Toast notifications -->
-    <div class="toast-container" id="toastContainer"></div>
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
 
     <!-- Scripts -->
     <script src="js/data.js"></script>

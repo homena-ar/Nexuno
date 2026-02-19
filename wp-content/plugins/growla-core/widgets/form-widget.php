@@ -34,12 +34,12 @@ class FormWidget extends WP_Widget {
         <?php
 
         if ( $title ) {
-			echo $args['before_title'] . $title . $args['after_title'];
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 		}
 
         ?> 
             <div class="contact-form">
-                <?php echo do_shortcode('[contact-form-7 id="' . $form . '"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="' . absint( $form ) . '"]'); ?>
             </div>
         <?php
 
@@ -106,20 +106,22 @@ class FormWidget extends WP_Widget {
         <p>
             <label for="<?php echo $this->get_field_id('image'); ?>"><?php _e('Image:'); ?></label>
             <input class="widefat image-upload" id="<?php echo $this->get_field_id('image'); ?>" name="<?php echo $this->get_field_name('image'); ?>" type="text" value="<?php echo esc_url($image); ?>" style="margin-bottom: 5px;">
-            <button class="upload-image-button button button-primary"><?php esc_html_e('Upload Image', 'text-domain'); ?></button>
+            <button class="upload-image-button button button-primary"><?php esc_html_e('Upload Image', 'growla-core'); ?></button>
         </p>
         <script>
             jQuery(document).ready(function($){
+                var customUploader;
+
                 // Function to open or reuse the media uploader
                 function openMediaUploader(button) {
                     // Reuse the existing uploader, if it exists
-                    if (typeof customUploader !== 'undefined') {
+                    if (customUploader) {
                         customUploader.open();
                         return;
                     }
 
                     // Create the media uploader
-                    var customUploader = wp.media({
+                    customUploader = wp.media({
                         title: 'Select an Icon',
                         library: { type: 'image' },
                         button: {
@@ -154,8 +156,6 @@ class FormWidget extends WP_Widget {
 		$instance['title']        = sanitize_text_field( $new_instance['title'] );
 		$instance['form']         = sanitize_text_field( $new_instance['form'] );
         $instance['image'] = ( ! empty( $new_instance['image'] ) ) ? esc_url_raw( $new_instance['image'] ) : '';
-
-        error_log('Widget Update Data: ' . print_r($new_instance, true));
 
 		return $instance;
     }

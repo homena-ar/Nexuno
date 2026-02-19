@@ -12,6 +12,7 @@ class App {
         this.gpsWatchId = null;
         this.posicionGPS = null;
         this.modalManzana = null;
+        this.lastFocusedElement = null;
         
         // Módulos
         this.map = null;
@@ -68,6 +69,10 @@ class App {
     }
 
     setupEventListeners() {
+        // Limitar inputs a dígitos para evitar estados inválidos
+        [this.elements.origenM, this.elements.origenC, this.elements.destinoM, this.elements.destinoC, this.elements.modalCasa]
+            .forEach(el => el.addEventListener('input', () => this.restringirInputNumerico(el)));
+
         // Menu toggle
         this.elements.menuBtn.addEventListener('click', () => {
             this.elements.menuBtn.classList.toggle('active');
@@ -85,7 +90,7 @@ class App {
         
         // Enter para calcular
         [this.elements.origenM, this.elements.origenC, this.elements.destinoM, this.elements.destinoC]
-            .forEach(el => el.addEventListener('keypress', (e) => {
+            .forEach(el => el.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter') this.calcularRuta();
             }));
         
@@ -105,7 +110,7 @@ class App {
         this.elements.modalOverlay.addEventListener('click', (e) => {
             if (e.target === this.elements.modalOverlay) this.cerrarModal();
         });
-        this.elements.modalCasa.addEventListener('keypress', (e) => {
+        this.elements.modalCasa.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 this.confirmarModal(this.origen.manzana ? 'destino' : 'origen');
             }
@@ -117,9 +122,7 @@ class App {
         this.elements.centerBtn.addEventListener('click', () => this.map.centerMap());
         
         // Keyboard
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') this.cerrarModal();
-        });
+        document.addEventListener('keydown', (e) => this.onGlobalKeydown(e));
         
         // Resize
         window.addEventListener('resize', () => {
@@ -152,24 +155,75 @@ class App {
 
     // ============ INPUTS ============
 
-    onOrigenInput() {
-        const m = parseInt(this.elements.origenM.value);
-        const c = parseInt(this.elements.origenC.value) || null;
-        
-        if (m && BarrioData.casasPorManzana[m]) {
-            this.origen = { tipo: 'manzana', manzana: m, casa: c };
-            this.actualizarTagOrigen();
+    restringirInputNumerico(input) {
+        if (!input) return;
+        const digits = input.value.replace(/\D+/g, '');
+        if (input.value !== digits) {
+            input.value = digits;
         }
     }
 
-    onDestinoInput() {
-        const m = parseInt(this.elements.destinoM.value);
-        const c = parseInt(this.elements.destinoC.value) || null;
-        
-        if (m && BarrioData.casasPorManzana[m]) {
-            this.destino = { manzana: m, casa: c };
-            this.actualizarTagDestino();
+    marcarErrorInput(input, message) {
+        if (!input) return;
+        input.classList.add('input-error');
+        input.setAttribute('aria-invalid', 'true');
+        input.focus();
+        this.toast(message, 'error');
+    }
+
+    limpiarErrorInput(input) {
+        if (!input) return;
+        input.classList.remove('input-error');
+        input.removeAttribute('aria-invalid');
+    }
+
+    limpiarErroresValidacion() {
+        [
+            this.elements.origenM,
+            this.elements.origenC,
+            this.elements.destinoM,
+            this.elements.destinoC,
+            this.elements.modalCasa
+        ].forEach((input) => this.limpiarErrorInput(input));
+    }
+
+    onOrigenInput() {
+        this.limpiarErrorInput(this.elements.origenM);
+        this.limpiarErrorInput(this.elements.origenC);
+        const m = parseInt(this.elements.origenM.value, 10);
+        const origenCasaValue = parseInt(this.elements.origenC.value, 10);
+
+        if (!m || !BarrioData.casasPorManzana[m]) {
+            if (this.origen.tipo === 'manzana' || this.origen.manzana) {
+                this.origen = { tipo: null, manzana: null, casa: null };
+                this.actualizarTagOrigen();
+            }
+            return;
         }
+
+        const c = this.normalizarCasa(m, origenCasaValue);
+        this.origen = { tipo: 'manzana', manzana: m, casa: c };
+        document.querySelectorAll('.chip').forEach(chip => chip.classList.remove('active'));
+        this.actualizarTagOrigen();
+    }
+
+    onDestinoInput() {
+        this.limpiarErrorInput(this.elements.destinoM);
+        this.limpiarErrorInput(this.elements.destinoC);
+        const m = parseInt(this.elements.destinoM.value, 10);
+        const destinoCasaValue = parseInt(this.elements.destinoC.value, 10);
+
+        if (!m || !BarrioData.casasPorManzana[m]) {
+            if (this.destino.manzana) {
+                this.destino = { manzana: null, casa: null };
+                this.actualizarTagDestino();
+            }
+            return;
+        }
+
+        const c = this.normalizarCasa(m, destinoCasaValue);
+        this.destino = { manzana: m, casa: c };
+        this.actualizarTagDestino();
     }
 
     actualizarTagOrigen() {
@@ -263,18 +317,19 @@ class App {
         this.gpsWatchId = navigator.geolocation.watchPosition(
             (pos) => this.onGPSUpdate(pos),
             (err) => this.onGPSError(err),
-            { enableHighAccuracy: true, maximumAge: 1000 }
+            { enableHighAccuracy: true, maximumAge: 1000, timeout: 10000 }
         );
         
         this.toast('GPS activado');
     }
 
-    desactivarGPS() {
+    desactivarGPS(showToast = true) {
         if (this.gpsWatchId) {
             navigator.geolocation.clearWatch(this.gpsWatchId);
         }
         
         this.gpsActivo = false;
+        this.gpsWatchId = null;
         this.posicionGPS = null;
         this.elements.gpsBtn.classList.remove('active');
         this.map.hideMarker('user');
@@ -284,7 +339,7 @@ class App {
             this.actualizarTagOrigen();
         }
         
-        this.toast('GPS desactivado');
+        if (showToast) this.toast('GPS desactivado');
     }
 
     onGPSUpdate(pos) {
@@ -302,9 +357,8 @@ class App {
 
     onGPSError(err) {
         console.warn('GPS Error:', err);
-        // Simular posición para testing
-        this.posicionGPS = { x: 287, y: 305 };
-        this.map.showMarker('user', this.posicionGPS.x, this.posicionGPS.y, 'GPS (sim)');
+        this.toast('No se pudo obtener tu ubicación GPS', 'error');
+        this.desactivarGPS(false);
     }
 
     mapear(valor, inMin, inMax, outMin, outMax) {
@@ -315,6 +369,7 @@ class App {
 
     abrirModal(manzana) {
         this.modalManzana = manzana;
+        this.lastFocusedElement = document.activeElement;
         const casas = BarrioData.casasPorManzana[manzana];
         
         this.elements.modalManzana.textContent = manzana;
@@ -331,14 +386,45 @@ class App {
     cerrarModal() {
         this.elements.modalOverlay.classList.remove('show');
         this.modalManzana = null;
+        if (this.lastFocusedElement && typeof this.lastFocusedElement.focus === 'function') {
+            this.lastFocusedElement.focus();
+        }
+        this.lastFocusedElement = null;
+    }
+
+    onGlobalKeydown(e) {
+        if (e.key === 'Escape' && this.modalManzana !== null) {
+            this.cerrarModal();
+            return;
+        }
+
+        if (e.key !== 'Tab' || this.modalManzana === null) return;
+
+        const focusables = this.elements.modalOverlay.querySelectorAll(
+            'button, input, [href], [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusables.length) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        const active = document.activeElement;
+
+        if (e.shiftKey && active === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && active === last) {
+            e.preventDefault();
+            first.focus();
+        }
     }
 
     confirmarModal(tipo) {
-        const casa = parseInt(this.elements.modalCasa.value) || null;
+        this.limpiarErrorInput(this.elements.modalCasa);
+        const casa = parseInt(this.elements.modalCasa.value, 10) || null;
         const maxCasas = BarrioData.casasPorManzana[this.modalManzana];
         
         if (casa && (casa < 1 || casa > maxCasas)) {
-            this.toast(`Casa debe ser 1-${maxCasas}`, 'error');
+            this.marcarErrorInput(this.elements.modalCasa, `Casa debe ser 1-${maxCasas}`);
             return;
         }
         
@@ -361,29 +447,90 @@ class App {
 
     // ============ RUTA ============
 
+    normalizarCasa(manzana, casa) {
+        const maxCasas = BarrioData.casasPorManzana[manzana];
+        if (!Number.isInteger(casa)) return null;
+        if (casa < 1 || casa > maxCasas) return null;
+        return casa;
+    }
+
+    leerOrigenDesdeInputs(mostrarToast = false) {
+        this.limpiarErrorInput(this.elements.origenM);
+        this.limpiarErrorInput(this.elements.origenC);
+        const origenMRaw = this.elements.origenM.value.trim();
+        const origenCRaw = this.elements.origenC.value.trim();
+        const m = parseInt(this.elements.origenM.value, 10);
+        const cIngresada = parseInt(this.elements.origenC.value, 10);
+
+        if (!m || !BarrioData.casasPorManzana[m]) {
+            if (mostrarToast) {
+                if (!origenMRaw) {
+                    this.marcarErrorInput(this.elements.origenM, 'Ingresá manzana de origen');
+                } else {
+                    this.marcarErrorInput(this.elements.origenM, 'La manzana de origen no existe');
+                }
+            }
+            return null;
+        }
+
+        const c = this.normalizarCasa(m, cIngresada);
+        if (origenCRaw && c === null && mostrarToast) {
+            this.marcarErrorInput(
+                this.elements.origenC,
+                `Casa origen debe ser 1-${BarrioData.casasPorManzana[m]}`
+            );
+            return null;
+        }
+
+        return { tipo: 'manzana', manzana: m, casa: c };
+    }
+
+    leerDestinoDesdeInputs(mostrarToast = false) {
+        this.limpiarErrorInput(this.elements.destinoM);
+        this.limpiarErrorInput(this.elements.destinoC);
+        const destinoMRaw = this.elements.destinoM.value.trim();
+        const destinoCRaw = this.elements.destinoC.value.trim();
+        const m = parseInt(this.elements.destinoM.value, 10);
+        const cIngresada = parseInt(this.elements.destinoC.value, 10);
+
+        if (!m || !BarrioData.casasPorManzana[m]) {
+            if (mostrarToast) {
+                if (!destinoMRaw) {
+                    this.marcarErrorInput(this.elements.destinoM, 'Ingresá manzana de destino');
+                } else {
+                    this.marcarErrorInput(this.elements.destinoM, 'La manzana de destino no existe');
+                }
+            }
+            return null;
+        }
+
+        const c = this.normalizarCasa(m, cIngresada);
+        if (destinoCRaw && c === null && mostrarToast) {
+            this.marcarErrorInput(
+                this.elements.destinoC,
+                `Casa destino debe ser 1-${BarrioData.casasPorManzana[m]}`
+            );
+            return null;
+        }
+
+        return { manzana: m, casa: c };
+    }
+
     calcularRuta() {
+        this.limpiarErroresValidacion();
+
         // Validar origen
         if (!this.origen.tipo && !this.origen.manzana) {
-            const m = parseInt(this.elements.origenM.value);
-            const c = parseInt(this.elements.origenC.value) || null;
-            if (m && BarrioData.casasPorManzana[m]) {
-                this.origen = { tipo: 'manzana', manzana: m, casa: c };
-            } else {
-                this.toast('Seleccioná un origen', 'warning');
-                return;
-            }
+            const origenInput = this.leerOrigenDesdeInputs(true);
+            if (!origenInput) return;
+            this.origen = origenInput;
         }
         
         // Validar destino
         if (!this.destino.manzana) {
-            const m = parseInt(this.elements.destinoM.value);
-            const c = parseInt(this.elements.destinoC.value) || null;
-            if (m && BarrioData.casasPorManzana[m]) {
-                this.destino = { manzana: m, casa: c };
-            } else {
-                this.toast('Seleccioná un destino', 'warning');
-                return;
-            }
+            const destinoInput = this.leerDestinoDesdeInputs(true);
+            if (!destinoInput) return;
+            this.destino = destinoInput;
         }
         
         // Validar GPS
@@ -461,7 +608,12 @@ class App {
     }
 
     limpiarTodo() {
+        if (this.modalManzana !== null) {
+            this.cerrarModal();
+        }
+
         this.limpiarRuta();
+        this.limpiarErroresValidacion();
         
         this.origen = { tipo: null, manzana: null, casa: null };
         this.destino = { manzana: null, casa: null };
@@ -484,9 +636,16 @@ class App {
     // ============ TOAST ============
 
     toast(message, type = 'default') {
+        if (this.elements.toastContainer.children.length >= 3) {
+            this.elements.toastContainer.firstElementChild?.remove();
+        }
+
         const toast = document.createElement('div');
         toast.className = `toast toast--${type}`;
         toast.textContent = message;
+        const role = type === 'error' || type === 'warning' ? 'alert' : 'status';
+        toast.setAttribute('role', role);
+        toast.setAttribute('aria-live', role === 'alert' ? 'assertive' : 'polite');
         
         this.elements.toastContainer.appendChild(toast);
         

@@ -34,7 +34,15 @@ class MapRenderer {
         this.map.querySelectorAll('.manzana').forEach(el => {
             el.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const manzana = parseInt(el.dataset.manzana);
+                const manzana = parseInt(el.dataset.manzana, 10);
+                if (this.onManzanaClick) {
+                    this.onManzanaClick(manzana);
+                }
+            });
+            el.addEventListener('keydown', (e) => {
+                if (e.key !== 'Enter' && e.key !== ' ') return;
+                e.preventDefault();
+                const manzana = parseInt(el.dataset.manzana, 10);
                 if (this.onManzanaClick) {
                     this.onManzanaClick(manzana);
                 }
@@ -81,12 +89,12 @@ class MapRenderer {
             </svg>
             <div class="area-verde" style="left:241.83px;top:52.85px;width:160.78px;height:20px;"></div>
             <div class="area-verde" style="left:402.6px;top:52.85px;width:49px;height:20px;"></div>
-            <span style="position:absolute;left:290px;top:56px;color:white;font-size:6px;z-index:4;pointer-events:none;">Espacio Verde</span>
+            <span style="position:absolute;left:286px;top:56px;color:white;font-size:9px;font-weight:600;z-index:4;pointer-events:none;">Espacio Verde</span>
             
             <!-- Acceso Florida -->
             <div style="position:absolute;left:357px;top:8px;width:130px;text-align:center;font-size:10px;z-index:20;pointer-events:none;">
                 <span style="font-weight:600;font-size:11px;">Acceso por Florida</span>
-                <div style="font-size:7px;">Ingreso/Egreso 6AM-12PM</div>
+                <div style="font-size:9px;">Ingreso/Egreso 6AM-12PM</div>
             </div>
             <div style="position:absolute;left:465px;top:20px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid #1d653f;z-index:20;pointer-events:none;"></div>
             
@@ -109,12 +117,12 @@ class MapRenderer {
                 <span class="plaza__title">Plaza Miguel</span>
                 <span class="plaza__subtitle">Benítez</span>
             </div>
-            <div class="capilla" style="left:284.88px;top:365.74px;width:29.38px;height:18.52px;">Capilla</div>
+            <div class="capilla" style="left:280px;top:362px;width:44px;height:24px;">Capilla</div>
             
             <!-- Instituciones -->
-            <div class="institucion institucion--escuela" style="left:390.63px;top:286.15px;width:13.92px;height:26.46px;">Esc<br>Sec<br>21</div>
-            <div class="institucion institucion--escuela" style="left:390.61px;top:313.63px;width:13.96px;height:23.51px;">Esc<br>Prim<br>53</div>
-            <div class="institucion institucion--jardin" style="left:390.61px;top:339.82px;width:13.96px;height:23.26px;">Jard<br>929</div>
+            <div class="institucion institucion--escuela" style="left:384px;top:282px;width:28px;height:34px;">Esc<br>Sec<br>21</div>
+            <div class="institucion institucion--escuela" style="left:384px;top:318px;width:28px;height:30px;">Esc<br>Prim<br>53</div>
+            <div class="institucion institucion--jardin" style="left:384px;top:350px;width:28px;height:30px;">Jard<br>929</div>
             
             <!-- Verde esquina inferior -->
             <svg style="position:absolute;left:106px;top:441px;width:210px;height:85px;z-index:2;pointer-events:none;" viewBox="0 0 210 85">
@@ -204,8 +212,11 @@ class MapRenderer {
             const style = pos.tipo === 'v' 
                 ? `left:${pos.l}px;top:${pos.t}px;`
                 : `left:${pos.l}px;top:${pos.t}px;width:${pos.w}px;`;
+            const casas = BarrioData.casasPorManzana[num] || 0;
             
-            html.push(`<div class="${className}" data-manzana="${num}" style="${style}">${displayNum}</div>`);
+            html.push(
+                `<div class="${className}" data-manzana="${num}" style="${style}" tabindex="0" role="button" aria-label="Manzana ${displayNum}, ${casas} casas">${displayNum}</div>`
+            );
         }
         
         return html.join('\n');
@@ -242,9 +253,14 @@ class MapRenderer {
         this.container.addEventListener('touchend', () => {
             this.isDragging = false;
         });
+        this.container.addEventListener('touchcancel', () => {
+            this.isDragging = false;
+        });
         
         // Mouse events para desktop
         this.container.addEventListener('mousedown', (e) => {
+            if (e.button !== 0) return;
+            if (e.target.closest('.manzana')) return;
             this.isDragging = true;
             this.startX = e.clientX - this.translateX;
             this.startY = e.clientY - this.translateY;

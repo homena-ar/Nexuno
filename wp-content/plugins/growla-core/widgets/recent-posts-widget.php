@@ -48,6 +48,8 @@ class RecentPosts extends WP_Widget {
 
                 // if there are no posts then return
                 if ( ! $r->have_posts() ) {
+                    echo '</ul>';
+                    echo $args['after_widget'];
                     return;
                 }
 
