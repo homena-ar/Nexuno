@@ -69,14 +69,17 @@ class App {
             modalDestinoBtn: document.getElementById('modalDestinoBtn'),
             modalCloseBtn: document.getElementById('modalCloseBtn'),
             gpsBtn: document.getElementById('gpsBtn'),
+            gpsStatus: document.getElementById('gpsStatus'),
             zoomInBtn: document.getElementById('zoomInBtn'),
             zoomOutBtn: document.getElementById('zoomOutBtn'),
             centerBtn: document.getElementById('centerBtn'),
+            centerGpsBtn: document.getElementById('centerGpsBtn'),
             toastContainer: document.getElementById('toastContainer')
         };
         
         this.setupEventListeners();
         this.setupPanelHeight();
+        this.setGpsStatus('GPS inactivo');
     }
 
     setupEventListeners() {
@@ -131,6 +134,7 @@ class App {
         this.elements.zoomInBtn.addEventListener('click', () => this.map.zoomIn());
         this.elements.zoomOutBtn.addEventListener('click', () => this.map.zoomOut());
         this.elements.centerBtn.addEventListener('click', () => this.map.centerMap());
+        this.elements.centerGpsBtn?.addEventListener('click', () => this.centerOnGps());
         
         // Keyboard
         document.addEventListener('keydown', (e) => this.onGlobalKeydown(e));
@@ -315,6 +319,14 @@ class App {
     activarGPS() {
         if (!navigator.geolocation) {
             this.toast('GPS no disponible', 'error');
+            this.setGpsStatus('GPS no disponible', 'error');
+            return;
+        }
+
+        const localHost = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (window.location.protocol !== 'https:' && !localHost) {
+            this.toast('GPS requiere HTTPS o localhost', 'error');
+            this.setGpsStatus('Requiere HTTPS/localhost', 'error');
             return;
         }
         
@@ -332,6 +344,7 @@ class App {
         );
         
         this.toast('GPS activado');
+        this.setGpsStatus('GPS activo: esperando señal...', 'warning');
     }
 
     desactivarGPS(showToast = true) {
@@ -345,6 +358,7 @@ class App {
         this.gpsHistory = [];
         this.elements.gpsBtn.classList.remove('active');
         this.map.hideMarker('user');
+        this.setGpsStatus('GPS inactivo');
         
         if (this.origen.tipo === 'gps') {
             this.origen = { tipo: null, manzana: null, casa: null };
@@ -366,6 +380,7 @@ class App {
                 accuracy,
                 timestamp
             });
+            this.setGpsStatus(`GPS activo: precisión baja (${Math.round(accuracy)}m)`, 'warning');
             return;
         }
 
@@ -375,6 +390,7 @@ class App {
 
         this.posicionGPS = snapped;
         this.map.showMarker('user', this.posicionGPS.x, this.posicionGPS.y, 'GPS');
+        this.setGpsStatus(`GPS activo (${Math.round(accuracy || 0)}m)`, 'success');
 
         console.info('[GPS] update', {
             latitude,
@@ -391,7 +407,23 @@ class App {
     onGPSError(err) {
         console.warn('GPS Error:', err);
         this.toast('No se pudo obtener tu ubicación GPS', 'error');
+        this.setGpsStatus(`Error GPS: ${err.message || 'sin detalle'}`, 'error');
         this.desactivarGPS(false);
+    }
+
+    centerOnGps() {
+        if (!this.posicionGPS) {
+            this.toast('Todavía no hay punto GPS válido', 'warning');
+            return;
+        }
+        const targetScale = Math.max(this.map.scale, 1.6);
+        this.map.focusOnPoint(this.posicionGPS.x, this.posicionGPS.y, targetScale);
+    }
+
+    setGpsStatus(message, type = 'default') {
+        if (!this.elements?.gpsStatus) return;
+        this.elements.gpsStatus.textContent = message;
+        this.elements.gpsStatus.className = `gps-status gps-status--${type}`;
     }
 
     mapear(valor, inMin, inMax, outMin, outMax) {

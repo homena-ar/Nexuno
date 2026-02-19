@@ -357,6 +357,36 @@ input {
     flex-wrap: wrap;
 }
 
+.gps-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    font-weight: 700;
+    border: 1px solid var(--color-gray-300);
+    color: var(--color-gray-700);
+    background: var(--color-gray-100);
+}
+
+.gps-status--success {
+    background: rgba(76, 175, 80, 0.15);
+    color: #2e7d32;
+    border-color: rgba(76, 175, 80, 0.45);
+}
+
+.gps-status--warning {
+    background: rgba(255, 152, 0, 0.18);
+    color: #8b5a00;
+    border-color: rgba(255, 152, 0, 0.5);
+}
+
+.gps-status--error {
+    background: rgba(229, 57, 53, 0.14);
+    color: #b71c1c;
+    border-color: rgba(229, 57, 53, 0.5);
+}
+
 .chip {
     display: inline-flex;
     align-items: center;
@@ -680,6 +710,45 @@ input {
     font-weight: 600;
     line-height: 1.1;
     pointer-events: none;
+}
+
+.poi-label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1.1;
+    z-index: 22;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1b2838;
+    padding: 0 4px;
+    pointer-events: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.poi-label--escuela {
+    background: rgba(134, 213, 245, 0.95);
+    border-color: #47839b;
+    color: #0f4150;
+}
+
+.poi-label--jardin {
+    background: rgba(238, 240, 107, 0.96);
+    border-color: #868929;
+    color: #3f4206;
+}
+
+.poi-label--capilla {
+    background: rgba(29, 29, 27, 0.93);
+    border-color: #111;
+    color: #fff;
 }
 
 /* Route */
@@ -1118,6 +1187,35 @@ input {
     .area-verde,
     .plaza {
         background: #1f7a4c;
+    }
+
+    .input-field input,
+    .input-field--large input {
+        background: #ffffff;
+        color: #111a24;
+        border-color: #7f90a7;
+        caret-color: #111a24;
+    }
+
+    .input-field input::placeholder,
+    .input-field--large input::placeholder {
+        color: #74859c;
+    }
+
+    .input-field input:focus,
+    .input-field--large input:focus {
+        border-color: #1976d2;
+        box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.25);
+    }
+
+    .gps-status {
+        background: #1f2731;
+        border-color: #425266;
+        color: #d8e3f3;
+    }
+
+    .poi-label {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
     }
 
     .selected-tag.active {

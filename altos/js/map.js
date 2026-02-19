@@ -15,7 +15,7 @@ class MapRenderer {
         this.startY = 0;
         this.onManzanaClick = null;
         this.onMapPointClick = null;
-        this.showPoiLabels = false;
+        this.showPoiLabels = true;
         this.debugEnabled = false;
         this.debugData = null;
         
@@ -97,8 +97,8 @@ class MapRenderer {
             <svg style="position:absolute;left:150px;top:52px;width:95px;height:105px;z-index:3;" viewBox="0 0 95 105">
                 <polygon points="93,0 0,92 0,105 15,105 93,25" fill="#1d653f"/>
             </svg>
-            <div class="area-verde" style="left:241.83px;top:52.85px;width:160.78px;height:20px;"></div>
-            <div class="area-verde" style="left:402.6px;top:52.85px;width:49px;height:20px;"></div>
+            <div class="area-verde" style="left:241.83px;top:50.85px;width:160.78px;height:14px;"></div>
+            <div class="area-verde" style="left:402.6px;top:50.85px;width:49px;height:14px;"></div>
             <span style="position:absolute;left:286px;top:56px;color:white;font-size:9px;font-weight:600;z-index:4;pointer-events:none;">Espacio Verde</span>
             
             <!-- Acceso Florida -->
@@ -184,7 +184,20 @@ class MapRenderer {
     }
 
     generatePoiLabels() {
-        return '';
+        return `
+            <button type="button" class="poi-label poi-label--escuela" style="left:247px;top:197px;width:70px;height:33px;" title="Esc Sec 21">
+                Esc Sec 21
+            </button>
+            <button type="button" class="poi-label poi-label--escuela" style="left:329px;top:413px;width:70px;height:20px;" title="Esc Prim 53">
+                Esc Prim 53
+            </button>
+            <button type="button" class="poi-label poi-label--jardin" style="left:262px;top:414px;width:46px;height:20px;" title="Jard 929">
+                Jard 929
+            </button>
+            <button type="button" class="poi-label poi-label--capilla" style="left:169px;top:413px;width:82px;height:20px;" title="Capilla">
+                Capilla
+            </button>
+        `;
     }
 
     generateVerdeHorizontal() {
@@ -348,6 +361,17 @@ class MapRenderer {
         this.translateX = (containerRect.width - mapWidth * this.scale) / 2;
         this.translateY = (containerRect.height - mapHeight * this.scale) / 2;
         
+        this.updateTransform();
+    }
+
+    focusOnPoint(x, y, preferredScale = null) {
+        const containerRect = this.container.getBoundingClientRect();
+        if (preferredScale && Number.isFinite(preferredScale)) {
+            this.scale = Math.max(0.5, Math.min(3, preferredScale));
+        }
+
+        this.translateX = containerRect.width / 2 - x * this.scale;
+        this.translateY = containerRect.height / 2 - y * this.scale;
         this.updateTransform();
     }
 
