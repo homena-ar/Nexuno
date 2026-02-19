@@ -14,6 +14,7 @@ class MapRenderer {
         this.startX = 0;
         this.startY = 0;
         this.onManzanaClick = null;
+        this.showPoiLabels = false;
         
         this.init();
     }
@@ -117,12 +118,8 @@ class MapRenderer {
                 <span class="plaza__title">Plaza Miguel</span>
                 <span class="plaza__subtitle">Benítez</span>
             </div>
-            <div class="capilla" style="left:280px;top:362px;width:44px;height:24px;">Capilla</div>
             
-            <!-- Instituciones -->
-            <div class="institucion institucion--escuela" style="left:384px;top:282px;width:28px;height:34px;">Esc<br>Sec<br>21</div>
-            <div class="institucion institucion--escuela" style="left:384px;top:318px;width:28px;height:30px;">Esc<br>Prim<br>53</div>
-            <div class="institucion institucion--jardin" style="left:384px;top:350px;width:28px;height:30px;">Jard<br>929</div>
+            ${this.showPoiLabels ? this.generatePoiLabels() : ''}
             
             <!-- Verde esquina inferior -->
             <svg style="position:absolute;left:106px;top:441px;width:210px;height:85px;z-index:2;pointer-events:none;" viewBox="0 0 210 85">
@@ -174,6 +171,15 @@ class MapRenderer {
         return segments.map(s => 
             `<div class="area-verde" style="left:${s.l}px;top:${s.t}px;width:${s.w}px;height:${s.h}px;"></div>`
         ).join('');
+    }
+
+    generatePoiLabels() {
+        return `
+            <div class="capilla" style="left:280px;top:362px;width:44px;height:24px;">Capilla</div>
+            <div class="institucion institucion--escuela" style="left:384px;top:282px;width:28px;height:34px;">Esc<br>Sec<br>21</div>
+            <div class="institucion institucion--escuela" style="left:384px;top:318px;width:28px;height:30px;">Esc<br>Prim<br>53</div>
+            <div class="institucion institucion--jardin" style="left:384px;top:350px;width:28px;height:30px;">Jard<br>929</div>
+        `;
     }
 
     generateVerdeHorizontal() {

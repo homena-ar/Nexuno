@@ -1093,6 +1093,21 @@ input {
     .plaza {
         background: #1f7a4c;
     }
+
+    .selected-tag.active {
+        background: rgba(89, 169, 255, 0.2);
+        color: #8fc8ff;
+    }
+
+    .selected-tag--dest.active {
+        background: rgba(255, 102, 89, 0.2);
+        color: #ffb0a6;
+    }
+
+    #routeFrom,
+    #routeTo {
+        color: #f5f8fd;
+    }
 }
 
 @media (prefers-contrast: more) {

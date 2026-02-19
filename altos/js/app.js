@@ -11,6 +11,10 @@ class App {
         this.gpsActivo = false;
         this.gpsWatchId = null;
         this.posicionGPS = null;
+        this.gpsHistory = [];
+        this.gpsMaxAccuracy = 50;
+        this.gpsSmoothingWindow = 5;
+        this.gpsSnapDistance = 20;
         this.modalManzana = null;
         this.lastFocusedElement = null;
         
@@ -331,6 +335,7 @@ class App {
         this.gpsActivo = false;
         this.gpsWatchId = null;
         this.posicionGPS = null;
+        this.gpsHistory = [];
         this.elements.gpsBtn.classList.remove('active');
         this.map.hideMarker('user');
         
@@ -344,15 +349,35 @@ class App {
 
     onGPSUpdate(pos) {
         const limits = BarrioData.gpsLimits;
-        const x = this.mapear(pos.coords.longitude, limits.lonMin, limits.lonMax, limits.xMin, limits.xMax);
-        const y = this.mapear(pos.coords.latitude, limits.latMin, limits.latMax, limits.yMin, limits.yMax);
-        
-        this.posicionGPS = {
-            x: Math.max(limits.xMin, Math.min(limits.xMax, x)),
-            y: Math.max(limits.yMin, Math.min(limits.yMax, y))
-        };
-        
+        const { latitude, longitude, accuracy } = pos.coords;
+        const timestamp = new Date(pos.timestamp).toISOString();
+
+        if (typeof accuracy === 'number' && accuracy > this.gpsMaxAccuracy) {
+            console.warn('[GPS] Lectura ignorada por baja precision', {
+                latitude,
+                longitude,
+                accuracy,
+                timestamp
+            });
+            return;
+        }
+
+        const raw = this.convertGpsToMapCoordinates(latitude, longitude, limits);
+        const smooth = this.smoothGpsPoint(raw);
+        const snapped = this.router.snapPointToPath(smooth, this.gpsSnapDistance) || smooth;
+
+        this.posicionGPS = snapped;
         this.map.showMarker('user', this.posicionGPS.x, this.posicionGPS.y, 'GPS');
+
+        console.info('[GPS] update', {
+            latitude,
+            longitude,
+            accuracy,
+            timestamp,
+            rawXY: raw,
+            smoothXY: smooth,
+            finalXY: snapped
+        });
     }
 
     onGPSError(err) {
@@ -363,6 +388,33 @@ class App {
 
     mapear(valor, inMin, inMax, outMin, outMax) {
         return (valor - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+    }
+
+    convertGpsToMapCoordinates(latitude, longitude, limits) {
+        const x = this.mapear(longitude, limits.lonMin, limits.lonMax, limits.xMin, limits.xMax);
+        // El mapa crece hacia abajo en Y, por eso la latitud se invierte (Norte -> menor Y).
+        const y = this.mapear(latitude, limits.latMax, limits.latMin, limits.yMin, limits.yMax);
+
+        return {
+            x: Math.max(limits.xMin, Math.min(limits.xMax, x)),
+            y: Math.max(limits.yMin, Math.min(limits.yMax, y))
+        };
+    }
+
+    smoothGpsPoint(point) {
+        this.gpsHistory.push(point);
+        if (this.gpsHistory.length > this.gpsSmoothingWindow) {
+            this.gpsHistory.shift();
+        }
+
+        const total = this.gpsHistory.reduce(
+            (acc, p) => ({ x: acc.x + p.x, y: acc.y + p.y }),
+            { x: 0, y: 0 }
+        );
+        return {
+            x: total.x / this.gpsHistory.length,
+            y: total.y / this.gpsHistory.length
+        };
     }
 
     // ============ MODAL ============
@@ -563,6 +615,11 @@ class App {
             origenTexto = this.origen.casa 
                 ? `M${this.origen.manzana}C${this.origen.casa}` 
                 : `M${this.origen.manzana}`;
+        }
+
+        if (!puntos || puntos.length < 2) {
+            this.toast('No se encontró una ruta válida por calles/pasillos', 'error');
+            return;
         }
         
         const destinoTexto = this.destino.casa 
