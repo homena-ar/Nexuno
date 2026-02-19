@@ -222,6 +222,22 @@ const BarrioData = {
         yMax: 590
     },
 
+    // ViewBox útil del mapa renderizado
+    mapViewBox: {
+        xMin: 0,
+        xMax: 573.16,
+        yMin: 0,
+        yMax: 704.08
+    },
+
+    // Puntos de control base para proyección afín GPS -> mapa.
+    // Formato: lat/lon reales y su coordenada x/y en el plano del mapa.
+    gpsControlPoints: [
+        { lat: -34.5890, lon: -58.6230, x: 108, y: 70 },  // NW
+        { lat: -34.5890, lon: -58.6160, x: 470, y: 70 },  // NE
+        { lat: -34.5940, lon: -58.6230, x: 108, y: 590 }  // SW
+    ],
+
     // Accesos
     accesos: {
         florida: { x: 456, y: 73 },

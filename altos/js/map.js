@@ -14,6 +14,7 @@ class MapRenderer {
         this.startX = 0;
         this.startY = 0;
         this.onManzanaClick = null;
+        this.onMapPointClick = null;
         this.showPoiLabels = false;
         this.debugEnabled = false;
         this.debugData = null;
@@ -50,6 +51,12 @@ class MapRenderer {
                     this.onManzanaClick(manzana);
                 }
             });
+        });
+
+        this.map.addEventListener('click', (e) => {
+            if (!this.onMapPointClick) return;
+            const point = this.getMapPointFromClient(e.clientX, e.clientY);
+            if (point) this.onMapPointClick(point);
         });
     }
 
@@ -177,12 +184,7 @@ class MapRenderer {
     }
 
     generatePoiLabels() {
-        return `
-            <div class="capilla" style="left:280px;top:362px;width:44px;height:24px;">Capilla</div>
-            <div class="institucion institucion--escuela" style="left:384px;top:282px;width:28px;height:34px;">Esc<br>Sec<br>21</div>
-            <div class="institucion institucion--escuela" style="left:384px;top:318px;width:28px;height:30px;">Esc<br>Prim<br>53</div>
-            <div class="institucion institucion--jardin" style="left:384px;top:350px;width:28px;height:30px;">Jard<br>929</div>
-        `;
+        return '';
     }
 
     generateVerdeHorizontal() {
@@ -320,6 +322,16 @@ class MapRenderer {
         if (this.map) {
             this.map.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
         }
+    }
+
+    getMapPointFromClient(clientX, clientY) {
+        const containerRect = this.container.getBoundingClientRect();
+        const localX = clientX - containerRect.left;
+        const localY = clientY - containerRect.top;
+        const x = (localX - this.translateX) / this.scale;
+        const y = (localY - this.translateY) / this.scale;
+        if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+        return { x, y };
     }
 
     centerMap() {

@@ -15,6 +15,10 @@ class App {
         this.gpsMaxAccuracy = 50;
         this.gpsSmoothingWindow = 5;
         this.gpsSnapDistance = 20;
+        this.gpsCalibrationStorageKey = 'altos_gps_affine_calibration_v1';
+        this.gpsCalibrationMode = false;
+        this.gpsCalibrationSamples = [];
+        this.gpsAffine = null;
         this.modalManzana = null;
         this.lastFocusedElement = null;
         
@@ -35,6 +39,8 @@ class App {
         this.map = new MapRenderer('mapContainer');
         this.router = new Router();
         this.map.setDebugData(this.router.getDebugData());
+        this.map.onMapPointClick = (point) => this.onMapPointClick(point);
+        this.initGpsAffine();
         
         // Configurar callbacks
         this.map.onManzanaClick = (manzana) => this.abrirModal(manzana);
@@ -377,6 +383,7 @@ class App {
             timestamp,
             rawXY: raw,
             smoothXY: smooth,
+            snappedXY: snapped,
             finalXY: snapped
         });
     }
@@ -392,14 +399,18 @@ class App {
     }
 
     convertGpsToMapCoordinates(latitude, longitude, limits) {
-        const x = this.mapear(longitude, limits.lonMin, limits.lonMax, limits.xMin, limits.xMax);
-        // El mapa crece hacia abajo en Y, por eso la latitud se invierte (Norte -> menor Y).
-        const y = this.mapear(latitude, limits.latMax, limits.latMin, limits.yMin, limits.yMax);
+        if (this.gpsAffine) {
+            const raw = this.projectLatLonAffine(latitude, longitude, this.gpsAffine);
+            const v = BarrioData.mapViewBox || { xMin: limits.xMin, xMax: limits.xMax, yMin: limits.yMin, yMax: limits.yMax };
+            return {
+                x: Math.max(v.xMin, Math.min(v.xMax, raw.x)),
+                y: Math.max(v.yMin, Math.min(v.yMax, raw.y))
+            };
+        }
 
-        return {
-            x: Math.max(limits.xMin, Math.min(limits.xMax, x)),
-            y: Math.max(limits.yMin, Math.min(limits.yMax, y))
-        };
+        const x = this.mapear(longitude, limits.lonMin, limits.lonMax, limits.xMin, limits.xMax);
+        const y = this.mapear(latitude, limits.latMax, limits.latMin, limits.yMin, limits.yMax);
+        return { x, y };
     }
 
     smoothGpsPoint(point) {
@@ -416,6 +427,161 @@ class App {
             x: total.x / this.gpsHistory.length,
             y: total.y / this.gpsHistory.length
         };
+    }
+
+    initGpsAffine() {
+        const stored = this.loadGpsCalibrationFromStorage();
+        if (stored && stored.points && stored.points.length === 3) {
+            const affine = this.solveAffine(stored.points);
+            if (affine) {
+                this.gpsAffine = affine;
+                console.info('[GPS] Usando calibración affine desde localStorage');
+                return;
+            }
+        }
+
+        const base = BarrioData.gpsControlPoints || [];
+        if (base.length === 3) {
+            this.gpsAffine = this.solveAffine(base);
+            if (this.gpsAffine) {
+                console.info('[GPS] Usando calibración affine por defecto en data.js');
+            }
+        }
+    }
+
+    onMapPointClick(point) {
+        if (!this.gpsCalibrationMode) return;
+        this.captureCalibrationSample(point);
+    }
+
+    toggleGpsCalibrationMode() {
+        this.gpsCalibrationMode = !this.gpsCalibrationMode;
+        if (!this.gpsCalibrationMode) {
+            this.gpsCalibrationSamples = [];
+            this.toast('Calibración GPS desactivada');
+            return;
+        }
+
+        this.gpsCalibrationSamples = [];
+        this.toast('Calibración GPS ON: tocá 3 puntos y cargá lat,lon', 'warning');
+    }
+
+    captureCalibrationSample(mapPoint) {
+        const idx = this.gpsCalibrationSamples.length + 1;
+        const input = window.prompt(`Punto ${idx}/3: ingresá "lat,lon"`, '');
+        if (!input) return;
+
+        const parsed = this.parseLatLonInput(input);
+        if (!parsed) {
+            this.toast('Formato inválido. Usá: lat,lon', 'error');
+            return;
+        }
+
+        this.gpsCalibrationSamples.push({
+            lat: parsed.lat,
+            lon: parsed.lon,
+            x: mapPoint.x,
+            y: mapPoint.y
+        });
+
+        this.toast(`Punto ${idx}/3 guardado`);
+
+        if (this.gpsCalibrationSamples.length < 3) return;
+
+        const affine = this.solveAffine(this.gpsCalibrationSamples);
+        if (!affine) {
+            this.toast('No se pudo calcular la matriz affine', 'error');
+            this.gpsCalibrationSamples = [];
+            return;
+        }
+
+        this.gpsAffine = affine;
+        this.saveGpsCalibrationToStorage(this.gpsCalibrationSamples);
+        this.gpsCalibrationMode = false;
+        this.gpsCalibrationSamples = [];
+        this.toast('Calibración GPS aplicada ✓', 'success');
+    }
+
+    parseLatLonInput(input) {
+        const parts = input.split(',').map((s) => s.trim());
+        if (parts.length !== 2) return null;
+        const lat = Number(parts[0]);
+        const lon = Number(parts[1]);
+        if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+        return { lat, lon };
+    }
+
+    loadGpsCalibrationFromStorage() {
+        try {
+            const raw = localStorage.getItem(this.gpsCalibrationStorageKey);
+            if (!raw) return null;
+            return JSON.parse(raw);
+        } catch (err) {
+            console.warn('[GPS] No se pudo leer calibración guardada', err);
+            return null;
+        }
+    }
+
+    saveGpsCalibrationToStorage(points) {
+        try {
+            localStorage.setItem(this.gpsCalibrationStorageKey, JSON.stringify({ points, savedAt: Date.now() }));
+        } catch (err) {
+            console.warn('[GPS] No se pudo guardar calibración', err);
+        }
+    }
+
+    projectLatLonAffine(lat, lon, affine) {
+        return {
+            x: affine.ax * lon + affine.bx * lat + affine.cx,
+            y: affine.ay * lon + affine.by * lat + affine.cy
+        };
+    }
+
+    solveAffine(points) {
+        if (!Array.isArray(points) || points.length !== 3) return null;
+        const m = points.map((p) => [p.lon, p.lat, 1]);
+        const bx = points.map((p) => p.x);
+        const by = points.map((p) => p.y);
+
+        const sx = this.solveLinear3x3(m, bx);
+        const sy = this.solveLinear3x3(m, by);
+        if (!sx || !sy) return null;
+
+        return {
+            ax: sx[0], bx: sx[1], cx: sx[2],
+            ay: sy[0], by: sy[1], cy: sy[2]
+        };
+    }
+
+    solveLinear3x3(matrix, rhs) {
+        const a = matrix.map((row, i) => [...row, rhs[i]]);
+
+        for (let col = 0; col < 3; col++) {
+            let pivot = col;
+            for (let r = col + 1; r < 3; r++) {
+                if (Math.abs(a[r][col]) > Math.abs(a[pivot][col])) pivot = r;
+            }
+            if (Math.abs(a[pivot][col]) < 1e-12) return null;
+
+            if (pivot !== col) {
+                const tmp = a[col];
+                a[col] = a[pivot];
+                a[pivot] = tmp;
+            }
+
+            const div = a[col][col];
+            for (let c = col; c < 4; c++) a[col][c] /= div;
+
+            for (let r = 0; r < 3; r++) {
+                if (r === col) continue;
+                const factor = a[r][col];
+                for (let c = col; c < 4; c++) {
+                    a[r][c] -= factor * a[col][c];
+                }
+            }
+        }
+
+        return [a[0][3], a[1][3], a[2][3]];
     }
 
     // ============ MODAL ============
@@ -450,6 +616,12 @@ class App {
             e.preventDefault();
             const enabled = this.map.toggleDebugOverlay();
             this.toast(`Debug grafo: ${enabled ? 'ON' : 'OFF'}`);
+            return;
+        }
+
+        if (e.ctrlKey && e.shiftKey && (e.key === 'G' || e.key === 'g')) {
+            e.preventDefault();
+            this.toggleGpsCalibrationMode();
             return;
         }
 

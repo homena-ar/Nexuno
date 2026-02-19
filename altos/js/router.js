@@ -14,7 +14,8 @@ class Router {
 
         this.obstacles = this.buildObstacleRects();
         this.baseGraph = this.buildBaseGraph();
-        this.validateRandomRoutes(20);
+        this.auditWalkableEdges();
+        this.validateRandomRoutes(200);
     }
 
     // ========= Public API =========
@@ -120,6 +121,33 @@ class Router {
         }));
 
         return { nodes, edges, obstacles };
+    }
+
+    auditWalkableEdges(limit = 40) {
+        let issues = 0;
+        for (const edge of this.baseGraph.edges) {
+            const a = this.baseGraph.nodes.get(edge.from);
+            const b = this.baseGraph.nodes.get(edge.to);
+            const crossing = this.getFirstCrossedObstacle(a, b);
+            if (!crossing) continue;
+
+            issues++;
+            if (issues <= limit) {
+                console.error('[Router] Edge walkable cruza manzana', {
+                    edgeId: edge.key,
+                    from: edge.from,
+                    to: edge.to,
+                    a,
+                    b,
+                    obstacleId: crossing.id,
+                    obstacle: crossing
+                });
+            }
+        }
+
+        if (issues > limit) {
+            console.error(`[Router] Se detectaron ${issues - limit} cruces extra no mostrados.`);
+        }
     }
 
     // ========= Core routing =========
@@ -410,68 +438,54 @@ class Router {
         );
     }
 
-    isSegmentWalkable(a, b, eps = 0.8) {
+    isSegmentWalkable(a, b, eps = 0.4) {
         if (this.isPointBlocked(a, eps) || this.isPointBlocked(b, eps)) return false;
+        return !this.getFirstCrossedObstacle(a, b, eps);
+    }
 
+    getFirstCrossedObstacle(a, b, eps = 0.4) {
         for (const rect of this.obstacles) {
-            if (this.segmentIntersectsRectInterior(a, b, rect, eps)) return false;
+            if (this.segmentIntersectsRect(a, b, rect, eps)) return rect;
         }
-        return true;
+        return null;
     }
 
-    segmentIntersectsRectInterior(a, b, rect, eps = 0.8) {
-        const rx1 = rect.left + eps;
-        const ry1 = rect.top + eps;
-        const rx2 = rect.right - eps;
-        const ry2 = rect.bottom - eps;
+    // Intersección robusta segmento-rectángulo (Liang-Barsky).
+    // Toca o atraviesa interior => true.
+    segmentIntersectsRect(a, b, rect, eps = 0.4) {
+        const rx1 = rect.left - eps;
+        const ry1 = rect.top - eps;
+        const rx2 = rect.right + eps;
+        const ry2 = rect.bottom + eps;
 
-        if (rx1 >= rx2 || ry1 >= ry2) return false;
-
-        const inside = (p) => p.x > rx1 && p.x < rx2 && p.y > ry1 && p.y < ry2;
-        if (inside(a) || inside(b)) return true;
-
-        const edges = [
-            [{ x: rx1, y: ry1 }, { x: rx2, y: ry1 }],
-            [{ x: rx2, y: ry1 }, { x: rx2, y: ry2 }],
-            [{ x: rx2, y: ry2 }, { x: rx1, y: ry2 }],
-            [{ x: rx1, y: ry2 }, { x: rx1, y: ry1 }]
-        ];
-
-        for (const [e1, e2] of edges) {
-            if (this.segmentsIntersect(a, b, e1, e2)) return true;
+        if (Math.max(a.x, b.x) < rx1 || Math.min(a.x, b.x) > rx2 || Math.max(a.y, b.y) < ry1 || Math.min(a.y, b.y) > ry2) {
+            return false;
         }
 
-        const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
-        return inside(mid);
-    }
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const p = [-dx, dx, -dy, dy];
+        const q = [a.x - rx1, rx2 - a.x, a.y - ry1, ry2 - a.y];
 
-    segmentsIntersect(p1, p2, q1, q2) {
-        const o1 = this.orientation(p1, p2, q1);
-        const o2 = this.orientation(p1, p2, q2);
-        const o3 = this.orientation(q1, q2, p1);
-        const o4 = this.orientation(q1, q2, p2);
+        let u1 = 0;
+        let u2 = 1;
 
-        if (o1 !== o2 && o3 !== o4) return true;
-        if (o1 === 0 && this.onSegment(p1, q1, p2)) return true;
-        if (o2 === 0 && this.onSegment(p1, q2, p2)) return true;
-        if (o3 === 0 && this.onSegment(q1, p1, q2)) return true;
-        if (o4 === 0 && this.onSegment(q1, p2, q2)) return true;
-        return false;
-    }
+        for (let i = 0; i < 4; i++) {
+            if (Math.abs(p[i]) < 1e-12) {
+                if (q[i] < 0) return false;
+                continue;
+            }
+            const t = q[i] / p[i];
+            if (p[i] < 0) {
+                if (t > u2) return false;
+                if (t > u1) u1 = t;
+            } else {
+                if (t < u1) return false;
+                if (t < u2) u2 = t;
+            }
+        }
 
-    orientation(a, b, c) {
-        const val = (b.y - a.y) * (c.x - b.x) - (b.x - a.x) * (c.y - b.y);
-        if (Math.abs(val) < 1e-9) return 0;
-        return val > 0 ? 1 : 2;
-    }
-
-    onSegment(a, b, c) {
-        return (
-            b.x <= Math.max(a.x, c.x) &&
-            b.x >= Math.min(a.x, c.x) &&
-            b.y <= Math.max(a.y, c.y) &&
-            b.y >= Math.min(a.y, c.y)
-        );
+        return u1 <= u2;
     }
 
     projectPointToSegment(point, a, b) {
