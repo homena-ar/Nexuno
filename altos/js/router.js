@@ -5,6 +5,83 @@
  * - Evita atravesar manzanas validando colision de segmentos con obstaculos.
  */
 
+/** Min-heap (priority queue) para A* – extracción O(log n) en vez de O(n). */
+class MinHeap {
+    constructor() {
+        this._data = [];
+        this._index = new Map();
+    }
+
+    get size() { return this._data.length; }
+
+    push(id, priority) {
+        if (this._index.has(id)) {
+            this._decreaseKey(id, priority);
+            return;
+        }
+        const i = this._data.length;
+        this._data.push({ id, priority });
+        this._index.set(id, i);
+        this._bubbleUp(i);
+    }
+
+    pop() {
+        if (!this._data.length) return null;
+        const top = this._data[0];
+        this._index.delete(top.id);
+        const last = this._data.pop();
+        if (this._data.length) {
+            this._data[0] = last;
+            this._index.set(last.id, 0);
+            this._sinkDown(0);
+        }
+        return top.id;
+    }
+
+    has(id) { return this._index.has(id); }
+
+    _decreaseKey(id, priority) {
+        const i = this._index.get(id);
+        if (i === undefined || this._data[i].priority <= priority) return;
+        this._data[i].priority = priority;
+        this._bubbleUp(i);
+    }
+
+    _bubbleUp(i) {
+        const d = this._data;
+        while (i > 0) {
+            const parent = (i - 1) >> 1;
+            if (d[parent].priority <= d[i].priority) break;
+            this._swap(i, parent);
+            i = parent;
+        }
+    }
+
+    _sinkDown(i) {
+        const d = this._data;
+        const n = d.length;
+        while (true) {
+            let smallest = i;
+            const l = 2 * i + 1;
+            const r = 2 * i + 2;
+            if (l < n && d[l].priority < d[smallest].priority) smallest = l;
+            if (r < n && d[r].priority < d[smallest].priority) smallest = r;
+            if (smallest === i) break;
+            this._swap(i, smallest);
+            i = smallest;
+        }
+    }
+
+    _swap(a, b) {
+        const d = this._data;
+        const tmp = d[a];
+        d[a] = d[b];
+        d[b] = tmp;
+        this._index.set(d[a].id, a);
+        this._index.set(d[b].id, b);
+    }
+}
+
 class Router {
     constructor() {
         this.callesH = BarrioData.callesH;
@@ -16,9 +93,7 @@ class Router {
 
         this.obstacles = this.buildObstacleRects();
         this.baseGraph = this.buildBaseGraph();
-        this.auditWalkableEdges();
-        this.validateRandomRoutes(200);
-        this.scheduleConnectivityAudit();
+        this.scheduleDiagnostics();
     }
 
     // ========= Public API =========
@@ -155,6 +230,20 @@ class Router {
         }
     }
 
+    scheduleDiagnostics() {
+        const schedule = typeof window !== 'undefined' && typeof window.requestIdleCallback === 'function'
+            ? (cb) => window.requestIdleCallback(cb, { timeout: 5000 })
+            : (cb) => window.setTimeout(cb, 200);
+
+        schedule(() => {
+            this.auditWalkableEdges();
+            schedule(() => {
+                this.validateRandomRoutes(200);
+                schedule(() => this.validateAllConnectivityAsync());
+            });
+        });
+    }
+
     scheduleConnectivityAudit() {
         if (typeof window === 'undefined' || typeof window.setTimeout !== 'function') return;
         window.setTimeout(() => this.validateAllConnectivityAsync(), 0);
@@ -288,41 +377,28 @@ class Router {
     }
 
     aStar(graph, startId, goalId) {
-        const open = new Set([startId]);
+        const open = new MinHeap();
         const cameFrom = new Map();
         const gScore = new Map();
-        const fScore = new Map();
 
-        for (const id of graph.nodes.keys()) {
-            gScore.set(id, Number.POSITIVE_INFINITY);
-            fScore.set(id, Number.POSITIVE_INFINITY);
-        }
         gScore.set(startId, 0);
-        fScore.set(startId, this.heuristic(graph, startId, goalId));
+        open.push(startId, this.heuristic(graph, startId, goalId));
 
         while (open.size) {
-            let current = null;
-            let best = Number.POSITIVE_INFINITY;
-            for (const id of open) {
-                const f = fScore.get(id);
-                if (f < best) {
-                    best = f;
-                    current = id;
-                }
-            }
+            const current = open.pop();
 
             if (current === goalId) return this.reconstructPath(cameFrom, current);
 
-            open.delete(current);
+            const currentG = gScore.get(current);
             const neighbors = graph.adjacency.get(current) || [];
             for (const edge of neighbors) {
-                const tentative = gScore.get(current) + edge.weight;
-                if (tentative >= gScore.get(edge.to)) continue;
+                const tentative = currentG + edge.weight;
+                const prevG = gScore.get(edge.to);
+                if (prevG !== undefined && tentative >= prevG) continue;
 
                 cameFrom.set(edge.to, current);
                 gScore.set(edge.to, tentative);
-                fScore.set(edge.to, tentative + this.heuristic(graph, edge.to, goalId));
-                open.add(edge.to);
+                open.push(edge.to, tentative + this.heuristic(graph, edge.to, goalId));
             }
         }
 
@@ -370,7 +446,8 @@ class Router {
         const graph = {
             nodes: new Map(),
             adjacency: new Map(),
-            edges: []
+            edges: [],
+            edgeKeys: new Set()
         };
 
         const xValues = new Set();
@@ -843,22 +920,24 @@ class Router {
         const b = graph.nodes.get(idB);
         if (!a || !b) return;
 
+        const keyA = `${idA}->${idB}`;
+        if (graph.edgeKeys.has(keyA)) return;
+
         const w = this.distance(a, b);
         const arrA = graph.adjacency.get(idA) || [];
         if (!graph.adjacency.has(idA)) graph.adjacency.set(idA, arrA);
-        if (!arrA.some((e) => e.to === idB)) arrA.push({ to: idB, weight: w });
+        arrA.push({ to: idB, weight: w });
 
-        const keyA = `${idA}->${idB}`;
-        if (!graph.edges.some((e) => e.key === keyA)) {
-            graph.edges.push({ key: keyA, from: idA, to: idB });
-        }
+        graph.edgeKeys.add(keyA);
+        graph.edges.push({ key: keyA, from: idA, to: idB });
     }
 
     cloneGraph(base) {
         const graph = {
             nodes: new Map(),
             adjacency: new Map(),
-            edges: base.edges.map((e) => ({ ...e }))
+            edges: base.edges.map((e) => ({ ...e })),
+            edgeKeys: new Set(base.edgeKeys)
         };
 
         for (const [id, node] of base.nodes.entries()) {

@@ -260,6 +260,7 @@ class MapRenderer {
                 this.startX = e.touches[0].clientX - this.translateX;
                 this.startY = e.touches[0].clientY - this.translateY;
             }
+            if (this.map) this.map.style.transition = 'none';
         }, { passive: true });
         
         this.container.addEventListener('touchmove', (e) => {
@@ -276,9 +277,11 @@ class MapRenderer {
         
         this.container.addEventListener('touchend', () => {
             this.isDragging = false;
+            if (this.map) this.map.style.transition = '';
         });
         this.container.addEventListener('touchcancel', () => {
             this.isDragging = false;
+            if (this.map) this.map.style.transition = '';
         });
         
         // Mouse events para desktop
@@ -289,8 +292,9 @@ class MapRenderer {
             this.startX = e.clientX - this.translateX;
             this.startY = e.clientY - this.translateY;
             this.container.style.cursor = 'grabbing';
+            if (this.map) this.map.style.transition = 'none';
         });
-        
+
         this.container.addEventListener('mousemove', (e) => {
             if (this.isDragging) {
                 this.translateX = e.clientX - this.startX;
@@ -298,16 +302,16 @@ class MapRenderer {
                 this.updateTransform();
             }
         });
-        
-        this.container.addEventListener('mouseup', () => {
+
+        const stopDrag = () => {
+            if (!this.isDragging) return;
             this.isDragging = false;
             this.container.style.cursor = 'grab';
-        });
-        
-        this.container.addEventListener('mouseleave', () => {
-            this.isDragging = false;
-            this.container.style.cursor = 'grab';
-        });
+            if (this.map) this.map.style.transition = '';
+        };
+
+        this.container.addEventListener('mouseup', stopDrag);
+        this.container.addEventListener('mouseleave', stopDrag);
         
         // Wheel zoom
         this.container.addEventListener('wheel', (e) => {

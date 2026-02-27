@@ -139,10 +139,14 @@ class App {
         // Keyboard
         document.addEventListener('keydown', (e) => this.onGlobalKeydown(e));
         
-        // Resize
+        // Resize (debounced)
+        let resizeTimer = null;
         window.addEventListener('resize', () => {
-            this.updateMapMargin();
-            this.map.centerMap();
+            if (resizeTimer) clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                this.updateMapMargin();
+                this.map.centerMap();
+            }, 150);
         });
     }
 
